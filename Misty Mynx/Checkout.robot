@@ -130,4 +130,59 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     Sleep    15s
 
 Checkout_TC_2: To verfiy registerd customer is able to see checkout page
+    Open Website
+    Accept Cookies
+    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Sleep    4s
+    Click Element    xpath=//button[@id="product-addtocart-button"]
+    #Check success message
+    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    #Click on OK button
+    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    Log To Console    Get count on minicart icon = ${MINICART_COUNT}
+    #Click minicart icon
+    Sleep    1s
+    Click Element    xpath=//div[@data-block="minicart"]
+    #Verify the Checkout button on Mini cart
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    #Click on Checkout button on Mini Cart
+    Click Element    ${MINI_CART_CHECKOUT_BUTTON}
+    Sleep    8s
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    Review Order
+    IF    '${LANDING_PAGE}'=='Review Order' 
+        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    ELSE
+    Wait Until Page Contains    Shipping Information
+        
+    END
+    #Verify the Order Information title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    Order Information
+    #Verify the number of item Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
+    Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
+    #Verify the Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
+    Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Verify the Shipping Fee on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    xpath=//td[@class="amount"]//span[@data-th="Shipping Fee"]
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
+    #Verify the Total Price on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
+    Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
+    #Verify the item list title on Checkout page
+
       

@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Library    OperatingSystem
 Resource   variables.robot
 Resource   keywords.robot
 
@@ -284,7 +283,7 @@ Global Footer_TC_5: Newsletter Subcription_Guest
     #Validate the PDPA Message
     Wait Until Page Contains Element    xpath=//div[@class="field custom-checkbox newsletter-agreement required"]//label/span
     #Input email 
-    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey994@gmail.com
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey1000@gmail.com
     #Click the enter button to subscribe the newspaper
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
     #Verify the Error Message to select Privacy Policy
@@ -312,8 +311,8 @@ Global Footer_TC_6: Newsletter Subcription_Register
     Wait Until Page Contains Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY}
     #Validate the PDPA Message
     Wait Until Page Contains Element    xpath=//div[@class="field custom-checkbox newsletter-agreement required"]//label/span
-    #Input email 
-    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey999@gmail.com   
+    #Input email (Have to change email that have never subscripted before. If you want to use the same email you will run unsubscript feature.)
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey1001@gmail.com   
     #Click the enter button to subscribe the newspaper
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
     #Verify the Error Message to select Privacy Policy
@@ -326,6 +325,7 @@ Global Footer_TC_6: Newsletter Subcription_Register
     Wait Until Element Contains    xpath=//div[@class="modal-inner-wrap"]//div[@class="modal-content"]//p[@class="message success "]    Thank you for your subscription.
     #Click on ok button on popup
     Click Element    xpath=//button[@class="action-primary action-accept"]
+    #Go to header
     Wait Until Element Is Not Visible    xpath=//div[@class="modal-inner-wrap"]//div[@class="modal-content"]//p[@class="message success "]
     Wait Until Page Contains Element    ${WEB_LOGO_MM}
     Sleep    1s
@@ -337,7 +337,7 @@ Global Footer_TC_7: My Order Search_Footer_GuestUser
     Open Website
     Accept Cookies
     #Scroll down to bottom of page
-    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)\
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     #Click on My Order in footer
     Wait Until Page Contains Element    ${FOOTER_MY_ACCOUNT_MY_ORDERS}
     Sleep    1s
@@ -369,13 +369,126 @@ Global Footer_TC_7: My Order Search_Footer_GuestUser
     Close Browser
 
 Global Footer_TC_8: Verify Mandatory Fields_My Order Search_Footer_GuestUser
+    Open Website
+    Accept Cookies
+    #Scroll down to bottom of page
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    #Click on My Order in footer
+    Wait Until Page Contains Element    ${FOOTER_MY_ACCOUNT_MY_ORDERS}
+    Sleep    1s
+    Click Element    ${FOOTER_MY_ACCOUNT_MY_ORDERS}
+    #Verify Bread Crumb
+    Wait Until Element Contains    xpath=//div[@class="breadcrumbs"]//li[@class="item cms_page"]    Order Information
+    #Verify Order Reference Number field
+    Wait Until Page Contains    Order Reference Number
+    #Enter Order Reference Number (Can checkout with Checkout_TC_1 before run this case because it have Order number and email)
+    Input Text    ${MY_ORDER_GUEST_ORDER_REFERENCE_NUMBER_FIELD}    ${EMPTY}  
+    #Verify Email Address field
+    Wait Until Page Contains    Email Address
+    #Enter Email Address
+    Input Text    ${MY_ORDER_GUEST_EMAIL_ADDRESS_FIELD}    ${EMPTY}
+    #Verify Billing Last Name field
+    Wait Until Page Contains    Billing Last Name
+    #Enter Billing Last Name
+    Input Text    ${MY_ORDER_GUEST_BILLING_LAST_NAME_FIELD}    ${EMPTY}
+    #Click on the search button
+    Click Element    ${MY_ORDER_GUEST_SEARCH_BUTTON}
+    #Verify Order Reference Number field As Mandatory
+    Wait Until Element Contains    xpath=//div[@id="oar-order-id-error"]    This is a required field.
+    Sleep    1s
+    #Verify Email Address field As Mandatory
+    Wait Until Element Contains    xpath=//div[@id="oar_email-error"]    This is a required field.
+    #Verify Billing Last Name field As Mandatory
+    Wait Until Element Contains    xpath=//div[@id="oar-billing-lastname-error"]    This is a required field.
+    Sleep    2s
+    Delete All Cookies
+    Close Browser
 
+Global Footer_TC_9: Verify Email As Mandatory in Newsletter Subcription_Guest
+    Open Website
+    Accept Cookies
+    #Scroll down to bottom of page
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    #Verify the JOIN_THE_JASPAL_COMMUNITY
+    Wait Until Page Contains Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY}
+    #Select PDPA checkbox
+    Click Element    ${FOOTER_PDPA_CHECKBOX}
+    #Input email 
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    ${EMPTY}
+    #Click subscribe the newspaper
+    Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
+    #Verify the Error Message to enter the email
+    Wait Until Element Contains    xpath=//div[@class="control"]//div[@id="newsletter-error"]    This is a required field.
+    Sleep    1s
+    Delete All Cookies
+    Close Browser
 
-    
+Global Footer_TC_10: Verify Email As Mandatory in Newsletter Subcription_Register
+    Open Website
+    Accept Cookies
+    Login    butternueybn@gmail.com    Bn12345678/
+    #Scroll down to bottom of page
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    #Verify the JOIN_THE_JASPAL_COMMUNITY
+    Wait Until Page Contains Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY}
+    #Select PDPA checkbox
+    Click Element    ${FOOTER_PDPA_CHECKBOX}
+    #Input email 
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    ${EMPTY}
+    #Click subscribe the newspaper
+    Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
+    #Verify the Error Message to enter the email
+    Wait Until Element Contains    xpath=//div[@class="control"]//div[@id="newsletter-error"]    This is a required field.
+    Sleep    1s
+    #Go to header
+    Wait Until Element Is Not Visible    xpath=//div[@class="modal-inner-wrap"]//div[@class="modal-content"]//p[@class="message success "]
+    Wait Until Page Contains Element    ${WEB_LOGO_MM}
+    Sleep    1s
+    Logout
+    Delete All Cookies
+    Close Browser
 
+Global Footer_TC_11: Verify Valid EmailID in Newsletter Subcription_Guest
+    Open Website
+    Accept Cookies
+    #Scroll down to bottom of page
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    #Verify the JOIN_THE_JASPAL_COMMUNITY
+    Wait Until Page Contains Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY}
+    #Select PDPA checkbox
+    Click Element    ${FOOTER_PDPA_CHECKBOX}
+    #Input email 
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    invalidemail.com    
+    #Click subscribe the newspaper
+    Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
+    #Verify the Error Message invalid email
+    Wait Until Element Contains    xpath=//div[@class="control"]//div[@id="newsletter-error"]    Please enter a valid email address (Ex: sally@domain.com)
+    Sleep    1s
+    Delete All Cookies
+    Close Browser
 
-
-
-
-
+Global Footer_TC_12: Verify Valid EmailID in Newsletter Subcription_Register
+    Open Website
+    Accept Cookies
+    Login    butternueybn@gmail.com    Bn12345678/
+    #Scroll down to bottom of page
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    #Verify the JOIN_THE_JASPAL_COMMUNITY
+    Wait Until Page Contains Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY}
+    #Select PDPA checkbox
+    Click Element    ${FOOTER_PDPA_CHECKBOX}
+    #Input email 
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    invalidemail.com    
+    #Click subscribe the newspaper
+    Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
+    #Verify the Error Message invalid email
+    Wait Until Element Contains    xpath=//div[@class="control"]//div[@id="newsletter-error"]    Please enter a valid email address (Ex: sally@domain.com)
+    Sleep    1s
+    #Go to header
+    Wait Until Element Is Not Visible    xpath=//div[@class="modal-inner-wrap"]//div[@class="modal-content"]//p[@class="message success "]
+    Wait Until Page Contains Element    ${WEB_LOGO_MM}
+    Sleep    1s
+    Logout
+    Delete All Cookies
+    Close Browser
     

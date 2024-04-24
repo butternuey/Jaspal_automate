@@ -51,6 +51,10 @@ ${PLP_PRODUCT_1}    css=#maincontent > div.columns > div > div.search.results > 
 ${SHIPPING_ORDER_INFORMATION_SECTION}    xpath=//aside[contains(@class,"modal-custom opc-sidebar opc-summary-wrapper")]
 ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    xpath=//div[@class="block items-in-cart items-in-bag"]//strong[@role="heading"]
 
+
+#REVIEW ORDER PAGE
+${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}    xpath=//div[@class="shipping-information"]//div[@class="ship-to"]//div[@class="shipping-information-title"]//button[@class="action action-edit"]
+
 #FOOTER
 ${FOOTER_MY_ACCOUNT_MY_ORDERS}    xpath=//div[@class="footer-menus"]/div[@class="order-link"]/a/span[text()='My Orders']    
 ${FOOTER_MY_ACCOUNT_MY_CREDITS}    xpath=//div[@class="footer-menus"]//a[@class="pagebuilder-button-link"]/span[text()='My Credits']

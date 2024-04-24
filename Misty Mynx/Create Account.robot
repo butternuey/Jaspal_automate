@@ -15,7 +15,7 @@ Create_Account_TC_1: Verify User Able to Register successfully
     #Enter LASTNAME
     Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    Thipathikeat
     #Enter EMAIL
-    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    butternueybn@gmail.com
+    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    bn.nuey.kittiya@gmail.com
     #Enter PASSWORD
     Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    Bn12345678/
     #Enter PASSWORD Again
@@ -46,6 +46,7 @@ Create_Account_TC_1: Verify User Able to Register successfully
     #Click on Create New Account Button
     Click Element    ${CREATE_ACCOUNT_BUTTON}
     #Check Email Confirm Popup
+    Sleep    2s
     Wait Until Page Contains    ${CREATE_ACCOUNT_CHECK_EMAIL_COMFIRM_TEXT}
     Sleep    1s
     Delete All Cookies
