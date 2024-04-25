@@ -183,6 +183,27 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     #Verify the Total Price on Checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
-    #Verify the item list title on Checkout page
-
-      
+    #Click Proceed to payment
+    Click Element    xpath=//button[@data-bind="click: processToPayment"]
+    Sleep    3s
+    Wait Until Page Contains    Select Payment Method
+    #Select payment method
+    Sleep    2s
+    Click Element    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+    Sleep    2s
+    #Click Proceed to Review Order button
+    Click Element    xpath=//button[@class="button action primary"]
+    #-------------------------- Review Order Page ---------------------------------------------
+    Wait Until Page Contains    Review Order
+    Wait Until Element Contains    xpath=//div[@class="shipping-information"]    Shipping
+    Wait Until Element Contains    xpath=//div[@class="payment-information content-section"]    Payment
+    Wait Until Element Contains    xpath=//div[@class="block items-in-cart"]//span    Item List
+    #Click Place Order button
+    Click Element    xpath=//button[@data-bind="click: placeOrder"]
+    #-------------------------- Thank you Page -------------------------------------------------
+    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]    Order Information
+    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]    Shipping Information
+    Wait Until Element Contains    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]    Item List
+    ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
+    Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
+    Sleep    15s
