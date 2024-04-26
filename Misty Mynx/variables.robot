@@ -50,6 +50,17 @@ ${PLP_PRODUCT_1}    css=#maincontent > div.columns > div > div.search.results > 
 #SHIPPING PAGE
 ${SHIPPING_ORDER_INFORMATION_SECTION}    xpath=//aside[contains(@class,"modal-custom opc-sidebar opc-summary-wrapper")]
 ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    xpath=//div[@class="block items-in-cart items-in-bag"]//strong[@role="heading"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_BUTTON}    xpath=//div[@id="checkout-step-shipping"]//div[@class="action-for-address"]//button[@class="action action-show-popup"]//span[text()='Add New Address']
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//header[@class="modal-header"]//h1[contains(text(),'Shipping Address')]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_FIRST_NAME_FIELD}    xpath=//div[@name="shippingAddress.firstname"]//input[@name="firstname"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_LAST_NAME_FIELD}    xpath=//div[@name="shippingAddress.lastname"]//input[@name="lastname"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_COUNTRY_FIELD}    xpath=//div[@name="shippingAddress.country_id"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_HOUSE_NUMBER_FIELD}    xpath=//div[@name="shippingAddress.custom_attributes.house_number"]//input[@name="custom_attributes[house_number]"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_BUIDING_FIELD}    xpath=//div[@name="shippingAddress.custom_attributes.building"]//input[@name="custom_attributes[building]"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_FLOOR_FIELD}    xpath=//div[@name="shippingAddress.custom_attributes.floor"]//input[@name="custom_attributes[floor]"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ALLEY/ROAD_FIELD}    xpath=//div[@name="shippingAddress.street.0"]//input[@name="street[0]"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_PHONE_NUMBER_FIELD}    xpath=//div[@name="shippingAddress.telephone"]//input[@name="telephone"]
+${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_BUTTON}    xpath=//div[@id="checkout-step-shipping"]//div[@class="action-for-address"]//button[@class="action action-show-popup"]//span[text()='Select From Address Book']
 
 
 #REVIEW ORDER PAGE
