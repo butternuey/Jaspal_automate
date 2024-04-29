@@ -12,8 +12,18 @@ ${HOMEPAGE_SEARCH_PRODUCT_CANCEL}    css=#search_mini_form > div.actions
 
 #MINI_CART
 ${MINI_CART_ICON}    xpath=//div[@data-block="minicart"]
-${MINI_CART_POPUP}    id=ui-id-36
+${MINI_CART_POPUP}    xpath=//div[@class="block block-minicart ui-dialog-content ui-widget-content"]
 ${MINI_CART_TEXT}    My Bag
+${MINI_CART_INCREASE}    xpath=//div[@class="qty-div"]//div[@class="qty-btn more"]
+${MINI_CART_DECREASE}    xpath=//div[@class="qty-div"]//div[@class="qty-btn less"]
+${MINI_CART_UPDATE_BUTTON}    xpath=//button[@title="Update"]
+${MINI_CART_DELETE_ICON}    xpath=//div[@class="product actions"]//div[@class="secondary"]//a[@class="action delete"]
+${MINI_CART_DELETE_POPUP}    xpath=//div[@class="modal-inner-wrap"]//div[@class="modal-content"]//div[text()='Are you sure you want to remove this item from your shopping bag?']
+${MINI_CART_DELETE_POPUP_OK_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+${MINI_CART_DELETE_POPUP_CANCEL_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-secondary action-dismiss"]    
+${MINI_CART_DELETE_POPUP_CLOSE_BUTTON}    xpath=//aside[@class="modal-popup confirm _show"]//div[@class="modal-inner-wrap"]//button[@class="action-close"]
+${MINI_CART_WISHLIST_ICON}    xpath=//div[@class="product actions"]//div[@class="primary"]//button[@class="button-wishlist-cart action towishlist add-to-wishlist"]
+${MINI_CART_VIEW_MY_BAG_ICON}    xpath=//button[@class=" btn btn--secondary"]
 ${MINI_CART_CHECKOUT_BUTTON}    xpath=//button[@id="top-cart-btn-checkout"]
 
 #VIEW_MY_BAG
@@ -28,13 +38,20 @@ ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_SIZE}    css=#shopping-cart-table > tbody > tr
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INPUT_QTY}    css=#cart-273622-qty
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_DECREASE_QTY}    css=#qty_change > span.decreaseQty
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INCREASE_QTY}    css=#qty_change > span.increaseQty
-${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST}    css=#customer-login-link
-${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}    css=#shopping-cart-table > tbody > tr > td > div > div.item-actions > div > div > a.action.action-delete
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_}    xpath=//table[@id="shopping-cart-table"]//div[@class="actions-toolbar"]//a[@id="customer-login-link"]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER}    xpath=//div[@class="primary"]//div[@class="split button wishlist"]//button[@data-action="add-to-wishlist"]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),"success")]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_MASSAGE}    xpath=xpath=//div[@class="modal-content"]//p[@class="message success "]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP_OK_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}    xpath=//table[@id="shopping-cart-table"]//div[@class="actions-toolbar"]//a[@class="action action-delete"]
 ${VIEW_MY_BAG_GIFT_BOX_SECTION}    css=#maincontent > div.columns > div > div.cart-container > div.group-cart-section > div
+${VIEW_MY_BAG_FREE_GIFT_SECTION}    xpath=//div[@class="ampromo-items-add"]//a[text()="free gift "]
+${VIEW_MY_BAG_FREE_GIFT_POPUP}    xpath=//div[@class="ampromo-items-content gifting-popup-content"]//div[@class="page-title-wrapper"]//h1[@class="page-title"]
+${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}    xpath=//div[@data-role="ampromo-popup-hide"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION}    css=#maincontent > div.columns > div > div.cart-container > div.cart-summary
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL}    css=#cart-totals > div > table > tbody > tr.totals.sub > th
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL}    css=#cart-totals > div > table > tbody > tr.grand.totals > td
-${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}    css=#block-discount > div.title.coupon-title
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}    xpath=//div[@id="block-discount"]//div[@class="title coupon-title"]//strong[@id="block-discount-heading"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_EXPAND}    css=#block-discount
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    css=#coupon_code
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_APPLY_BUTTON}    css=#discount-coupon-form > div > div.col-xs-4.text-center > div > div > button
@@ -48,6 +65,7 @@ ${PRODUCT_2}    Logo Tape Pullover
 ${PLP_PRODUCT_1}    css=#maincontent > div.columns > div > div.search.results > div.products.wrapper.grid.products-grid > ol > li > div
 
 #SHIPPING PAGE
+${SHIPPING_LOGIN_LINK}    xpath=//div[@class="incentive-message"]//div[@class="checkout-incentive-message"]//a[@id="customer-login-link"]
 ${SHIPPING_ORDER_INFORMATION_SECTION}    xpath=//aside[contains(@class,"modal-custom opc-sidebar opc-summary-wrapper")]
 ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    xpath=//div[@class="block items-in-cart items-in-bag"]//strong[@role="heading"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_BUTTON}    xpath=//div[@id="checkout-step-shipping"]//div[@class="action-for-address"]//button[@class="action action-show-popup"]//span[text()='Add New Address']
@@ -61,6 +79,8 @@ ${SHIPPING_SHIPPING_SECTION_ADD_NEW_FLOOR_FIELD}    xpath=//div[@name="shippingA
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ALLEY/ROAD_FIELD}    xpath=//div[@name="shippingAddress.street.0"]//input[@name="street[0]"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_PHONE_NUMBER_FIELD}    xpath=//div[@name="shippingAddress.telephone"]//input[@name="telephone"]
 ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_BUTTON}    xpath=//div[@id="checkout-step-shipping"]//div[@class="action-for-address"]//button[@class="action action-show-popup"]//span[text()='Select From Address Book']
+${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_POPUP}    xpath=//div[@class="modal-inner-wrap"]//header[@class="modal-header"]//h1[contains(text(),"Please Select Address")]
+${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_CLOSE_ICON}    xpath=//aside[@class="modal-popup customer-popup forgot-password-popup _inner-scroll"]//h1[@class="modal-title"]//ancestor::header[@class="modal-header"]//button//span[text()="Close"]
 
 
 #REVIEW ORDER PAGE

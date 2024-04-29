@@ -16,8 +16,11 @@ Login
     Click Element    ${LOGIN_PASSWORD_TEXTBOX}
     Input Text    ${LOGIN_PASSWORD_TEXTBOX}    ${LOGIN_PASSWORD}
     Click Element    ${LOGIN_BUTTON}
+    Sleep    1s
     Wait Until Element Is Not Visible    ${LOGIN_POPUP}
+    Sleep    1s
 Logout
+    Wait Until Page Contains Element    ${LOGIN_ICON}
     Click Element    ${LOGIN_ICON}
     Click Element    ${LOGOUT_MENU}
     Wait Until Page Contains Element    ${WEB_LOGO_MM}
@@ -30,7 +33,7 @@ Delete Account
     Open Browser    ${ADMIN_MM_URL}    Chrome
     Delete All Cookies
     #Should enter data by Login Magento >> input 2FA >> inspect >> application >> cookies >> admin ad
-    Add Cookie    admin    c822cf52e83fc7769557e75f25a92cab
+    Add Cookie    admin    92c248493d21145142f98acdaad14310
     Reload Page
     Maximize Browser Window
     Click Element    ${ADMIN_CUSTOMER_MENU}
@@ -38,10 +41,10 @@ Delete Account
     Sleep    1s
     Click Element    ${ADMIN_CUSTOMER_ALL_CUSTOMER}
     Wait Until Page Contains Element    ${ADMIN_CUSTOMER_ALL_CUSTOMER_SEARCH_FIELD}
-    Input Text    ${ADMIN_CUSTOMER_ALL_CUSTOMER_SEARCH_FIELD}    butternueybn@gmail.com
+    Input Text    ${ADMIN_CUSTOMER_ALL_CUSTOMER_SEARCH_FIELD}    bn.nuey.kittiya@gmail.com
     sleep    5s
     #Check 
-    Click Element    xpath=//div[text()='butternueybn@gmail.com']//ancestor::tr/td/div[text()='MistyMynx Main Website']//ancestor::tr//input[@class='admin__control-checkbox']
+    Click Element    xpath=//div[text()='bn.nuey.kittiya@gmail.com']//ancestor::tr/td/div[text()='MistyMynx Main Website']//ancestor::tr//input[@class='admin__control-checkbox']
     Click Element    xpath=//div[@class='action-select-wrap']/button[@class='action-select']
     Click Element     xpath=//div[contains(@data-bind, "listing_massaction")]//div[@class="action-menu-items"]//span[text()='Delete']
     Wait Until Element Contains    xpath=//header[@class="modal-header"]/h1[contains(@id, "modal-title-")]    Delete items

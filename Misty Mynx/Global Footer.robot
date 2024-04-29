@@ -190,7 +190,7 @@ Global Footer_TC_2: Verify Footer Lables_Register
     Switch Window    ${WINDOW_HANDLES}[1]
     #Verify JPS_CLUB Page in new tab
     Page Should Contain Element    css=#header > div.elementor-container.elementor-column-gap-default > div.elementor-column.elementor-col-25.elementor-top-column.elementor-element.elementor-element-59136322.ob-is-e3 > div > div > div > a > img
-    #Wait and switch to the old tab
+    #Wait and switch to the old tab  test
     ${WINDOW_HANDLES}=    Get Window Handles
     Switch Window    ${WINDOW_HANDLES}[0]
     #Verify JPS_CLUB  Page in new tab

@@ -1,8 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
-Resource    ../Resource/variables.robot
-Resource    ../Resource/keywords.robot
+Resource    Misty Mynx/variables.robot
+Resource    Misty Mynx/keywords.robot
 
 *** Test Cases ***
 TC_001: Guest checkout via My bag page
