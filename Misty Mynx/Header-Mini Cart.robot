@@ -614,6 +614,7 @@ Header-Mini Cart_TC_12: To verify guest customer able to add product to Wishlist
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon: ${MINICART_COUNT}
     #Click on Minicart icon
+    Sleep    1s
     Click Element    ${MINI_CART_ICON}
     #Click on View my bag button
     Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
@@ -627,20 +628,328 @@ Header-Mini Cart_TC_12: To verify guest customer able to add product to Wishlist
     Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
     Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
     #Verify the Wishlist icon on Shopping bag page
+    Sleep    2s
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER}
     #Click on Wishlist icon on shopping bag
+    Sleep    2s
     Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER}
     #Verify the Wishlist success popup on Shopping bag
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP}
     #Verfiy the Success message on Wishlist popup
+    Sleep    5s
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_MASSAGE}
     Get Text    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_MASSAGE}
     #Click on OK button on Wishlist popup
     Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP_OK_BUTTON}
     Wait Until Element Is Not Visible    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP}
+    Sleep    2s
+    #Click on Login icon
+    Click Element    ${LOGIN_ICON}
+    Wait Until Page Contains Element    ${LOGIN_MENU}
+    #Select My withlist menu
+    Click Element    xpath=//div[@class="header-links-menu panel header arrow_box"]//ul[@class="header links"]//li[@class="link wishlist"]//a[@href="https://mcstaging-2-4.mistymynx.com/en/wishlist/"][contains(text(),"My Wishlist")]
+    #Verify My wishlist page
+    Wait Until Page Contains    MY WISHLIST
+    #Verify product in wishlist page
+    Wait Until Page Contains Element    xpath=//strong[@class="product-item-name"]//a[@title="Mynx Love Tee"]
+    Sleep    2s
     Logout
     Delete All Cookies
     Close Browser
     
+Header-Mini Cart_TC_13: To verify guest customer is not able to see JPS section.
+    #Open Browser
+    Open Website
+    #Accept the Cookies
+    Accept Cookies
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Sleep    4s
+    Click Element    xpath=//button[@id="product-addtocart-button"]
+    #Check success message
+    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    #Click on OK button
+    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    Log To Console    Get count on minicart icon: ${MINICART_COUNT}
+    #Click on Minicart icon
+    Click Element    ${MINI_CART_ICON}
+    #Click on View my bag button
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
+    Click Element    ${VIEW_MY_BAG_BUTTON}
+    #---------------------- VIEW MY BAG Page --------------------------------
+    #Verify View my bag page
+    Wait Until Page Contains    My Bag
+    #Close Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    5s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Verify the Order Information title on my bag page
+    Wait Until Page Contains Element    xpath=//div[@class="cart-summary"]//strong[text()="Order Information"]
+    #Verify JPS Club section Shoul not show on my bag page
+    Wait Until Element Does Not Contain    xpath=//div[@class="cart-summary"]    JPS Club
+    Delete All Cookies
+    Close Browser  
 
+Header-Mini Cart_TC_14: To verify as guest customer is able to Redeem promotion code
+    #Open Browser
+    Open Website
+    #Accept the Cookies
+    Accept Cookies
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Sleep    4s
+    Click Element    xpath=//button[@id="product-addtocart-button"]
+    #Check success message
+    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    #Click on OK button
+    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    Log To Console    Get count on minicart icon: ${MINICART_COUNT}
+    #Click on Minicart icon
+    Click Element    ${MINI_CART_ICON}
+    #Click on View my bag button
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
+    Click Element    ${VIEW_MY_BAG_BUTTON}
+    #---------------------- VIEW MY BAG Page --------------------------------
+    #Verify View my bag page
+    Wait Until Page Contains    My Bag
+    #Close Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    5s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Verify the Order Information title on my bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION}
+    #Verify the Bag sub total on My bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Get subtotal
+    ${SUBTOTAL_VALUE}=    Get Value    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SUBTOTAL_VALUE}
+    #Verify the Bag total on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL}
+    #Get Total
+    ${TOTAL_VALUE}=    Get Value    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Subtotal is ${TOTAL_VALUE}
+    #Verify the Promotion Code on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
+    #Click on Promotion code to enter the code
+    Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
+    Input Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    CRM10
+    #Click on Apply Button
+    Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_APPLY_BUTTON}
+    Sleep    3s
+    #Verify the Success message of Promo Code
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_POPUP}
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_MASSEGE}
+    #Get Promo success massage
+    ${PROMOTION_CODE_SUCCESS_MASSEGE}=    Get Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_MASSEGE}
+    Log To Console    Promo success massage is ${PROMOTION_CODE_SUCCESS_MASSEGE}
+    #Click on OK button to Confirm
+    Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_OK_BUTTTON}
+    #Verify the Coupon discount on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}
+    Execute Javascript    window.scrollTo(0, 0)
+    ${PROMOTION_DISCOUNT}=    Get Value    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT_VALUE}
+    Log To Console    Promotion discount is ${PROMOTION_DISCOUNT}
+    #Verify the Bag total on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL}
+    #Get Total
+    ${UPDATED_TOTAL_VALUE}=    Get Value    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Subtotal is ${UPDATED_TOTAL_VALUE}
+    #Close Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    3s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Verify the Delete button in view bags
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    Sleep    5s
+    #Click delete button
+    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    #Verify my bag page is empty
+    Wait Until Page Contains    Your shopping bag is empty.
+    Delete All Cookies
+    Close Browser
+
+Header-Mini Cart_TC_15: To verify as register customer is able to Redeem promotion code.
+    #Open Browser
+    Open Website
+    #Accept the Cookies
+    Accept Cookies
+    #Login
+    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Sleep    4s
+    Click Element    xpath=//button[@id="product-addtocart-button"]
+    #Check success message
+    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    #Click on OK button
+    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    Log To Console    Get count on minicart icon: ${MINICART_COUNT}
+    #Click on Minicart icon
+    Click Element    ${MINI_CART_ICON}
+    #Click on View my bag button
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
+    Click Element    ${VIEW_MY_BAG_BUTTON}
+    #---------------------- VIEW MY BAG Page --------------------------------
+    #Verify View my bag page
+    Wait Until Page Contains    My Bag
+    #Close Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    5s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Verify the Order Information title on my bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION}
+    #Verify the Bag sub total on My bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Get subtotal
+    ${SUBTOTAL_VALUE}=    Get Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SUBTOTAL_VALUE}
+    #Verify the Bag total on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL}
+    #Get Total
+    ${TOTAL_VALUE}=    Get Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Subtotal is ${TOTAL_VALUE}
+    #Verify the Promotion Code on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
+    #Click on Promotion code to enter the code
+    Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
+    Input Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    CRM10
+    #Click on Apply Button
+    Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_APPLY_BUTTON}
+    Sleep    3s
+    #Verify the Success message of Promo Code
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_POPUP}
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_MASSEGE}
+    #Get Promo success massage
+    ${PROMOTION_CODE_SUCCESS_MASSEGE}=    Get Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_MASSEGE}
+    Log To Console    Promo success massage is ${PROMOTION_CODE_SUCCESS_MASSEGE}
+    #Click on OK button to Confirm
+    Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_OK_BUTTTON}
+    #Verify the Coupon discount on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}
+    Execute Javascript    window.scrollTo(0, 0)
+    ${PROMOTION_DISCOUNT}=    Get Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT_VALUE}
+    Log To Console    Promotion discount is ${PROMOTION_DISCOUNT}
+    #Verify the Bag total on My Bag page
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL}
+    #Get Total
+    ${UPDATED_TOTAL_VALUE}=    Get Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Subtotal is ${UPDATED_TOTAL_VALUE}
+    #Close Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    3s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Verify the Delete button in view bags
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    Sleep    5s
+    #Click delete button
+    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    #Verify my bag page is empty
+    Wait Until Page Contains    Your shopping bag is empty.
+    Logout
+    Delete All Cookies
+    Close Browser
+
+Header-Mini Cart_TC_16: To Verify customer able to add Free gift product to bag from shopping bag page.
+    #Open Browser
+    Open Website
+    #Accept the Cookies
+    Accept Cookies
+    #Login
+    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Sleep    4s
+    Click Element    xpath=//button[@id="product-addtocart-button"]
+    #Check success message
+    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    #Click on OK button
+    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    Log To Console    Get count on minicart icon: ${MINICART_COUNT}
+    #Click on Minicart icon
+    Click Element    ${MINI_CART_ICON}
+    #Click on View my bag button
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
+    Click Element    ${VIEW_MY_BAG_BUTTON}
+    #---------------------- VIEW MY BAG Page --------------------------------
+    #Verify View my bag page
+    Wait Until Page Contains    My Bag
+    #Verify Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_SECTION}
+    #Verify Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    5s
+    Wait Until Page Contains Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//div[@class="product-item-info"]//img[@class="product-image-photo"]
+    Wait Until Page Contains Element    xpath=//div[@class="product details product-item-details"]//strong[@class="product name product-item-name"]
+    ${FREE_GIFT_PRODUCT_NAME_IN_FREE_GIFT_POPUP}=    Get Text    xpath=//div[@class="product details product-item-details"]//strong[@class="product name product-item-name"]
+    Log To Console    Free gift product name is ${FREE_GIFT_PRODUCT_NAME_IN_FREE_GIFT_POPUP}
+    Click Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//div[@class="ampromo-item-qty-input"]//span[@class="increaseQty"]
+    ${PRODUCT_QTY_IN_FREE_GIFT_POPUP}=    Get Text    //div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//input[@title="QTY Select"]
+    Log To Console    QTY_IN_FREE_GIFT_POPUP is ${PRODUCT_QTY_IN_FREE_GIFT_POPUP}
+    Click Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//button[@class="action tocart btn btn--primary ampromo-button"]
+    Wait Until Page Contains Element    xpath=//tbody[@class="cart item free-gift free-gift-block"]//strong[@class="product-item-name"]
+    ${FREE_GIFT_PRODUCT_NAME_IN_MY_BAG_POPUP}=    Get Text    xpath=//tbody[@class="cart item free-gift free-gift-block"]//strong[@class="product-item-name"]
+    Log To Console    Free gift product name is ${FREE_GIFT_PRODUCT_NAME_IN_MY_BAG_POPUP}
+    #Verify the Delete button in view bags
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    Sleep    5s
+    #Click delete button
+    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    #Verify my bag page is empty
+    Wait Until Page Contains    Your shopping bag is empty.
+    Logout
+    Delete All Cookies
+    Close Browser
 

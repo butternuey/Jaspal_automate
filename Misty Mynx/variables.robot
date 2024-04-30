@@ -38,10 +38,10 @@ ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_SIZE}    css=#shopping-cart-table > tbody > tr
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INPUT_QTY}    css=#cart-273622-qty
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_DECREASE_QTY}    css=#qty_change > span.decreaseQty
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INCREASE_QTY}    css=#qty_change > span.increaseQty
-${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_}    xpath=//table[@id="shopping-cart-table"]//div[@class="actions-toolbar"]//a[@id="customer-login-link"]
-${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER}    xpath=//div[@class="primary"]//div[@class="split button wishlist"]//button[@data-action="add-to-wishlist"]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST}    xpath=//table[@id="shopping-cart-table"]//div[@class="actions-toolbar"]//a[@id="customer-login-link"]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER}    xpath=//div[@class="actions-toolbar"]//div[@class="split button wishlist"]//button[@class="action toggle change"]
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),"success")]
-${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_MASSAGE}    xpath=xpath=//div[@class="modal-content"]//p[@class="message success "]
+${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_MASSAGE}    xpath=//div[@class="modal-content"]//p[@class="message success "]
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP_OK_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}    xpath=//table[@id="shopping-cart-table"]//div[@class="actions-toolbar"]//a[@class="action action-delete"]
 ${VIEW_MY_BAG_GIFT_BOX_SECTION}    css=#maincontent > div.columns > div > div.cart-container > div.group-cart-section > div
@@ -50,11 +50,26 @@ ${VIEW_MY_BAG_FREE_GIFT_POPUP}    xpath=//div[@class="ampromo-items-content gift
 ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}    xpath=//div[@data-role="ampromo-popup-hide"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION}    css=#maincontent > div.columns > div > div.cart-container > div.cart-summary
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL}    css=#cart-totals > div > table > tbody > tr.totals.sub > th
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL}    css=#cart-totals > div > table > tbody > tr.grand.totals > td
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL_VALUE}    xpath=//tr[@class="grand totals"]//td[@data-th="Total"]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}    xpath=//tr[@class="totals total_point"]//th[text()="Promotion Discount"]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT_VALUE}    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}    xpath=//div[@id="block-discount"]//div[@class="title coupon-title"]//strong[@id="block-discount-heading"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_EXPAND}    css=#block-discount
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    css=#coupon_code
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_REMOVE_BUTTON}    xpath=//div[@class="primary"]//button[@class="action cancel primary action-cancel"]//span[contains(text(),"Remove")]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_APPLY_BUTTON}    css=#discount-coupon-form > div > div.col-xs-4.text-center > div > div > button
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMO_CODE_TAG}    xpath=//div[@class="field  discount-wrapper"]//label[@for="discount-code"]//span[@class="applied-code"]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMO_CODE_DISCOUNT}    xpath=//div[@class="field  discount-wrapper"]//label[@for="discount-code"]//span[@class="coupon-price"]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_POPUP}    xpath=//aside[@class="modal-popup messages _show"]//header[@class="modal-header"]//h1[@class="modal-title"][contains(text(),"success")]    
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_MASSEGE}    xpath=//p[@class="message success "]//span[text()="We've successfully applied your Promo Code."]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_OK_BUTTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]//span[text()="OK"]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SUCCESS_CLOSE_BUTTTON}    xpath=//aside[@class="modal-popup messages _show"]//header[@class="modal-header"]//button[@data-role="closeBtn"]//span[text()="Close"]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_REMOVE_SUCCESS_POPUP}    xpath=//aside[@class="modal-popup messages _show"]//header[@class="modal-header"]//h1[@class="modal-title"][contains(text(),"success")] 
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_REMOVE_SUCCESS_MASSEGE}    xpath=//aside[@class="modal-popup messages _show"]//p[@class="message success "]//span[text()="We've successfully removed your Promo Code."]   
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_REMOVE_SUCCESS_OK_BUTTTON}    xpath=class="action-primary action-accept"
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_REMOVE_SUCCESS_CLOSE_BUTTTON}    xpath=//aside[@class="modal-popup messages _show"]//header[@class="modal-header"]//button[@data-role="closeBtn"]//span[text()="Close"] 
 ${VIEW_MY_BAG_CHECKOUT_BUTTON}    css=#maincontent > div.columns > div > div.cart-container > div.cart-summary > ul > li > button
 
 #Product
@@ -132,7 +147,7 @@ ${LOGIN_GOOGLE}    css=#customer-popup-login-form > fieldset > div.social-links 
 ${LOGIN_EMAIL}
 ${LOGIN_PASSWORD}
 
-#LOGIN_ERROR
+#LOGIN_ERROR t
 ${LOGIN_ERROR_EMAIL}    css=#email-login-error
 ${LOGIN_ERROR_EMAIL_EMPTY_TEXT}    Please enter your email address.
 ${LOGIN_ERROR_EMAIL_INVALID_TEXT}    Please enter a valid email address (Ex: sally@domain.com)    
