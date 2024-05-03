@@ -983,3 +983,72 @@ Header-Mini Cart_TC_16: To Verify customer able to add Free gift product to bag 
     Delete All Cookies
     Close Browser
 
+Header-Mini Cart_TC_17: To Verify customer able to add Gift box product to bag from shopping bag page
+    #Open Browser
+    Open Website
+    #Accept the Cookies
+    Accept Cookies
+    #Login
+    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Sleep    4s
+    Click Element    xpath=//button[@id="product-addtocart-button"]
+    #Check success message
+    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    #Click on OK button
+    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    Log To Console    Get count on minicart icon: ${MINICART_COUNT}
+    #Click on Minicart icon
+    Sleep    2s
+    Click Element    ${MINI_CART_ICON}
+    #Click on View my bag button
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
+    Click Element    ${VIEW_MY_BAG_BUTTON}
+    #---------------------- VIEW MY BAG Page --------------------------------
+    #Verify View my bag page
+    Wait Until Page Contains    My Bag
+    #Close Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    5s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    3s
+    #Verify Gift box section
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_GIFT_BOX_SECTION}
+    #Verify Gift box Checkbox
+    Wait Until Page Contains Element    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-checkox"]
+    #Click Gift box Checkbox
+    Click Element    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-checkox"]//input
+    #Verify Gift box name
+    Wait Until Page Contains Element    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-detail"]//span[@class="name"]
+    #Get gift box name
+    ${GIFT_BOX_NAME}=    Get Text    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-detail"]//span[@class="name"]
+    Log To Console    GIFT_BOX_NAME is ${GIFT_BOX_NAME}   
+    #Verify Gift box price
+    Wait Until Page Contains Element    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-detail"]//span[@class="price"]
+    #Get gift box price
+    ${GIFT_BOX_PRICE}=    Get Text    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-detail"]//span[@class="price"]
+    Log To Console    GIFT_BOX_NAME is ${GIFT_BOX_PRICE}
+    Sleep    4s
+    #Verify the Delete button in view bags
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    #Click delete button
+    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    #Verify my bag page is empty
+    Wait Until Page Contains    Your shopping bag is empty.
+    Logout
+    Delete All Cookies
+    Close Browser

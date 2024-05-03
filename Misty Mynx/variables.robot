@@ -52,7 +52,7 @@ ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION}    css=#maincontent > div.columns > div
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL}    css=#cart-totals > div > table > tbody > tr.totals.sub > th
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL}    css=#cart-totals > div > table > tbody > tr.grand.totals > td
-${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL_VALUE}    xpath=//tr[@class="grand totals"]//td[@data-th="Total"]
+${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_TOTAL_VALUE}    xpath=//tr[@class="grand totals"]//td[@data-th="Total"]//strong//span[@class="price"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}    xpath=//tr[@class="totals total_point"]//th[text()="Promotion Discount"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT_VALUE}    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}    xpath=//div[@id="block-discount"]//div[@class="title coupon-title"]//strong[@id="block-discount-heading"]
