@@ -824,6 +824,7 @@ Header-Mini Cart_TC_15: To verify as register customer is able to Redeem promoti
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon: ${MINICART_COUNT}
     #Click on Minicart icon
+    Sleep    2s
     Click Element    ${MINI_CART_ICON}
     #Click on View my bag button
     Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
@@ -919,6 +920,7 @@ Header-Mini Cart_TC_16: To Verify customer able to add Free gift product to bag 
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon: ${MINICART_COUNT}
     #Click on Minicart icon
+    Sleep    2s
     Click Element    ${MINI_CART_ICON}
     #Click on View my bag button
     Wait Until Page Contains Element    ${VIEW_MY_BAG_BUTTON}
@@ -927,28 +929,56 @@ Header-Mini Cart_TC_16: To Verify customer able to add Free gift product to bag 
     #Verify View my bag page
     Wait Until Page Contains    My Bag
     #Verify Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_SECTION}
-    #Verify Free gift popup
     Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
     Sleep    5s
+    #Verify the Product Image on Free Gift Popup
     Wait Until Page Contains Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//div[@class="product-item-info"]//img[@class="product-image-photo"]
+    #Verify the Product Name on Free Gift Popup
     Wait Until Page Contains Element    xpath=//div[@class="product details product-item-details"]//strong[@class="product name product-item-name"]
+    #Get the Product Name on Free Gift Popup
     ${FREE_GIFT_PRODUCT_NAME_IN_FREE_GIFT_POPUP}=    Get Text    xpath=//div[@class="product details product-item-details"]//strong[@class="product name product-item-name"]
     Log To Console    Free gift product name is ${FREE_GIFT_PRODUCT_NAME_IN_FREE_GIFT_POPUP}
-    Click Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//div[@class="ampromo-item-qty-input"]//span[@class="increaseQty"]
-    ${PRODUCT_QTY_IN_FREE_GIFT_POPUP}=    Get Text    //div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//input[@title="QTY Select"]
-    Log To Console    QTY_IN_FREE_GIFT_POPUP is ${PRODUCT_QTY_IN_FREE_GIFT_POPUP}
-    Click Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//button[@class="action tocart btn btn--primary ampromo-button"]
-    Wait Until Page Contains Element    xpath=//tbody[@class="cart item free-gift free-gift-block"]//strong[@class="product-item-name"]
-    ${FREE_GIFT_PRODUCT_NAME_IN_MY_BAG_POPUP}=    Get Text    xpath=//tbody[@class="cart item free-gift free-gift-block"]//strong[@class="product-item-name"]
-    Log To Console    Free gift product name is ${FREE_GIFT_PRODUCT_NAME_IN_MY_BAG_POPUP}
-    #Verify the Delete button in view bags
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
     Sleep    5s
-    #Click delete button
-    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
-    #Verify my bag page is empty
-    Wait Until Page Contains    Your shopping bag is empty.
+    #Click increase Qty
+    Click Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//div[@class="ampromo-item-qty-input"]//span[@class="increaseQty"]
+    #Get the Product qty on Free Gift Popup
+    Sleep    5s
+    ${PRODUCT_QTY_IN_FREE_GIFT_POPUP}=    Get Text    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//input[@title="QTY Select"]
+    Log To Console    QTY_IN_FREE_GIFT_POPUP is ${PRODUCT_QTY_IN_FREE_GIFT_POPUP}
+    #Click add to bag button
+    Sleep    5s
+    Click Element    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//button[@class="action tocart btn btn--primary ampromo-button"]
+    #Close Free gift popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    Sleep    5s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Verify Free gift title in Free gift section on My bag page
+    Sleep    2s
+    Wait Until Page Contains Element    xpath=//span[@class="free-gift-title"][text()="Free Gift"]
+    #Verify Product in Free gift section on My bag page
+    Wait Until Page Contains Element    xpath=//tbody[@class="cart item free-gift free-gift-block"]//strong[@class="product-item-name"]
+    #Get the Product name in Free gift section on My bag page
+    ${FREE_GIFT_PRODUCT_NAME_IN_MY_BAG}=    Get Text    xpath=//tbody[@class="cart item free-gift free-gift-block"]//strong[@class="product-item-name"]
+    Log To Console    Free gift product name is ${FREE_GIFT_PRODUCT_NAME_IN_MY_BAG}
+    #Get the Product qty in Free gift section on My bag page
+    ${PRODUCT_QTY_IN_MY_BAG}=    Get Text    xpath=//tbody[@class="cart item free-gift free-gift-block"]//ul[@class="item-options options-list"]//li[@class="list-options"]//div[@class="values"]
+    Log To Console    QTY_IN_MY_BAG is ${PRODUCT_QTY_IN_MY_BAG}
+   
+    #Verify qty on Free Gift Popup should be equal to qty in Free gift section on My bag page
+    IF    '${PRODUCT_QTY_IN_FREE_GIFT_POPUP}'=='${PRODUCT_QTY_IN_MY_BAG}'
+        #Verify the Delete button in view bags
+        Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+        Sleep    5s
+        Log To Console    Qty on Free Gift Popup is equal to qty in Free gift section on My bag page.
+        #Click delete button
+        Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+        #Verify my bag page is empty
+        Wait Until Page Contains    Your shopping bag is empty.
+    ELSE
+    Log To Console    Test Failed.
+        
+    END
     Logout
     Delete All Cookies
     Close Browser
