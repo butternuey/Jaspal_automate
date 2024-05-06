@@ -1,8 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    OperatingSystem
-Resource   variables.robot
-Resource   keywords.robot
+Resource    variables.robot
+Resource    keywords.robot
+Resource    variables_locator.robot
+Resource    variables_text.robot
 
 *** Test Cases ***
 Header-General_TC_1: Search Product_Guest
@@ -13,7 +15,7 @@ Header-General_TC_1: Search Product_Guest
     #Search Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     #Click on product on PLP
     Click Element    ${PLP_PRODUCT_1}
     Wait Until Element Contains    xpath=//ul[@class="items"]//li[@class="item product"]//strong    ${PRODUCT_1}
@@ -30,7 +32,7 @@ Header-General_TC_2: Search Product_Register
     #Search Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     #Click on product on PLP
     Click Element    ${PLP_PRODUCT_1}
     Wait Until Element Contains    xpath=//ul[@class="items"]//li[@class="item product"]//strong    ${PRODUCT_1}

@@ -2,6 +2,8 @@
 Library    SeleniumLibrary
 Resource   variables.robot
 Resource   keywords.robot
+Resource    variables_locator.robot
+Resource    variables_text.robot
 
 *** Test Cases ***
 Global Footer_TC_1: Verify Footer Lables_Guest
@@ -283,7 +285,7 @@ Global Footer_TC_5: Newsletter Subcription_Guest
     #Validate the PDPA Message
     Wait Until Page Contains Element    xpath=//div[@class="field custom-checkbox newsletter-agreement required"]//label/span
     #Input email 
-    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey1000@gmail.com
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}   ${JASPAL_COMMUNITY_ENTER_EMAIL}
     #Click the enter button to subscribe the newspaper
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
     #Verify the Error Message to select Privacy Policy
@@ -312,7 +314,7 @@ Global Footer_TC_6: Newsletter Subcription_Register
     #Validate the PDPA Message
     Wait Until Page Contains Element    xpath=//div[@class="field custom-checkbox newsletter-agreement required"]//label/span
     #Input email (Have to change email that have never subscripted before. If you want to use the same email you will run unsubscript feature.)
-    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey1001@gmail.com   
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    ${JASPAL_COMMUNITY_ENTER_EMAIL_1}   
     #Click the enter button to subscribe the newspaper
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
     #Verify the Error Message to select Privacy Policy
@@ -458,7 +460,7 @@ Global Footer_TC_11: Verify Valid EmailID in Newsletter Subcription_Guest
     #Select PDPA checkbox
     Click Element    ${FOOTER_PDPA_CHECKBOX}
     #Input email 
-    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    invalidemail.com    
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    ${JASPAL_COMMUNITY_ENTER_EMAIL_INVALID}    
     #Click subscribe the newspaper
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
     #Verify the Error Message invalid email
@@ -478,7 +480,7 @@ Global Footer_TC_12: Verify Valid EmailID in Newsletter Subcription_Register
     #Select PDPA checkbox
     Click Element    ${FOOTER_PDPA_CHECKBOX}
     #Input email 
-    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    invalidemail.com    
+    Input Text    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    ${JASPAL_COMMUNITY_ENTER_EMAIL_INVALID}    
     #Click subscribe the newspaper
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
     #Verify the Error Message invalid email

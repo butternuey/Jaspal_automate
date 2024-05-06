@@ -11,15 +11,15 @@ Create_Account_TC_1: Verify User Able to Register successfully
     Accept Cookies
     Create Account
     #Enter FIRSTNAME
-    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    kittiya
+    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    ${CREATE_ACCOUNT_FIRSTNAME_TEXT}
     #Enter LASTNAME
-    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    Thipathikeat
+    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    ${CREATE_ACCOUNT_LASTNAME_TEXT}
     #Enter EMAIL
-    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    bn.nuey.kittiya@gmail.com
+    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    ${CREATE_ACCOUNT_EMAIL}
     #Enter PASSWORD
-    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    Bn12345678/
+    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_PASSWORD}
     #Enter PASSWORD Again
-    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    Bn12345678/
+    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD}
     #Select DOB dropdown
     Click Element    ${CREATE_ACCOUNT_DOB_TEXTBOX}
     Sleep    1s
@@ -27,17 +27,17 @@ Create_Account_TC_1: Verify User Able to Register successfully
     Select From List By Value    ${CREATE_ACCOUNT_DOB_YEAR_DROPDOWN}    1996
     Sleep    1s
     #Select Month (0=JAN, 1=FEB, 2=MAR, ...)
-    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    1
+    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    ${CREATE_ACCOUNT_DOB_MONTH_VALUE}
     Sleep    1s
     #Select Date
     Click Element    ${CREATE_ACCOUNT_DOB_DATE}
     Sleep    1s
     #Select Gender (4=MALE, 7=FEMALE, 10=NOT SPECCIFIED)
-    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    7
+    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    ${CREATE_ACCOUNT_GENDER_VALUE}
     #Enter ISD
-    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    66
+    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    ${CREATE_ACCOUNT_ISD_CODE}
     #Enter Phone Number (Started without 0)
-    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    820252263
+    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    ${CREATE_ACCOUNT_PHONENUMBER}
     #Check Subscribe checkbox
     Select Checkbox    ${CREATE_ACCOUNT_Subscribe to our newsletter!_CHECKBOX}
     Sleep    1s
@@ -110,15 +110,15 @@ Create_Account_TC_3: Verify User Has to Fill All Mandatory Fields to Register
     Accept Cookies
     Create Account
     #Enter FIRSTNAME
-    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    kittiya
+    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    ${CREATE_ACCOUNT_FIRSTNAME_TEXT}
     #Enter LASTNAME
-    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    Thipathikeat
+    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    ${CREATE_ACCOUNT_LASTNAME_TEXT}
     #Enter EMAIL
-    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    butternueybn@gmail.com
+    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    ${CREATE_ACCOUNT_EMAIL}
     #Enter PASSWORD
-    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    Bn12345678/
+    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_PASSWORD}
     #Enter PASSWORD Again
-    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    Bn12345678/
+    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD}
     #Select DOB dropdown
     Click Element    ${CREATE_ACCOUNT_DOB_TEXTBOX}
     Sleep    1s
@@ -126,17 +126,17 @@ Create_Account_TC_3: Verify User Has to Fill All Mandatory Fields to Register
     Select From List By Value    ${CREATE_ACCOUNT_DOB_YEAR_DROPDOWN}    1996
     Sleep    1s
     #Select Month (0=JAN, 1=FEB, 2=MAR, ...)
-    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    1
+    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    ${CREATE_ACCOUNT_DOB_MONTH_VALUE}
     Sleep    1s
     #Select Date
     Click Element    ${CREATE_ACCOUNT_DOB_DATE}
     Sleep    1s
     #Select Gender (4=MALE, 7=FEMALE, 10=NOT SPECCIFIED)
-    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    7
+    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    ${CREATE_ACCOUNT_GENDER_VALUE}
     #Enter ISD
-    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    66
+    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    ${CREATE_ACCOUNT_ISD_CODE}
     #Enter Phone Number (Started without 0)
-    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    820252263
+    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    ${CREATE_ACCOUNT_PHONENUMBER}
     #Check Subscribe checkbox
     Select Checkbox    ${CREATE_ACCOUNT_Subscribe to our newsletter!_CHECKBOX}
     Sleep    1s
@@ -154,15 +154,15 @@ Create_Account_TC_4: Verify Password and Re-Enter Password Should Match
     Accept Cookies
     Create Account
     #Enter FIRSTNAME
-    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    kittiya
+    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    ${CREATE_ACCOUNT_FIRSTNAME_TEXT}
     #Enter LASTNAME
-    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    Thipathikeat
+    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    ${CREATE_ACCOUNT_LASTNAME_TEXT}
     #Enter EMAIL
-    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    butternueybn@gmail.com
+    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    ${CREATE_ACCOUNT_EMAIL}
     #Enter PASSWORD
-    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    Bn12345678/
+    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_PASSWORD}
     #Enter PASSWORD Again >> Not same as PASSWORD field
-    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    Bn12345678//
+    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_INVALID}
     #Select DOB dropdown
     Click Element    ${CREATE_ACCOUNT_DOB_TEXTBOX}
     Sleep    1s
@@ -170,17 +170,17 @@ Create_Account_TC_4: Verify Password and Re-Enter Password Should Match
     Select From List By Value    ${CREATE_ACCOUNT_DOB_YEAR_DROPDOWN}    1996
     Sleep    1s
     #Select Month (0=JAN, 1=FEB, 2=MAR, ...)
-    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    1
+    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    ${CREATE_ACCOUNT_DOB_MONTH_VALUE}
     Sleep    1s
     #Select Date
     Click Element    ${CREATE_ACCOUNT_DOB_DATE}
     Sleep    1s
     #Select Gender (4=MALE, 7=FEMALE, 10=NOT SPECCIFIED)
-    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    7
+    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    ${CREATE_ACCOUNT_GENDER_VALUE}
     #Enter ISD
-    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    66
+    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    ${CREATE_ACCOUNT_ISD_CODE}
     #Enter Phone Number (Started without 0)
-    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    820252263
+    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    ${CREATE_ACCOUNT_PHONENUMBER}
     #Check Subscribe checkbox
     Select Checkbox    ${CREATE_ACCOUNT_Subscribe to our newsletter!_CHECKBOX}
     Sleep    1s
@@ -196,14 +196,13 @@ Create_Account_TC_4: Verify Password and Re-Enter Password Should Match
     Close Browser
 
 Create_Account_TC_5: Verify user can write only alphabtes in firstName and lastName
-    [Documentation]    fill in Re-Enter Password field not same as Password field to verify error text.
     Open Website
     Accept Cookies
     Create Account
     #Enter FIRSTNAME
-    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    kittiya1
+    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    ${CREATE_ACCOUNT_FIRSTNAME_INVALID_TEXT}
     #Enter LASTNAME
-    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    Thipathikeat1
+    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    ${CREATE_ACCOUNT_LASTNAME_INVALID_TEXT}
     #Click on Create New Account Button
     Click Element    ${CREATE_ACCOUNT_BUTTON}
     #Verify FIRSTNAME Error Message
@@ -220,15 +219,15 @@ Create_Account_TC_6: Verify user should enter valid phone number
     Accept Cookies
     Create Account
     #Enter FIRSTNAME
-    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    kittiya
+    Input Text    ${CREATE_ACCOUNT_FIRSTNAME_TEXTBOX}    ${CREATE_ACCOUNT_FIRSTNAME_TEXT}
     #Enter LASTNAME
-    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    Thipathikeat
+    Input Text    ${CREATE_ACCOUNT_LASTNAME_TEXTBOX}    ${CREATE_ACCOUNT_LASTNAME_TEXT}
     #Enter EMAIL
-    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    butternueybn1@gmail.com
+    Input Text    ${CREATE_ACCOUNT_EMAIL_TEXTBOX}    ${CREATE_ACCOUNT_EMAIL}
     #Enter PASSWORD
-    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    Bn12345678/
+    Input Text    ${CREATE_ACCOUNT_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_PASSWORD}
     #Enter PASSWORD Again
-    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    Bn12345678/
+    Input Text    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    ${CREATE_ACCOUNT_RE_ENTER_PASSWORD}
     #Select DOB dropdown
     Click Element    ${CREATE_ACCOUNT_DOB_TEXTBOX}
     Sleep    1s
@@ -236,17 +235,17 @@ Create_Account_TC_6: Verify user should enter valid phone number
     Select From List By Value    ${CREATE_ACCOUNT_DOB_YEAR_DROPDOWN}    1996
     Sleep    1s
     #Select Month (0=JAN, 1=FEB, 2=MAR, ...)
-    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    1
+    Select From List By Value    ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    ${CREATE_ACCOUNT_DOB_MONTH_VALUE}
     Sleep    1s
     #Select Date
     Click Element    ${CREATE_ACCOUNT_DOB_DATE}
     Sleep    1s
     #Select Gender (4=MALE, 7=FEMALE, 10=NOT SPECCIFIED)
-    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    7
+    Select From List By Value    ${CREATE_ACCOUNT_GENDER_DROPDOWN}    ${CREATE_ACCOUNT_GENDER_VALUE}
     #Enter ISD
-    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    66
+    Input Text    ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    ${CREATE_ACCOUNT_ISD_CODE}
     #Enter Phone Number (Started without 0)
-    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    0820252263s
+    Input Text    ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    ${CREATE_ACCOUNT_PHONENUMBER_INVALID}
     #Check Subscribe checkbox
     Select Checkbox    ${CREATE_ACCOUNT_Subscribe to our newsletter!_CHECKBOX}
     Sleep    1s

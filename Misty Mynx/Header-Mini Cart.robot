@@ -2,6 +2,8 @@
 Library    SeleniumLibrary
 Resource   variables.robot
 Resource   keywords.robot
+Resource    variables_locator.robot
+Resource    variables_text.robot
 
 *** Test Cases ***
 Header-Mini Cart_TC_1: Add/Edit/Delete Product_Mini Cart_Guest
@@ -15,7 +17,7 @@ Header-Mini Cart_TC_1: Add/Edit/Delete Product_Mini Cart_Guest
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -58,7 +60,7 @@ Header-Mini Cart_TC_1: Add/Edit/Delete Product_Mini Cart_Guest
     #Verify Mini cart is empty
     Click Element    ${MINI_CART_ICON}
     Sleep    2s
-    Wait Until Element Contains    ${MINI_CART_POPUP}    Your shopping bag is empty.
+    Wait Until Element Contains    ${MINI_CART_POPUP}    ${MINI_CART_POPUP_TEXT}
     #Click on Mini cart icon again to hide mini cart popup
     Click Element    ${MINI_CART_ICON}
     Delete All Cookies
@@ -77,7 +79,7 @@ Header-Mini Cart_TC_2: Add/Edit/Delete Product_Mini Cart_Register
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -121,7 +123,7 @@ Header-Mini Cart_TC_2: Add/Edit/Delete Product_Mini Cart_Register
     #Verify Mini cart is empty
     Click Element    ${MINI_CART_ICON}
     Sleep    2s
-    Wait Until Element Contains    ${MINI_CART_POPUP}    Your shopping bag is empty.
+    Wait Until Element Contains    ${MINI_CART_POPUP}    ${MINI_CART_POPUP_TEXT}
     #Click on Mini cart icon again to hide mini cart popup
     Click Element    ${MINI_CART_ICON}
     Delete All Cookies
@@ -137,7 +139,7 @@ Header-Mini Cart_TC_3: Search Product_Guest
     Click Element    ${MINI_CART_ICON}
     Sleep    1s
     #Verify Mini cart is empty
-    Wait Until Element Contains    ${MINI_CART_POPUP}    Your shopping bag is empty.
+    Wait Until Element Contains    ${MINI_CART_POPUP}    ${MINI_CART_POPUP_TEXT}
     Delete All Cookies
     Close Browser
 
@@ -152,7 +154,7 @@ Header-Mini Cart_TC_4: Verify Bag Empty Message_Register
     Click Element    ${MINI_CART_ICON}
     Sleep    1s
     #Verify Mini cart is empty
-    Wait Until Element Contains    ${MINI_CART_POPUP}    Your shopping bag is empty.
+    Wait Until Element Contains    ${MINI_CART_POPUP}    ${MINI_CART_POPUP_TEXT}
     #Click on Mini cart icon again to hide mini cart popup
     Click Element    ${MINI_CART_ICON}
     Logout
@@ -169,7 +171,7 @@ Header-Mini Cart_TC_5: To verify guest user view the shopping bag page
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -250,7 +252,7 @@ Header-Mini Cart_TC_6: To verify guest user view the shopping bag page.
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -330,7 +332,7 @@ Header-Mini Cart_TC_7: To verify guest able to delete the product from shopping 
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -380,7 +382,7 @@ Header-Mini Cart_TC_8: To verify registered customer able to delete the product 
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -429,7 +431,7 @@ Header-Mini Cart_TC_9: To verify guest able to Update the product quantity from 
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -480,7 +482,7 @@ Header-Mini Cart_TC_10: To verify registered customer able to Update the product
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -537,7 +539,7 @@ Header-Mini Cart_TC_11: To verify guest customer able to add product to Wishlist
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -597,7 +599,7 @@ Header-Mini Cart_TC_12: To verify guest customer able to add product to Wishlist
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -667,7 +669,7 @@ Header-Mini Cart_TC_13: To verify guest customer is not able to see JPS section.
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -713,7 +715,7 @@ Header-Mini Cart_TC_14: To verify as guest customer is able to Redeem promotion 
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -758,7 +760,7 @@ Header-Mini Cart_TC_14: To verify as guest customer is able to Redeem promotion 
     Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
     #Click on Promotion code to enter the code
     Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
-    Input Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    CRM10
+    Input Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    ${PROMOTION_CODE}
     #Click on Apply Button
     Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_APPLY_BUTTON}
     Sleep    3s
@@ -807,7 +809,7 @@ Header-Mini Cart_TC_15: To verify as register customer is able to Redeem promoti
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -853,7 +855,7 @@ Header-Mini Cart_TC_15: To verify as register customer is able to Redeem promoti
     Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
     #Click on Promotion code to enter the code
     Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION}
-    Input Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    CRM10
+    Input Text    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_PROMOTION_CODE_FIELD}    ${PROMOTION_CODE}
     #Click on Apply Button
     Click Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_SECTION_APPLY_BUTTON}
     Sleep    3s
@@ -903,7 +905,7 @@ Header-Mini Cart_TC_16: To Verify customer able to add Free gift product to bag 
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -995,7 +997,7 @@ Header-Mini Cart_TC_17: To Verify customer able to add Gift box product to bag f
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}

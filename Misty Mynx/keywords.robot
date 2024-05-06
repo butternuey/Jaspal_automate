@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource    variables.robot
+Resource    variables_text.robot
 
 *** Keywords ***
 Open Website
@@ -10,7 +11,7 @@ Login
     [Arguments]    ${LOGIN_EMAIL}    ${LOGIN_PASSWORD}
     Click Element    ${LOGIN_ICON}
     Click Element    ${LOGIN_MENU}
-    Wait Until Element Contains    ${LOGIN_POPUP}    LOG IN
+    Wait Until Element Contains    ${LOGIN_POPUP}    ${LOGIN_POPUP_TEXT}
     Click Element    ${LOGIN_EMAIL_TEXTBOX}
     Input Text    ${LOGIN_EMAIL_TEXTBOX}        ${LOGIN_EMAIL}
     Click Element    ${LOGIN_PASSWORD_TEXTBOX}

@@ -2,6 +2,8 @@
 Library    SeleniumLibrary
 Resource   variables.robot
 Resource   keywords.robot
+Resource    variables_locator.robot
+Resource    variables_text.robot
 
 *** Test Cases ***
 Checkout_TC_1: To Verfiy guest customer is able to see checkout page
@@ -14,7 +16,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -34,14 +36,14 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     Sleep    1s
     Click Element    xpath=//div[@data-block="minicart"]
     #Verify the Checkout button on Mini cart
-    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Verify shipping page
     Wait Until Page Contains    Shipping Information
     #Verify the Order Information title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    Order Information
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
@@ -55,7 +57,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Verify the item list title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    Item List
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
     Click Element    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}
     #Verify item name
     ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text    xpath=//ol[@class="minicart-items"]//li[@class="product-item"]//div[@class="product"]//strong[@class="product-item-name"]
@@ -141,7 +143,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -161,7 +163,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Sleep    1s
     Click Element    xpath=//div[@data-block="minicart"]
     #Verify the Checkout button on Mini cart
-    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
@@ -174,7 +176,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Verify the Order Information title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    Order Information
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
@@ -226,7 +228,7 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -246,7 +248,7 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Sleep    1s
     Click Element    xpath=//div[@data-block="minicart"]
     #Verify the Checkout button on Mini cart
-    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
@@ -267,9 +269,9 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Sleep    1s
     Wait Until Page Contains Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_POPUP}
     #Input Firstname
-    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_FIRST_NAME_FIELD}    NewKittiya
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_FIRST_NAME_FIELD}    ${ADD_NEW_ADDRESS_FIRST_NAME_TEXT}
     #Input Lastname
-    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_LAST_NAME_FIELD}    NewLastname
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_LAST_NAME_FIELD}    ${ADD_NEW_ADDRESS_LAST_NAME_TEXT}
     #Input Country Thailand
     Click Element    xpath=//div[@id="opc-new-shipping-address"]//div[@id="shipping-new-address-form"]//div[@name="shippingAddress.country_id"]//select[@name="country_id"]
     #Select Provice
@@ -338,7 +340,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -358,7 +360,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Sleep    1s
     Click Element    xpath=//div[@data-block="minicart"]
     #Verify the Checkout button on Mini cart
-    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
@@ -424,7 +426,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -444,7 +446,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     Sleep    1s
     Click Element    xpath=//div[@data-block="minicart"]
     #Verify the Checkout button on Mini cart
-    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
@@ -460,7 +462,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     ${REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
     #Verify the Order Information title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    Order Information
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
@@ -474,7 +476,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Verify the item list title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    Item List
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
     Click Element    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}
     #Verify item name
     ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text    xpath=//ol[@class="minicart-items"]//li[@class="product-item"]//div[@class="product"]//strong[@class="product-item-name"]
@@ -510,7 +512,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -530,7 +532,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Sleep    1s
     Click Element    xpath=//div[@data-block="minicart"]
     #Verify the Checkout button on Mini cart
-    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     #--------------------------------------------- Shipping Page ---------------------------------------------------
@@ -540,13 +542,13 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Execute Javascript    window.scrollTo(0, 0)
     Click Element    ${SHIPPING_LOGIN_LINK}
     #Verify Login popup
-    Wait Until Element Contains    ${LOGIN_POPUP}    LOG IN
+    Wait Until Element Contains    ${LOGIN_POPUP}    ${LOGIN_POPUP_TEXT}
     #Input Email
     Click Element    ${LOGIN_EMAIL_TEXTBOX}
-    Input Text    ${LOGIN_EMAIL_TEXTBOX}        bn.nuey.kittiya@gmail.com
+    Input Text    ${LOGIN_EMAIL_TEXTBOX}        ${LOGIN_EMAIL_EXISTING_CUSTOMER}
     #Input Password
     Click Element    ${LOGIN_PASSWORD_TEXTBOX}
-    Input Text    ${LOGIN_PASSWORD_TEXTBOX}    Bn12345678/    
+    Input Text    ${LOGIN_PASSWORD_TEXTBOX}    ${LOGIN_PASSWORD_EXISTING_CUSTOMER}    
     #Click login button
     Click Element    ${LOGIN_BUTTON}
     Sleep    1s
@@ -574,7 +576,7 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
     #Click on Enter
-    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ENTER
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
@@ -594,7 +596,7 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     Sleep    1s
     Click Element    xpath=//div[@data-block="minicart"]
     #Verify the Checkout button on Mini cart
-    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    Checkout
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
@@ -610,7 +612,7 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     ${REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
     #Verify the Order Information title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    Order Information
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
@@ -624,12 +626,12 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Verify the item list title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    Item List
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
     #Verify Choose Shipping Method
     Wait Until Page Contains    Choose Shipping Method
     Click Element    xpath=//tr[@id="checkout-shipping-method-section"][2]
     #Verify the Order Information title on Checkout page
-    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    Order Information
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
