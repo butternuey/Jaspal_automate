@@ -34,7 +34,7 @@ Delete Account
     Open Browser    ${ADMIN_MM_URL}    Chrome
     Delete All Cookies
     #Should enter data by Login Magento >> input 2FA >> inspect >> application >> cookies >> admin ad
-    Add Cookie    admin    92c248493d21145142f98acdaad14310
+    Add Cookie    admin    6ce10e5b525df4a80c3bbe0ba161ab45
     Reload Page
     Maximize Browser Window
     Click Element    ${ADMIN_CUSTOMER_MENU}
@@ -42,10 +42,10 @@ Delete Account
     Sleep    1s
     Click Element    ${ADMIN_CUSTOMER_ALL_CUSTOMER}
     Wait Until Page Contains Element    ${ADMIN_CUSTOMER_ALL_CUSTOMER_SEARCH_FIELD}
-    Input Text    ${ADMIN_CUSTOMER_ALL_CUSTOMER_SEARCH_FIELD}    bn.nuey.kittiya@gmail.com
+    Input Text    ${ADMIN_CUSTOMER_ALL_CUSTOMER_SEARCH_FIELD}    kittiyanuey994@gmail.com
     sleep    5s
     #Check 
-    Click Element    xpath=//div[text()='bn.nuey.kittiya@gmail.com']//ancestor::tr/td/div[text()='MistyMynx Main Website']//ancestor::tr//input[@class='admin__control-checkbox']
+    Click Element    xpath=//div[text()='kittiyanuey994@gmail.com']//ancestor::tr/td/div[text()='MistyMynx Main Website']//ancestor::tr//input[@class='admin__control-checkbox']
     Click Element    xpath=//div[@class='action-select-wrap']/button[@class='action-select']
     Click Element     xpath=//div[contains(@data-bind, "listing_massaction")]//div[@class="action-menu-items"]//span[text()='Delete']
     Wait Until Element Contains    xpath=//header[@class="modal-header"]/h1[contains(@id, "modal-title-")]    Delete items

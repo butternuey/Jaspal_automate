@@ -9,6 +9,7 @@ ${WEB_LOGO_MM}    css=#html-body > div.page-wrapper > header > div.container > d
 ${HOMEPAGE_SEARCH_PRODUCT_ICON}    xpath=//div[@class='desktop-search-btn']
 ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    css=#search
 ${HOMEPAGE_SEARCH_PRODUCT_CANCEL}    css=#search_mini_form > div.actions
+${HOMEPAGE_SCROLL_TO_TOP_BUTTON}    xpath=//div[@class="scroll-top"]
 
 #MINI_CART
 ${MINI_CART_ICON}    xpath=//div[@data-block="minicart"]
@@ -159,11 +160,13 @@ ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TEXTBOX}    css=#password-confirmation
 ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_TOGGLE}    css=#customer-popup-form-register > fieldset.fieldset.create.account > div.field.password.confirmation.required > div > span
 ${CREATE_ACCOUNT_DOB_TEXTBOX}    css=#my_dob
 ${CREATE_ACCOUNT_DOB_ICON}    xpath=//span[@class="calendar-icon"]
+${CREATE_ACCOUNT_DOB_POPUP}    xpath=//div[@class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"]
 ${CREATE_ACCOUNT_DOB_MONTH_DROPDOWN}    xpath=//select[@class='ui-datepicker-month']
 ${CREATE_ACCOUNT_DOB_YEAR_DROPDOWN}    xpath=//*[@class='ui-datepicker-year']
 ${CREATE_ACCOUNT_DOB_DATE}    css=#ui-datepicker-div > table > tbody > tr:nth-child(3) > td:nth-child(4) > a
 ${CREATE_ACCOUNT_GENDER_TO_EXPAND_LIST}    xpath=//div[@class="control custom-select"]
 ${CREATE_ACCOUNT_GENDER_DROPDOWN}    css=#gender
+${CREATE_ACCOUNT_GENDER_PLEASE_VERIFY_GENDER_OPTION}    xpath=//div[@class="control custom-select"]//select[@id="gender"]//option[contains(text(),"Please specify gender")]
 ${CREATE_ACCOUNT_ISD_CODE_TEXTBOX}    css=#isd_code
 ${CREATE_ACCOUNT_PHONENUMBER_TEXTBOX}    css=#phone_number
 ${CREATE_ACCOUNT_Subscribe to our newsletter!_CHECKBOX}    css=#is_subscribed
@@ -177,6 +180,15 @@ ${CREATE_ACCOUNT_FACEBOOK}    css=#customer-popup-form-register > div.social-lin
 ${CREATE_ACCOUNT_GOOGLE}    css=#customer-popup-form-register > div.social-links > a:nth-child(2)
 ${CREATE_ACCOUNT_CLOSE_POPUP}    css=#html-body > div.modals-wrapper > aside.modal-slide.customer-popup.register-popup._inner-scroll._show > div.modal-inner-wrap > header > button
 ${CREATE_ACCOUNT_CHECK_EMAIL_COMFIRM_POPUP}    css=#html-body > div.modals-wrapper > aside.modal-popup.confirm._show > div.modal-inner-wrap
+${CREATE_ACCOUNT_FIRSTNAME_ERROR}    xpath=//div[@class="field field-name-firstname required"]//div[@id="firstname-error"]
+${CREATE_ACCOUNT_LASTNAME_ERROR}    xpath=//div[@class="field field-name-lastname required"]//div[@id="lastname-error"]
+${CREATE_ACCOUNT_EMAIL_ERROR}    xpath=//div[@class="field required"]//div[@id="popup-email_address-error"]
+${CREATE_ACCOUNT_PASSWORD_ERROR}    xpath=//div[@class="field password required"]//div[@id="password-error"]
+${CREATE_ACCOUNT_RE_ENTER_PASSWORD_ERROR}    xpath=//div[@class="field password confirmation required"]//div[@id="password-confirmation-error"]
+${CREATE_ACCOUNT_DOB_ERROR}    xpath=//div[@class="field required"]//div[@id="my_dob-error"]
+${CREATE_ACCOUNT_GENDER_ERROR}    xpath=//div[@class="field required"]//div[@id="gender-error"]
+${CREATE_ACCOUNT_PHONENUMBER_ERROR}    xpath=//div[@class="field field-phone_number telephone required"]//div[@id="phone_number-error"]
+${CREATE_ACCOUNT_TC_PDPA_CHECKBOX_ERROR}    xpath=//div[@class="confirmation custom-checkbox required margin-bottom-20 control"]//div[@id="terms_conditions-error"] 
 
 #ADMIN
 ${ADMIN_MM_URL}    https://mcstaging-2-4.jaspal.com/admin/
