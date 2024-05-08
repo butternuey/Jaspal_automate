@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    variables.robot
+Resource    variables_locator.robot
 Resource    variables_text.robot
 
 *** Keywords ***

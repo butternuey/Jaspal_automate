@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource   variables.robot
 Resource   keywords.robot
 Resource    variables_locator.robot
 Resource    variables_text.robot
@@ -22,9 +21,9 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     Click Element    ${PLP_PRODUCT_1}
     #Click on ADD TO BAG button
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
-    Click Element    xpath=//button[@id="product-addtocart-button"]
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
     Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
     #Click on OK button
@@ -149,9 +148,9 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Click Element    ${PLP_PRODUCT_1}
     #Click on ADD TO BAG button
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
-    Click Element    xpath=//button[@id="product-addtocart-button"]
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
     Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
     #Click on OK button
@@ -234,9 +233,9 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Click Element    ${PLP_PRODUCT_1}
     #Click on ADD TO BAG button
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
-    Click Element    xpath=//button[@id="product-addtocart-button"]
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
     Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
     #Click on OK button
@@ -346,9 +345,9 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Click Element    ${PLP_PRODUCT_1}
     #Click on ADD TO BAG button
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
-    Click Element    xpath=//button[@id="product-addtocart-button"]
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
     Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
     #Click on OK button
@@ -432,9 +431,9 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     Click Element    ${PLP_PRODUCT_1}
     #Click on ADD TO BAG button
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
-    Click Element    xpath=//button[@id="product-addtocart-button"]
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
     Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
     #Click on OK button
@@ -518,9 +517,9 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Click Element    ${PLP_PRODUCT_1}
     #Click on ADD TO BAG button
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
-    Click Element    xpath=//button[@id="product-addtocart-button"]
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
     Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
     #Click on OK button
@@ -582,9 +581,9 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     Click Element    ${PLP_PRODUCT_1}
     #Click on ADD TO BAG button
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="crumbName container"]    Mynx Love Tee
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
-    Click Element    xpath=//button[@id="product-addtocart-button"]
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
     Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
     #Click on OK button

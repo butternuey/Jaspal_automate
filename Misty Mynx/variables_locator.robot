@@ -11,6 +11,22 @@ ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    css=#search
 ${HOMEPAGE_SEARCH_PRODUCT_CANCEL}    css=#search_mini_form > div.actions
 ${HOMEPAGE_SCROLL_TO_TOP_BUTTON}    xpath=//div[@class="scroll-top"]
 
+#HEADER
+${HEADER_COLLECTION_NEW_IN}    xpath=//nav/ul/li/a/span[text()="New In"]    
+${HEADER_COLLECTION_COLLECTION}    xpath=//nav/ul/li/a/span[text()="Collection"]    
+${HEADER_COLLECTION_ACTIVE}    xpath=//nav/ul/li/a/span[text()="Active"]    
+${HEADER_COLLECTION_QA_PRODUCT}    xpath=//nav/ul/li/a/span[text()="QA Product"]
+${HEADER_BREADCRUMBS}    xpath=//div[@class="breadcrumbs"]
+${HEADER_DROPDOWN_LANGUAGE_ENG}    xpath=xpath=//div[@class="panel wrapper"]//div[contains(@class, "dropdown")]//span[contains(text(), "En")][@class="header-switcher-lebel"]
+${HEADER_DROPDOWN_LANGUAGE_THAI}    xpath=//div[@class="panel wrapper"]//div[contains(@class, "dropdown")]//span[contains(text(), "Th")][@class="header-switcher-lebel"]
+${HEADER_DROPDOWN_LANGUAGE_THAI_OPTION}    xpath=//div[@class="panel wrapper"]//div[contains(@class, "dropdown")]//a[contains(text(), "ไทย")]
+${HEADER_DROPDOWN_CURRENCY_THB}    xpath=//div[@class="panel wrapper"]//div[contains(@class,'dropdown')]//div[@id="switcher-currency-trigger-nav"]//strong[@class="language-THB"]
+${HEADER_DROPDOWN_CURRENCY_USD}    xpath=//div[@class="panel wrapper"]//div[contains(@class,'dropdown')]//div[@id="switcher-currency-trigger-nav"]//strong[@class="language-USD"]
+${HEADER_DROPDOWN_CURRENCY_OPTION}    xpath=//div[@class="panel wrapper"]//ul[contains(@class,'dropdown')]//li[@class="currency-USD switcher-option"]
+
+
+
+
 #MINI_CART
 ${MINI_CART_ICON}    xpath=//div[@data-block="minicart"]
 ${MINI_CART_POPUP}    xpath=//div[@class="block block-minicart ui-dialog-content ui-widget-content"]
@@ -74,6 +90,13 @@ ${VIEW_MY_BAG_CHECKOUT_BUTTON}    css=#maincontent > div.columns > div > div.car
 #PLP
 ${PLP_PRODUCT_1}    css=#maincontent > div.columns > div > div.search.results > div.products.wrapper.grid.products-grid > ol > li > div
 
+#PDP
+${PDP_BREADCRUMBS_ITEMLIST}    xpath=//ul[@class="items"]//li[@class="item product"]//strong
+${PDP_ADD_TO_CART_BUTTON}    xpath=//button[@id="product-addtocart-button"]
+${PDP_ADD_TO_CART_SUCCESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]
+
+
+
 #SHIPPING PAGE
 ${SHIPPING_LOGIN_LINK}    xpath=//div[@class="incentive-message"]//div[@class="checkout-incentive-message"]//a[@id="customer-login-link"]
 ${SHIPPING_ORDER_INFORMATION_SECTION}    xpath=//aside[contains(@class,"modal-custom opc-sidebar opc-summary-wrapper")]
@@ -124,7 +147,6 @@ ${MY_ORDER_GUEST_EMAIL_ADDRESS_FIELD}    xpath=//div[@class="control"]//input[@n
 ${MY_ORDER_GUEST_BILLING_LAST_NAME_FIELD}    xpath=//div[@class="control"]//input[@name="oar_billing_lastname"]
 ${MY_ORDER_GUEST_SEARCH_BUTTON}    xpath=//div[@class="actions-toolbar row"]//button[@class="action submit primary btn btn--primary"]
 
-
 #LOGIN
 ${LOGIN_ICON}    css=#html-body > div.page-wrapper > header > div.container > div > div.page-header__right > div.header-links-wrapper.cps-login.text-center
 ${LOGIN_MENU}    css=#html-body > div.page-wrapper > header > div.container > div > div.page-header__right > div.header-links-wrapper.cps-login.text-center.active > div.header-links-menu.panel.header.arrow_box > ul > li.authorization-link
@@ -138,6 +160,8 @@ ${LOGIN_FORGOT_PASSWORD}    css=#customer-popup-login-form > fieldset > div.fiel
 ${LOGIN_CLOSE_POPUP_BUTTON}    css=#html-body > div.modals-wrapper > aside.modal-slide.customer-popup.login-popup._inner-scroll._show > div.modal-inner-wrap > header > button
 ${LOGIN_FACEBOOK}    css=#customer-popup-login-form > fieldset > div.social-links > a:nth-child(1)
 ${LOGIN_GOOGLE}    css=#customer-popup-login-form > fieldset > div.social-links > a:nth-child(2)
+${LOGIN_EMAIL_ERROR}    xpath=//div[@class="control"]//div[@id="email-login-error"]
+${LOGIN_PASSWORD_ERROR}    xpath=//div[@class="field password form-group required margin-bottom-5"]//div[@id="pass-login-error"]    
 ${LOGIN_EMAIL}
 ${LOGIN_PASSWORD}
 
