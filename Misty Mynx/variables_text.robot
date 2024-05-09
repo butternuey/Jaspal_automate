@@ -80,9 +80,32 @@ ${CREATE_ACCOUNT_PHONENUMBER_EMPTY_ERROR_TEXT}    This is a required field.
 ${CREATE_ACCOUNT_PHONENUMBER_INVALID_ERROR_TEXT}    Please enter a valid number in this field.
 ${CREATE_ACCOUNT_TC_PDPA_CHECKBOX_EMPTY_ERROR_TEXT}    Please check the checkbox to register into the MISTY MYNX site    
 
+#SHIPPING
+${SHIPPING_INFORMATION_TEXT}    Shipping Information
+${SHIPPING_SHIPPING_METHOD}    Choose Shipping Method
+${SHIPPING_FIRSTNAME}    Kittiya
+${SHIPPING_LASTNAME}    Thipathikeat
+${SHIPPING_EMAIL}    kittiya_test@gmail.com
+${SHIPPING_EMAIL_FIELD_TEXT}    Email Address
+${SHIPPING_HOUSENUMBER}    21
+${SHIPPING_BUILDING}    NueyBuilding
+${SHIPPING_FLOOR}    3
+${SHIPPING_ROAD}    Ramkhamheang
+${SHIPPING_PHONENUMBER}    0999999999
 
+#PAYMENT_PAGE
+${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}    Select Payment Method
 
+#REVIEW_PAGE
+${REVIEW_ORDER_TEXT}    Review Order
+${REVIEW_ORDER_SHIPPING_TEXT}    Shipping
+${REVIEW_ORDER_PAYMENT_TEXT}    Payment
+${REVIEW_ORDER_ITEM_LIST_TEXT}    Item List
 
+#THANKYOU_PAGE
+${THANKYOU_SHIPPING_TEXT}    Shipping
+${THANKYOU_PAYMENT_TEXT}    Payment
+${THANKYOU_ITEM_LIST_TEXT}    Item List
 
 #LOGIN_ERROR
 ${LOGIN_ERROR_EMAIL_EMPTY_TEXT}    Please enter your email address.

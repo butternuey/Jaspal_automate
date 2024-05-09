@@ -25,22 +25,22 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
-    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
-    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
-    Click Element    xpath=//div[@data-block="minicart"]
+    Click Element    ${MINI_CART_ICON}
     #Verify the Checkout button on Mini cart
     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Verify shipping page
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
@@ -60,7 +60,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     Click Element    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}
     #Verify item name
     ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text    xpath=//ol[@class="minicart-items"]//li[@class="product-item"]//div[@class="product"]//strong[@class="product-item-name"]
-    Log To Console    Item name is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text    
+    Log To Console    Item name is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}  
     #Verify item original price
     ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE}    Get Text    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="original-price"]
     Log To Console    Original price is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE} 
@@ -77,58 +77,58 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}    Get Text    xpath=//div[@class="details-qty summary-details-qty"]//span[@class="value"]
     Log To Console    item qty is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY} 
     #Verify the Email address field on Checkout page
-    Wait Until Element Contains    xpath=//div[@class="field required"]//label[@for="customer-email"]//span    Email Address
+    Wait Until Element Contains    ${SHIPPING_SHIPPING_SECTION_EMAIL}    ${SHIPPING_EMAIL_FIELD_TEXT}
     #FirstName
-    Input Text    xpath=//li[@id="shipping"]//input[@name="firstname"]   Kittiya
+    Input Text    ${SHIPPING_SHIPPING_SECTION_FIRSTNAME_FIELD}   ${SHIPPING_FIRSTNAME}
     #LastName
-    Input Text    xpath=//li[@id="shipping"]//input[@name="lastname"]    Thipathikeat
+    Input Text    ${SHIPPING_SHIPPING_SECTION_LASTNAME_FIELD}    ${SHIPPING_LASTNAME}
     #Email
-    Input Text    xpath=//input[@id="customer-email"]    kittiya_test@gmail.com
+    Input Text    ${SHIPPING_SHIPPING_SECTION_EMAIL_FIELD}    ${SHIPPING_EMAIL}
     #Country
-    Click Element    xpath=//div[@class="control custom-select"]//ancestor::li[@id="shipping"]//option[@data-title="Thailand"]
+    Click Element    ${SHIPPING_SHIPPING_SECTION_COUNTRY_THAILAND}
     #PDSD
-    Click Element    xpath=//div[@class="pdsd-wrapper"]//ancestor::li//div[@class="pdsd-label"]
-    Click Element    xpath=//div[@class="pdsd-province"]//ancestor::li//p[3]
-    Click Element    xpath=//div[@data-bind="foreach: districtOptions"]//ancestor::li//p[22]
-    Click Element    xpath=//div[@class="pdsd-control"]//ancestor::li//div[@class="pdsd-subdistrict"]//p[1]
+    Click Element    ${SHIPPING_SHIPPING_SECTION_PDSD_FIELD}
+    Click Element    ${SHIPPING_SHIPPING_SECTION_PDSD_P_BANGKOK}
+    Click Element    ${SHIPPING_SHIPPING_SECTION_PDSD_D_MINBURI}
+    Click Element    ${SHIPPING_SHIPPING_SECTION_PDSD_SD_MINBURI}
     #HouseNumber
-    Input Text    xpath=//li//input[@name="custom_attributes[house_number]"]    21
+    Input Text    ${SHIPPING_SHIPPING_SECTION_HOUSE_NUMBER_FIELD}    ${SHIPPING_HOUSENUMBER}
     #Building
-    Input Text    xpath=//li//input[@name="custom_attributes[building]"]    NueyBuilding
+    Input Text    ${SHIPPING_SHIPPING_SECTION_BUILDING_FIELD}    ${SHIPPING_BUILDING}
     #Floor
-    Input Text    xpath=//li//input[@name="custom_attributes[floor]"]    3
+    Input Text    ${SHIPPING_SHIPPING_SECTION_FLOOR_FIELD}    ${SHIPPING_FLOOR}
     #Alley/Road 
-    Input Text    xpath=//li//input[@name="street[0]"]    Ramkhamheang
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ALLEY/ROAD_FIELD}    ${SHIPPING_ROAD}
     #Phone Number
-    Input Text    xpath=//li//input[@name="telephone"]    0999999999
+    Input Text    ${SHIPPING_SHIPPING_SECTION_PHONE_NUMBER_FIELD}    ${SHIPPING_PHONENUMBER}    
     Sleep    2s
     #PDPA_checkbox
-    Click Element    xpath=//div[@class="choice field pdpa"]
-    #Subscription
-    Click Element    xpath=//div[@class="field choice subscription"]
+    Click Element    ${SHIPPING_SHIPPING_SECTION_PDPA_CHECKBOX}
+    #Subscription_checkbox
+    Click Element    ${SHIPPING_SHIPPING_SECTION_SUBSCRIPTION_CHECKBOX}
     #Click Proceed to payment
-    Click Element    xpath=//button[@data-bind="click: processToPayment"]
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON} 
     #-------------------------- Payment Page -----------------------------------------------
     Sleep    3s
-    Wait Until Page Contains    Select Payment Method
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
     #Select payment method
     Sleep    2s
-    Click Element    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+    Click Element    ${PAYMENT_METHOD_COD}
     Sleep    2s
     #Click Proceed to Review Order button
-    Click Element    xpath=//button[@class="button action primary"]
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
     #-------------------------- Review Order Page ---------------------------------------------
-    Wait Until Page Contains    Review Order
-    Wait Until Element Contains    xpath=//div[@class="shipping-information"]    Shipping
-    Wait Until Element Contains    xpath=//div[@class="payment-information content-section"]    Payment
-    Wait Until Element Contains    xpath=//div[@class="block items-in-cart"]//span    Item List
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
     #Click Place Order button
-    Click Element    xpath=//button[@data-bind="click: placeOrder"]
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     #-------------------------- Thank you Page -------------------------------------------------
     Sleep    2s
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]    Order Information
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]    Shipping Information
-    Wait Until Element Contains    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]    Item List
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
     ${GUEST_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
     Log To Console    Order Number is ${GUEST_ORDER_NUMBER}   
     Sleep    3s
@@ -136,7 +136,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
 Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Open Website
     Accept Cookies
-    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -152,25 +152,25 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
-    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
-    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
-    Click Element    xpath=//div[@data-block="minicart"]
+    Click Element    ${MINI_CART_ICON}
     #Verify the Checkout button on Mini cart
     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    Review Order
-    IF    '${LANDING_PAGE}'=='Review Order' 
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
@@ -190,27 +190,27 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     Sleep    2s
     #Click Proceed to payment
-    Click Element    xpath=//button[@data-bind="click: processToPayment"]
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
     Sleep    3s
     #-------------------------- Payment Page ---------------------------------------------
-    Wait Until Page Contains    Select Payment Method
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
     #Select payment method
     Sleep    2s
-    Click Element    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+    Click Element    ${PAYMENT_METHOD_COD}
     Sleep    2s
     #Click Proceed to Review Order button
-    Click Element    xpath=//button[@class="button action primary"]
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
     #-------------------------- Review Order Page ---------------------------------------------
-    Wait Until Page Contains    Review Order
-    Wait Until Element Contains    xpath=//div[@class="shipping-information"]    Shipping
-    Wait Until Element Contains    xpath=//div[@class="payment-information content-section"]    Payment
-    Wait Until Element Contains    xpath=//div[@class="block items-in-cart"]//span    Item List
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
     #Click Place Order button
-    Click Element    xpath=//button[@data-bind="click: placeOrder"]
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     #-------------------------- Thank you Page -------------------------------------------------
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]    Order Information
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]    Shipping Information
-    Wait Until Element Contains    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]    Item List
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
     ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    5s
@@ -221,7 +221,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
 Checkout_TC_3: To Verify registered customer able to add multiple shipping address in Shipping Details Tab during the checkout process.
     Open Website
     Accept Cookies
-    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -237,25 +237,25 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
-    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
-    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
-    Click Element    xpath=//div[@data-block="minicart"]
+    Click Element    ${MINI_CART_ICON}
     #Verify the Checkout button on Mini cart
     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    Review Order
-    IF    '${LANDING_PAGE}'=='Review Order' 
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
@@ -300,28 +300,27 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Log To Console    New Shipping information/Name-Lastname: ${NEW_REGISTER_SHIPPING_DEFAULT}
     #Click Proceed to payment
     Sleep    1s
-    Click Element    xpath=//div[@class="actions-toolbar-trigger process-to-payment"]//button[@data-bind="click: processToPayment"]
-    Sleep    1s
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
     #-------------------------- Payment Page ---------------------------------------------
-    Wait Until Page Contains    Select Payment Method
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
     #Select payment method
     Sleep    2s
-    Click Element    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+    Click Element    ${PAYMENT_METHOD_COD}
     Sleep    2s
     #Click Proceed to Review Order button
-    Click Element    xpath=//button[@class="button action primary"]
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
     #-------------------------- Review Order Page ---------------------------------------------
-    Wait Until Page Contains    Review Order
-    Wait Until Element Contains    xpath=//div[@class="shipping-information"]    Shipping
-    Wait Until Element Contains    xpath=//div[@class="payment-information content-section"]    Payment
-    Wait Until Element Contains    xpath=//div[@class="block items-in-cart"]//span    Item List
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
     #Click Place Order button
-    Click Element    xpath=//button[@data-bind="click: placeOrder"]
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     Sleep    5s
     #-------------------------- Thank you Page -------------------------------------------------
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]    Order Information
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]    Shipping Information
-    Wait Until Element Contains    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]    Item List
+   Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
     ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    3s
@@ -333,7 +332,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     [Documentation]    Select address by select from address book
     Open Website
     Accept Cookies
-    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -349,25 +348,25 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
-    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
-    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
-    Click Element    xpath=//div[@data-block="minicart"]
+    Click Element    ${MINI_CART_ICON}
     #Verify the Checkout button on Mini cart
     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    Review Order
-    IF    '${LANDING_PAGE}'=='Review Order' 
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
@@ -387,28 +386,28 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Log To Console    New Shipping information/Name-Lastname: ${NEW_REGISTER_SHIPPING_DEFAULT}
     #Click Proceed to payment
     Sleep    2s
-    Click Element    xpath=//div[@class="actions-toolbar-trigger process-to-payment"]//button[@data-bind="click: processToPayment"]
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
     Sleep    2s
     #-------------------------- Payment Page ---------------------------------------------
-    Wait Until Page Contains    Select Payment Method
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
     #Select payment method
     Sleep    2s
-    Click Element    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+    Click Element    ${PAYMENT_METHOD_COD}
     Sleep    2s
     #Click Proceed to Review Order button
-    Click Element    xpath=//button[@class="button action primary"]
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
     #-------------------------- Review Order Page ---------------------------------------------
-    Wait Until Page Contains    Review Order
-    Wait Until Element Contains    xpath=//div[@class="shipping-information"]    Shipping
-    Wait Until Element Contains    xpath=//div[@class="payment-information content-section"]    Payment
-    Wait Until Element Contains    xpath=//div[@class="block items-in-cart"]//span    Item List
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
     #Click Place Order button
     Click Element    xpath=//button[@data-bind="click: placeOrder"]
     Sleep    5s
     #-------------------------- Thank you Page -------------------------------------------------
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]    Order Information
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]    Shipping Information
-    Wait Until Element Contains    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]    Item List
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
     ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    3s
@@ -419,7 +418,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
 Checkout_TC_5: To verify registered customer view the Shipping Details and Payment & review tabs during the checkout process
     Open Website
     Accept Cookies
-    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -435,25 +434,25 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
-    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
-    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
-    Click Element    xpath=//div[@data-block="minicart"]
+    Click Element    ${MINI_CART_ICON}
     #Verify the Checkout button on Mini cart
     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    Review Order
-    IF    '${LANDING_PAGE}'=='Review Order' 
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
@@ -496,7 +495,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}    Get Text    xpath=//div[@class="details-qty summary-details-qty"]//span[@class="value"]
     Log To Console    item qty is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}
     #Verify Proceed to payment button
-    Wait Until Page Contains Element   xpath=//div[@class="actions-toolbar-trigger process-to-payment"]//button[@data-bind="click: processToPayment"]
+    Wait Until Page Contains Element   ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
     Sleep    2s
     Delete All Cookies
     Close Browser
@@ -521,22 +520,22 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
-    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
-    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
-    Click Element    xpath=//div[@data-block="minicart"]
+    Click Element    ${MINI_CART_ICON}
     #Verify the Checkout button on Mini cart
     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Verify shipping page
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
     #Click login link oon shipping page
     Execute Javascript    window.scrollTo(0, 0)
     Click Element    ${SHIPPING_LOGIN_LINK}
@@ -553,7 +552,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Sleep    1s
     Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     Sleep    2s
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
     Execute Javascript    window.scrollTo(0, 0)
     Sleep    2s
     Click Element    xpath=//div[@class="container"]//a[@title="Misty Mynx logo"]//img[@title="Misty Mynx logo"]
@@ -569,7 +568,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
 Checkout_TC_7: To verify registered customer able to select choose shipping method options in shipping details tab during the checkout process.
     Open Website
     Accept Cookies
-    Login    bn.nuey.kittiya@gmail.com    Bn12345678/
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -585,25 +584,25 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
-    Wait Until Element Contains   xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]    SUCCESS
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
-    Click Element    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
     ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
-    Click Element    xpath=//div[@data-block="minicart"]
+    Click Element    ${MINI_CART_ICON}
     #Verify the Checkout button on Mini cart
     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    Review Order
-    IF    '${LANDING_PAGE}'=='Review Order' 
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
-    Wait Until Page Contains    Shipping Information
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
@@ -627,8 +626,8 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     #Verify the item list title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
     #Verify Choose Shipping Method
-    Wait Until Page Contains    Choose Shipping Method
-    Click Element    xpath=//tr[@id="checkout-shipping-method-section"][2]
+    Wait Until Page Contains    ${SHIPPING_SHIPPING_METHOD}
+    Click Element    ${SHIPPING_SHIPPING_METHOD_NEXT_DAY} 
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
@@ -645,28 +644,28 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Click Proceed to payment
     Sleep    1s
-    Click Element    xpath=//div[@class="actions-toolbar-trigger process-to-payment"]//button[@data-bind="click: processToPayment"]
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
     Sleep    1s
     #-------------------------- Payment Page ---------------------------------------------
-    Wait Until Page Contains    Select Payment Method
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
     #Select payment method
     Sleep    2s
-    Click Element    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+    Click Element    ${PAYMENT_METHOD_COD}
     Sleep    2s
     #Click Proceed to Review Order button
-    Click Element    xpath=//button[@class="button action primary"]
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
     #-------------------------- Review Order Page ---------------------------------------------
-    Wait Until Page Contains    Review Order
-    Wait Until Element Contains    xpath=//div[@class="shipping-information"]    Shipping
-    Wait Until Element Contains    xpath=//div[@class="payment-information content-section"]    Payment
-    Wait Until Element Contains    xpath=//div[@class="block items-in-cart"]//span    Item List
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
     #Click Place Order button
-    Click Element    xpath=//button[@data-bind="click: placeOrder"]
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     Sleep    5s
     #-------------------------- Thank you Page -------------------------------------------------
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]    Order Information
-    Wait Until Element Contains    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]    Shipping Information
-    Wait Until Element Contains    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]    Item List
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
     ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    3s

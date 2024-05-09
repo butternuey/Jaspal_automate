@@ -94,6 +94,7 @@ ${PLP_PRODUCT_1}    css=#maincontent > div.columns > div > div.search.results > 
 ${PDP_BREADCRUMBS_ITEMLIST}    xpath=//ul[@class="items"]//li[@class="item product"]//strong
 ${PDP_ADD_TO_CART_BUTTON}    xpath=//button[@id="product-addtocart-button"]
 ${PDP_ADD_TO_CART_SUCCESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]
+${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
 
 
 
@@ -101,6 +102,22 @@ ${PDP_ADD_TO_CART_SUCCESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//h1[c
 ${SHIPPING_LOGIN_LINK}    xpath=//div[@class="incentive-message"]//div[@class="checkout-incentive-message"]//a[@id="customer-login-link"]
 ${SHIPPING_ORDER_INFORMATION_SECTION}    xpath=//aside[contains(@class,"modal-custom opc-sidebar opc-summary-wrapper")]
 ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    xpath=//div[@class="block items-in-cart items-in-bag"]//strong[@role="heading"]
+${SHIPPING_SHIPPING_SECTION_FIRSTNAME_FIELD}    xpath=//li[@id="shipping"]//input[@name="firstname"]
+${SHIPPING_SHIPPING_SECTION_LASTNAME_FIELD}    xpath=//li[@id="shipping"]//input[@name="lastname"]
+${SHIPPING_SHIPPING_SECTION_EMAIL}    xpath=//div[@class="field required"]//label[@for="customer-email"]//span
+${SHIPPING_SHIPPING_SECTION_EMAIL_FIELD}    xpath=//input[@id="customer-email"]
+${SHIPPING_SHIPPING_SECTION_PDSD_FIELD}    xpath=//div[@class="pdsd-wrapper"]//ancestor::li//div[@class="pdsd-label"]
+${SHIPPING_SHIPPING_SECTION_PDSD_P_BANGKOK}    xpath=//div[@class="pdsd-province"]//ancestor::li//p[3]
+${SHIPPING_SHIPPING_SECTION_PDSD_D_MINBURI}    xpath=//div[@data-bind="foreach: districtOptions"]//ancestor::li//p[22]
+${SHIPPING_SHIPPING_SECTION_PDSD_SD_MINBURI}    xpath=//div[@class="pdsd-control"]//ancestor::li//div[@class="pdsd-subdistrict"]//p[1]
+${SHIPPING_SHIPPING_SECTION_COUNTRY_THAILAND}    xpath=//div[@class="control custom-select"]//ancestor::li[@id="shipping"]//option[@data-title="Thailand"]
+${SHIPPING_SHIPPING_SECTION_HOUSE_NUMBER_FIELD}    xpath=//li//input[@name="custom_attributes[house_number]"]    
+${SHIPPING_SHIPPING_SECTION_BUILDING_FIELD}    xpath=//li//input[@name="custom_attributes[building]"]    
+${SHIPPING_SHIPPING_SECTION_FLOOR_FIELD}    xpath=//li//input[@name="custom_attributes[floor]"]    
+${SHIPPING_SHIPPING_SECTION_ALLEY/ROAD_FIELD}    xpath=//li//input[@name="street[0]"]
+${SHIPPING_SHIPPING_SECTION_PHONE_NUMBER_FIELD}    xpath=//li//input[@name="telephone"] 
+${SHIPPING_SHIPPING_SECTION_PDPA_CHECKBOX}    xpath=//div[@class="choice field pdpa"]
+${SHIPPING_SHIPPING_SECTION_SUBSCRIPTION_CHECKBOX}    xpath=//div[@class="field choice subscription"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_BUTTON}    xpath=//div[@id="checkout-step-shipping"]//div[@class="action-for-address"]//button[@class="action action-show-popup"]//span[text()='Add New Address']
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//header[@class="modal-header"]//h1[contains(text(),'Shipping Address')]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_FIRST_NAME_FIELD}    xpath=//div[@name="shippingAddress.firstname"]//input[@name="firstname"]
@@ -114,9 +131,25 @@ ${SHIPPING_SHIPPING_SECTION_ADD_NEW_PHONE_NUMBER_FIELD}    xpath=//div[@name="sh
 ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_BUTTON}    xpath=//div[@id="checkout-step-shipping"]//div[@class="action-for-address"]//button[@class="action action-show-popup"]//span[text()='Select From Address Book']
 ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_POPUP}    xpath=//div[@class="modal-inner-wrap"]//header[@class="modal-header"]//h1[contains(text(),"Please Select Address")]
 ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_CLOSE_ICON}    xpath=//aside[@class="modal-popup customer-popup forgot-password-popup _inner-scroll"]//h1[@class="modal-title"]//ancestor::header[@class="modal-header"]//button//span[text()="Close"]
+${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}    xpath=//div[@class="actions-toolbar-trigger process-to-payment"]//button[@data-bind="click: processToPayment"]
+${SHIPPING_SHIPPING_METHOD_NEXT_DAY}    xpath=//tr[@id="checkout-shipping-method-section"][2]
+
+#PAYMENT PAGE
+${PAYMENT_METHOD_COD}    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+${PAYMENT_PROCEED_TO_REVIEW_BUTTON}    xpath=//button[@class="button action primary"]
 
 #REVIEW ORDER PAGE
 ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}    xpath=//div[@class="shipping-information"]//div[@class="ship-to"]//div[@class="shipping-information-title"]//button[@class="action action-edit"]
+${REVIEW_ORDER_PLACE_ORDER}     xpath=//button[@data-bind="click: placeOrder"]
+${REVIEW_ORDER_SHIPPING_SECTION}    xpath=//div[@class="shipping-information"]
+${REVIEW_ORDER_PAYMENT_SECTION}    xpath=//div[@class="payment-information content-section"]
+${REVIEW_ORDER_ITEM_LIST_SECTION}    xpath=//div[@class="block items-in-cart"]//span
+
+#THANKYOU_PAGE
+${REVIEW_ORDER_SHIPPING_SECTION}    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]
+${REVIEW_ORDER_PAYMENT_SECTION}    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]
+${REVIEW_ORDER_ITEM_LIST_SECTION}    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]
+
 
 #FOOTER
 ${FOOTER_MY_ACCOUNT_MY_ORDERS}    xpath=//div[@class="footer-menus"]/div[@class="order-link"]/a/span[text()='My Orders']    
