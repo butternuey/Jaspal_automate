@@ -24,9 +24,6 @@ ${HEADER_DROPDOWN_CURRENCY_THB}    xpath=//div[@class="panel wrapper"]//div[cont
 ${HEADER_DROPDOWN_CURRENCY_USD}    xpath=//div[@class="panel wrapper"]//div[contains(@class,'dropdown')]//div[@id="switcher-currency-trigger-nav"]//strong[@class="language-USD"]
 ${HEADER_DROPDOWN_CURRENCY_OPTION}    xpath=//div[@class="panel wrapper"]//ul[contains(@class,'dropdown')]//li[@class="currency-USD switcher-option"]
 
-
-
-
 #MINI_CART
 ${MINI_CART_ICON}    xpath=//div[@data-block="minicart"]
 ${MINI_CART_POPUP}    xpath=//div[@class="block block-minicart ui-dialog-content ui-widget-content"]
@@ -42,7 +39,6 @@ ${MINI_CART_WISHLIST_ICON}    xpath=//div[@class="product actions"]//div[@class=
 ${MINI_CART_VIEW_MY_BAG_ICON}    xpath=//button[@class=" btn btn--secondary"]
 ${MINI_CART_CHECKOUT_BUTTON}    xpath=//button[@id="top-cart-btn-checkout"]
 ${MINI_CART_COUNTER_LABEL}    xpath=//span[@class="counter-label"]
-
 
 #VIEW_MY_BAG
 ${VIEW_MY_BAG_BUTTON}    css=#minicart-content-wrapper > div.block-content > div.actions.cart-btn-group > div.secondary > a > button
@@ -62,9 +58,15 @@ ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_MASSAGE}
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER_SUCCESS_POPUP_OK_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
 ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}    xpath=//table[@id="shopping-cart-table"]//div[@class="actions-toolbar"]//a[@class="action action-delete"]
 ${VIEW_MY_BAG_GIFT_BOX_SECTION}    css=#maincontent > div.columns > div > div.cart-container > div.group-cart-section > div
+${VIEW_MY_BAG_GIFT_BOX_CHECKBOX}    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-checkox"]//input
+${VIEW_MY_BAG_GIFT_BOX_NAME}    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-detail"]//span[@class="name"]    
+${VIEW_MY_BAG_GIFT_BOX_PRICE}    xpath=//div[@class="giftwrap-wrapper list"]//div[@class="cart table-wrapper"]//div[@class="giftcart-items"]//div[@class="giftcart-item"][1]//div[@class="gift-detail"]//span[@class="price"]    
 ${VIEW_MY_BAG_FREE_GIFT_SECTION}    xpath=//div[@class="ampromo-items-add"]//a[text()="free gift "]
 ${VIEW_MY_BAG_FREE_GIFT_POPUP}    xpath=//div[@class="ampromo-items-content gifting-popup-content"]//div[@class="page-title-wrapper"]//h1[@class="page-title"]
 ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}    xpath=//div[@data-role="ampromo-popup-hide"]
+${VIEW_MY_BAG_FREE_GIFT_TABLE}    xpath=//span[@class="free-gift-title"][text()="Free Gift"]
+${VIEW_MY_BAG_FREE_GIFT_TABLE_PRODUCT_NAME}    xpath=//tbody[@class="cart item free-gift free-gift-block"]//strong[@class="product-item-name"]
+${VIEW_MY_BAG_FREE_GIFT_TABLE_GET_PRODUCT_QTY}    xpath=//tbody[@class="cart item free-gift free-gift-block"]//ul[@class="item-options options-list"]//li[@class="list-options"]//div[@class="values"]
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION}    css=#maincontent > div.columns > div > div.cart-container > div.cart-summary
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL}    css=#cart-totals > div > table > tbody > tr.totals.sub > th
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
@@ -88,6 +90,23 @@ ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_REMOVE_SUCCESS_MASSEGE}  
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_REMOVE_SUCCESS_OK_BUTTTON}    xpath=class="action-primary action-accept"
 ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION_PROMOTION_CODE_REMOVE_SUCCESS_CLOSE_BUTTTON}    xpath=//aside[@class="modal-popup messages _show"]//header[@class="modal-header"]//button[@data-role="closeBtn"]//span[text()="Close"] 
 ${VIEW_MY_BAG_CHECKOUT_BUTTON}    css=#maincontent > div.columns > div > div.cart-container > div.cart-summary > ul > li > button
+${VIEW_MY_BAG_GET_PRODUCT_NAME}    xpath=//div[@class="product-item-details"]/strong/a
+${VIEW_MY_BAG_GET_PRODUCT_PRICE}    xpath=//div[@class="col subtotal"]//span[@class="price"]/span
+${VIEW_MY_BAG_GET_PRODUCT_COLOR}    xpath=//table[@id="shopping-cart-table"]/tbody[1]//div[contains(text(), "Color")]/ancestor::li[@class="list-options"]/div[@class="values"]
+${VIEW_MY_BAG_GET_PRODUCT_SIZE}    xpath=//table[@id="shopping-cart-table"]//tbody//tr//td//li[@class="list-options"]//div[contains(text(),'Size')]/ancestor::li[@class="list-options"]/div[@class="values"]
+${VIEW_MY_BAG_GET_PRODUCT_QTY}    xpath=//table[@id="shopping-cart-table"]//tbody//div[@class="product-item-details"]//ancestor::tr[@class="item-info"]//div[@class="field qty"]//input[contains(@id,"qty")]    
+${VIEW_MY_BAG_LOADING_INDICATOR}    xpath=//body[contains(@class,"view page-load")]
+
+#FREEGIFT
+${FREEGIFT_POPUP_PRODUCT_IMAGE}    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//div[@class="product-item-info"]//img[@class="product-image-photo"]
+${FREEGIFT_POPUP_PRODUCT_NAME}    xpath=//div[@class="product details product-item-details"]//strong[@class="product name product-item-name"]
+${FREEGIFT_POPUP_PRODUCT_INCREASE_QTY}    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//div[@class="ampromo-item-qty-input"]//span[@class="increaseQty"]
+${FREEGIFT_POPUP_PRODUCT_QTY}    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//ol[@class="product-items row"]//li[1]//input[@title="QTY Select"]
+${FREEGIFT_POPUP_ADD_TO_BAG_BUTTON}    xpath=//div[@class="ampromo-popup-container"]//div[@class="container products-grid"]//button[@class="action tocart btn btn--primary ampromo-button"]
+
+#MY WISHLIST
+${MY_WISHLIST_OPTION}    xpath=//div[@class="header-links-menu panel header arrow_box"]//ul[@class="header links"]//li[@class="link wishlist"]//a[@href="https://mcstaging-2-4.mistymynx.com/en/wishlist/"][contains(text(),"My Wishlist")]
+${MY_WISHLIST_PRODUCT_NAME}    xpath=//strong[@class="product-item-name"]//a[@title="Mynx Love Tee"]
 
 #PLP
 ${PLP_PRODUCT_1}    css=#maincontent > div.columns > div > div.search.results > div.products.wrapper.grid.products-grid > ol > li > div
