@@ -29,7 +29,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     #Click on OK button
     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
-    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
@@ -44,37 +44,37 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
     #Verify the Subtotal on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
     Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
     #Verify the Shipping Fee on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    xpath=//td[@class="amount"]//span[@data-th="Shipping Fee"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
     Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
     #Verify the Total Price on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Verify the item list title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
     Click Element    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}
     #Verify item name
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text    xpath=//ol[@class="minicart-items"]//li[@class="product-item"]//div[@class="product"]//strong[@class="product-item-name"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text   ${SHIPPING_ORDER_INFORMATION_SECTION_GET_ITEM_NAME}
     Log To Console    Item name is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}  
     #Verify item original price
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE}    Get Text    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="original-price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_ORIGINAL_PRICE}
     Log To Console    Original price is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE} 
     #Verify item new price
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NEW_PRICE}    Get Text    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="price have-original-price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NEW_PRICE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_NEW_PRICE}
     Log To Console    New price is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NEW_PRICE}        
     #Verify item color
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_COLOR}    Get Text    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[1]//span[@class="values"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_COLOR}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_COLOR}
     Log To Console    Item color is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_COLOR}    
     #Verify item size
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_SIZE}    Get Text    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[2]//span[@class="values"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_SIZE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_SIZE}
     Log To Console    Item size is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_SIZE}  
     #Verify item qty
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}    Get Text    xpath=//div[@class="details-qty summary-details-qty"]//span[@class="value"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_QTY}
     Log To Console    item qty is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY} 
     #Verify the Email address field on Checkout page
     Wait Until Element Contains    ${SHIPPING_SHIPPING_SECTION_EMAIL}    ${SHIPPING_EMAIL_FIELD_TEXT}
@@ -126,10 +126,10 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     #-------------------------- Thank you Page -------------------------------------------------
     Sleep    2s
-    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
-    ${GUEST_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    ${GUEST_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_GUEST_ORDER_NUMBER}
     Log To Console    Order Number is ${GUEST_ORDER_NUMBER}   
     Sleep    3s
 
@@ -156,7 +156,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     #Click on OK button
     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
-    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
@@ -167,6 +167,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
     ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
@@ -177,16 +178,16 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
     #Verify the Subtotal on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
     Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
     #Verify the Shipping Fee on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    xpath=//td[@class="amount"]//span[@data-th="Shipping Fee"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
     Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
     #Verify the Total Price on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     Sleep    2s
     #Click Proceed to payment
@@ -208,10 +209,10 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     #Click Place Order button
     Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     #-------------------------- Thank you Page -------------------------------------------------
-    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
-    ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    ${REGISTER_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    5s
     Logout
@@ -241,7 +242,7 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     #Click on OK button
     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
-    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
@@ -252,17 +253,19 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
     ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
-        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Get Default shipping address
-    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
+    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
     #Click on Add New Address
+    Sleep    2s
     Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_BUTTON}
     #Verify Add New Address Popup
     Sleep    1s
@@ -272,31 +275,31 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     #Input Lastname
     Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_LAST_NAME_FIELD}    ${ADD_NEW_ADDRESS_LAST_NAME_TEXT}
     #Input Country Thailand
-    Click Element    xpath=//div[@id="opc-new-shipping-address"]//div[@id="shipping-new-address-form"]//div[@name="shippingAddress.country_id"]//select[@name="country_id"]
+    Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_COUNTRY_THAILAND}
     #Select Provice
-    Click Element    xpath=//div[@name="shippingAddress.pdsd"]
-    Click Element    xpath=//div[@name="shippingAddress.pdsd"]//div[@class="control"]//div[@class="pdsd-province"]//p[text()='Bangkok']
+    Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_PROVICE_FIELD} 
+    Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_PROVICE_BANGKOK} 
     #Select District
-    Click Element    xpath=//div[@name="shippingAddress.pdsd"]//div[@class="pdsd-district"]//p[text()='Bang Kapi']
+    Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_DISTRICT_BANGKAPI}
     #Select Subdistrict
-    Click Element    xpath=//div[@name="shippingAddress.pdsd"]//div[@class="pdsd-subdistrict"]//p[text()='Hua Mak']
+    Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_SUB_DISTRICT_HUAMAK}
     #Input House number
-    Input Text    xpath=//div[@name="shippingAddress.custom_attributes.house_number"]//input[@name="custom_attributes[house_number]"]    21H
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_HOUSE_NUMBER_FIELD}     ${SHIPPING_ADD_NEW_HOUSENUMBER}
     #Input Buiding
-    Input Text    xpath=//div[@name="shippingAddress.custom_attributes.building"]//input[@name="custom_attributes[building]"]    JASPAL Tower
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_BUIDING_FIELD}    ${SHIPPING_ADD_NEW_BUILDING}
     #Input Floor
-    Input Text    xpath=//div[@name="shippingAddress.custom_attributes.floor"]//input[@name="custom_attributes[floor]"]    38
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_FLOOR_FIELD}    ${SHIPPING_ADD_NEW_FLOOR}
     #Input Alley/Road
-    Input Text    xpath=//div[@name="shippingAddress.street.0"]//input[@name="street[0]"]    Kao-san
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ALLEY/ROAD_FIELD}    ${SHIPPING_ADD_NEW_ROAD}
     #Input Phone Number
-    Input Text    xpath=//div[@name="shippingAddress.telephone"]//input[@name="telephone"]    0989898989
+    Input Text    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_PHONE_NUMBER_FIELD}    ${SHIPPING_ADD_NEW_PHONENUMBER}
     #Click Save address
     Sleep    2s
-    Click Element    xpath=//button[@class="action primary action-update-address"]//span[text()='Save Address']
-    Click Element    xpath=//button[@class="action primary action-update-address"]//span[text()='Save Address']
+    Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_SAVE_ADDRESS_BUTTON}
+    Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_SAVE_ADDRESS_BUTTON}
     Wait Until Element Is Not Visible    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_POPUP}
     #Get New Default shipping address
-    ${NEW_REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
+    ${NEW_REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    New Shipping information/Name-Lastname: ${NEW_REGISTER_SHIPPING_DEFAULT}
     #Click Proceed to payment
     Sleep    1s
@@ -318,10 +321,10 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     Sleep    5s
     #-------------------------- Thank you Page -------------------------------------------------
-   Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
-    ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    ${REGISTER_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    3s
     Logout
@@ -352,7 +355,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     #Click on OK button
     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
-    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
@@ -362,7 +365,8 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
@@ -371,7 +375,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Get Default shipping address
-    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
+    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
     #Click on Select from Address Book button
     Click Element    ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_BUTTON}
@@ -379,10 +383,10 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Sleep    2s
     Wait Until Page Contains Element    ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_POPUP} 
     #Select Address from Select from Address Book button (Select First item)
-    Click Element    xpath=//div[@class="modal-content"]//div[@class="shipping-addresses-list"]//div[@class="content"]//div[@class="field addresses"]//div[@class="shipping-address-item-wrapper"][1]
+    Click Element    ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_FIRST_ITEM} 
     Wait Until Element Is Not Visible    ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_POPUP} 
     #Get New Default shipping address
-    ${NEW_REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
+    ${NEW_REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    New Shipping information/Name-Lastname: ${NEW_REGISTER_SHIPPING_DEFAULT}
     #Click Proceed to payment
     Sleep    2s
@@ -402,13 +406,13 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
     Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
     #Click Place Order button
-    Click Element    xpath=//button[@data-bind="click: placeOrder"]
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     Sleep    5s
     #-------------------------- Thank you Page -------------------------------------------------
-    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
-    ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    ${REGISTER_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    3s
     Logout
@@ -438,7 +442,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     #Click on OK button
     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
-    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
@@ -448,7 +452,9 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+     ${LANDING_PAGE}=    Run Keyword And Return Status    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Execute Javascript    window.scrollTo(0, 0)
+    Sleep    3s
     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
@@ -457,42 +463,43 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Get Default shipping address
-    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
+    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
-    #Verify the Subtotal on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
+    #the Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
     Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
     #Verify the Shipping Fee on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    xpath=//td[@class="amount"]//span[@data-th="Shipping Fee"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
     Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
     #Verify the Total Price on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Verify the item list title on Checkout page
+    Sleep    2s
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
     Click Element    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}
-    #Verify item name
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text    xpath=//ol[@class="minicart-items"]//li[@class="product-item"]//div[@class="product"]//strong[@class="product-item-name"]
-    Log To Console    Item name is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text    
+     #Verify item name
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}    Get Text   ${SHIPPING_ORDER_INFORMATION_SECTION_GET_ITEM_NAME}
+    Log To Console    Item name is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NAME}  
     #Verify item original price
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE}    Get Text    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="original-price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_ORIGINAL_PRICE}
     Log To Console    Original price is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_ORIGINAL_PRICE} 
     #Verify item new price
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NEW_PRICE}    Get Text    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="price have-original-price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NEW_PRICE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_NEW_PRICE}
     Log To Console    New price is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_NEW_PRICE}        
     #Verify item color
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_COLOR}    Get Text    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[1]//span[@class="values"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_COLOR}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_COLOR}
     Log To Console    Item color is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_COLOR}    
     #Verify item size
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_SIZE}    Get Text    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[2]//span[@class="values"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_SIZE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_SIZE}
     Log To Console    Item size is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_SIZE}  
     #Verify item qty
-    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}    Get Text    xpath=//div[@class="details-qty summary-details-qty"]//span[@class="value"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_GET_QTY}
     Log To Console    item qty is ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_ITEM_QTY}
     #Verify Proceed to payment button
     Wait Until Page Contains Element   ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
@@ -524,7 +531,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     #Click on OK button
     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
-    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
@@ -555,11 +562,11 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
     Execute Javascript    window.scrollTo(0, 0)
     Sleep    2s
-    Click Element    xpath=//div[@class="container"]//a[@title="Misty Mynx logo"]//img[@title="Misty Mynx logo"]
+    Click Element    ${WEB_LOGO_MM}
     Sleep    5s
     Wait until page contains Element    ${LOGIN_ICON}
     Click Element    ${LOGIN_ICON}
-    Wait Until Page Contains Element    //div[@class="header-links-menu panel header arrow_box"]//ul//li//span[contains(text(),"Hi,")]
+    Wait Until Page Contains Element    ${LOGIN_HI}
     Click Element    ${LOGIN_ICON}
     Logout
     Delete All Cookies
@@ -584,11 +591,12 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
+    Sleep    2s
     Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
     #Click on OK button
     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
     #Get minicart count
-    ${MINICART_COUNT}=    Get Text    xpath=//span[@class="counter-label"]
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
     #Click minicart icon
     Sleep    1s
@@ -599,6 +607,7 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
     ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
     ELSE
@@ -607,21 +616,22 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     END
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Get Default shipping address
-    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    xpath=//div[@class='shipping-address-item']
+    Sleep    2s
+    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
-    #Verify the Subtotal on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
+    #the Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
     Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
     #Verify the Shipping Fee on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    xpath=//td[@class="amount"]//span[@data-th="Shipping Fee"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
     Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
     #Verify the Total Price on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Verify the item list title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
@@ -631,21 +641,21 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
     #Verify the number of item Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    xpath=//tr[@class="totals sub"]//th[@class="mark"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
-    #Verify the Subtotal on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
+    #the Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
     Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
     #Verify the Shipping Fee on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_UPDATE}    Get Text    xpath=//td[@class="amount"]//span[@data-th="Shipping Fee"]
-    Log To Console    Shipping Fee is update to ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_UPDATE} 
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
     #Verify the Total Price on Checkout page
-    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Click Proceed to payment
-    Sleep    1s
+    Sleep    3s
     Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
-    Sleep    1s
+    Sleep    2s
     #-------------------------- Payment Page ---------------------------------------------
     Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
     #Select payment method
@@ -663,10 +673,10 @@ Checkout_TC_7: To verify registered customer able to select choose shipping meth
     Click Element    ${REVIEW_ORDER_PLACE_ORDER}
     Sleep    5s
     #-------------------------- Thank you Page -------------------------------------------------
-    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
-    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
-    ${REGISTER_ORDER_NUMBER}=    Get Text    xpath=//ul//li//div[@class="value"]
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    ${REGISTER_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
     Sleep    3s
     Logout

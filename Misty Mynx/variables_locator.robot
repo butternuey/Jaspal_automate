@@ -41,6 +41,8 @@ ${MINI_CART_DELETE_POPUP_CLOSE_BUTTON}    xpath=//aside[@class="modal-popup conf
 ${MINI_CART_WISHLIST_ICON}    xpath=//div[@class="product actions"]//div[@class="primary"]//button[@class="button-wishlist-cart action towishlist add-to-wishlist"]
 ${MINI_CART_VIEW_MY_BAG_ICON}    xpath=//button[@class=" btn btn--secondary"]
 ${MINI_CART_CHECKOUT_BUTTON}    xpath=//button[@id="top-cart-btn-checkout"]
+${MINI_CART_COUNTER_LABEL}    xpath=//span[@class="counter-label"]
+
 
 #VIEW_MY_BAG
 ${VIEW_MY_BAG_BUTTON}    css=#minicart-content-wrapper > div.block-content > div.actions.cart-btn-group > div.secondary > a > button
@@ -96,8 +98,6 @@ ${PDP_ADD_TO_CART_BUTTON}    xpath=//button[@id="product-addtocart-button"]
 ${PDP_ADD_TO_CART_SUCCESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//h1[contains(text(),'success')]
 ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
 
-
-
 #SHIPPING PAGE
 ${SHIPPING_LOGIN_LINK}    xpath=//div[@class="incentive-message"]//div[@class="checkout-incentive-message"]//a[@id="customer-login-link"]
 ${SHIPPING_ORDER_INFORMATION_SECTION}    xpath=//aside[contains(@class,"modal-custom opc-sidebar opc-summary-wrapper")]
@@ -123,16 +123,34 @@ ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_POPUP}    xpath=//div[@class="modal-
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_FIRST_NAME_FIELD}    xpath=//div[@name="shippingAddress.firstname"]//input[@name="firstname"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_LAST_NAME_FIELD}    xpath=//div[@name="shippingAddress.lastname"]//input[@name="lastname"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_COUNTRY_FIELD}    xpath=//div[@name="shippingAddress.country_id"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_COUNTRY_THAILAND}    xpath=//div[@id="opc-new-shipping-address"]//div[@id="shipping-new-address-form"]//div[@name="shippingAddress.country_id"]//select[@name="country_id"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_PROVICE_FIELD}    xpath=//div[@name="shippingAddress.pdsd"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_PROVICE_BANGKOK}    xpath=//div[@name="shippingAddress.pdsd"]//div[@class="control"]//div[@class="pdsd-province"]//p[text()='Bangkok']
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_DISTRICT_BANGKAPI}    xpath=//div[@name="shippingAddress.pdsd"]//div[@class="pdsd-district"]//p[text()='Bang Kapi']
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_SUB_DISTRICT_HUAMAK}    xpath=//div[@name="shippingAddress.pdsd"]//div[@class="pdsd-subdistrict"]//p[text()='Hua Mak']
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_HOUSE_NUMBER_FIELD}    xpath=//div[@name="shippingAddress.custom_attributes.house_number"]//input[@name="custom_attributes[house_number]"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_BUIDING_FIELD}    xpath=//div[@name="shippingAddress.custom_attributes.building"]//input[@name="custom_attributes[building]"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_FLOOR_FIELD}    xpath=//div[@name="shippingAddress.custom_attributes.floor"]//input[@name="custom_attributes[floor]"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ALLEY/ROAD_FIELD}    xpath=//div[@name="shippingAddress.street.0"]//input[@name="street[0]"]
 ${SHIPPING_SHIPPING_SECTION_ADD_NEW_PHONE_NUMBER_FIELD}    xpath=//div[@name="shippingAddress.telephone"]//input[@name="telephone"]
+${SHIPPING_SHIPPING_SECTION_ADD_NEW_SAVE_ADDRESS_BUTTON}    xpath=//button[@class="action primary action-update-address"]//span[text()='Save Address']   
 ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_BUTTON}    xpath=//div[@id="checkout-step-shipping"]//div[@class="action-for-address"]//button[@class="action action-show-popup"]//span[text()='Select From Address Book']
-${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_POPUP}    xpath=//div[@class="modal-inner-wrap"]//header[@class="modal-header"]//h1[contains(text(),"Please Select Address")]
+${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_POPUP}    xpath=//div[@class="modal-inner-wrap"]//header[@class="modal-header"]//h1[contains(text(),"Please Select Address")] 
 ${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_CLOSE_ICON}    xpath=//aside[@class="modal-popup customer-popup forgot-password-popup _inner-scroll"]//h1[@class="modal-title"]//ancestor::header[@class="modal-header"]//button//span[text()="Close"]
-${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}    xpath=//div[@class="actions-toolbar-trigger process-to-payment"]//button[@data-bind="click: processToPayment"]
+${SHIPPING_SHIPPING_SECTION_SELECT_FROM_ADDRESS_BOOK_FIRST_ITEM}     xpath=//div[@class="modal-content"]//div[@class="shipping-addresses-list"]//div[@class="content"]//div[@class="field addresses"]//div[@class="shipping-address-item-wrapper"][1]
+${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}    xpath=//button[@data-bind="click: processToPayment"]
 ${SHIPPING_SHIPPING_METHOD_NEXT_DAY}    xpath=//tr[@id="checkout-shipping-method-section"][2]
+${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}    xpath=//tr[@class="totals sub"]//th[@class="mark"]
+${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}    xpath=//td[@class="amount"]//span[@data-th="Subtotal"]
+${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}    xpath=//td[@class="amount"]//span[@data-th="Shipping Fee"]
+${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}    xpath=//tr[@class="grand totals"]//td//strong//span[@class="price"]
+${SHIPPING_ORDER_INFORMATION_SECTION_GET_ITEM_NAME}    xpath=//ol[@class="minicart-items"]//li[@class="product-item"]//div[@class="product"]//strong[@class="product-item-name"]
+${SHIPPING_ORDER_INFORMATION_SECTION_GET_ORIGINAL_PRICE}    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="original-price"]
+${SHIPPING_ORDER_INFORMATION_SECTION_GET_NEW_PRICE}    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="price have-original-price"]
+${SHIPPING_ORDER_INFORMATION_SECTION_GET_COLOR}    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[1]//span[@class="values"]
+${SHIPPING_ORDER_INFORMATION_SECTION_GET_SIZE}    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[2]//span[@class="values"]
+${SHIPPING_ORDER_INFORMATION_SECTION_GET_QTY}    xpath=//div[@class="details-qty summary-details-qty"]//span[@class="value"]
+${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}    xpath=//div[@class='shipping-address-item']
 
 #PAYMENT PAGE
 ${PAYMENT_METHOD_COD}    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
@@ -146,10 +164,11 @@ ${REVIEW_ORDER_PAYMENT_SECTION}    xpath=//div[@class="payment-information conte
 ${REVIEW_ORDER_ITEM_LIST_SECTION}    xpath=//div[@class="block items-in-cart"]//span
 
 #THANKYOU_PAGE
-${REVIEW_ORDER_SHIPPING_SECTION}    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]
-${REVIEW_ORDER_PAYMENT_SECTION}    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]
-${REVIEW_ORDER_ITEM_LIST_SECTION}    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]
-
+${THANKYOU_SHIPPING_SECTION}    xpath=//div[@class="container order-details"]//div[@class="order-details-in order-summary"]
+${THANKYOU_PAYMENT_SECTION}    xpath=//div[@class="container order-details"]//div[@class="order-details-in shipping-details"]
+${THANKYOU_ITEM_LIST_SECTION}    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]
+${THANKYOU_GET_GUEST_ORDER_NUMBER}    xpath=//ul//li//div[@class="value"]
+${THANKYOU_GET_REGISTER_ORDER_NUMBER}    xpath=//ul//li//div[@class="value"]
 
 #FOOTER
 ${FOOTER_MY_ACCOUNT_MY_ORDERS}    xpath=//div[@class="footer-menus"]/div[@class="order-link"]/a/span[text()='My Orders']    
@@ -197,6 +216,7 @@ ${LOGIN_EMAIL_ERROR}    xpath=//div[@class="control"]//div[@id="email-login-erro
 ${LOGIN_PASSWORD_ERROR}    xpath=//div[@class="field password form-group required margin-bottom-5"]//div[@id="pass-login-error"]    
 ${LOGIN_EMAIL}
 ${LOGIN_PASSWORD}
+${LOGIN_HI}    xpath=//div[@class="header-links-menu panel header arrow_box"]//ul//li//span[contains(text(),"Hi,")]
 
 #LOGIN_ERROR
 ${LOGIN_ERROR_EMAIL}    css=#email-login-error
