@@ -202,8 +202,13 @@ ${FOOTER_CUSTOMER_SERVICE_RETURN_&_EXCHANGES}    xpath=//div[@class="footer-menu
 ${FOOTER_CUSTOMER_SERVICE_CONTACT_US}    xpath=//div[@class="footer-menus"]//a[@class="pagebuilder-button-link"]/span[text()='Contact Us']
 ${FOOTER_JOIN_THE_JASPAL_COMMUNITY}    xpath=//div[@class="footer-newsletter-content"]//div[@class="block newsletter"]//strong[text()='Join the Jaspal community']
 ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}    xpath=//div[@class="field newsletter"]//div[@class="control"]//input[@id="newsletter"]
+${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ERROR}    xpath=//div[@class="control"]//div[@id="newsletter-error"]
 ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}    xpath=//button[@class="action subscribe primary"]
+${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_POPUP}    xpath=//div[@class="modal-inner-wrap"]//div[@class="modal-content"]//p[@class="message success "]
+${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_POPUP_OK_BUTTON}    xpath=//button[@class="action-primary action-accept"]
+${FOOTER_PDPA_TEXT}    xpath=//div[@class="field custom-checkbox newsletter-agreement required"]//label/span
 ${FOOTER_PDPA_CHECKBOX}    xpath=//input[@id="newsletter-agreement"]
+${FOOTER_PDPA_ERROR}    xpath=//div[@class="field custom-checkbox newsletter-agreement required"]//div[@class="control"]//div[@id="newsletter-agreement-error"]
 ${FOOTER_PDPA_LINK}    xpath=//div[@class="field custom-checkbox newsletter-agreement required"]/label/span/a[text()='PDPA']
 ${FOOTER_LANGUAGE}    xpath=//div[@class="footer-links-content links"]//div[@id="switcher-language-nav"]/strong/span[text()='Language']
 ${FOOTER_CURRENCY}    xpath=//div[@class="footer-links-content links"]//div[@id="switcher-currency-nav"]/strong/span[text()='Currency']
@@ -211,12 +216,25 @@ ${FOOTER_SOCIAL_FACEBOOK_ICON}    xpath=//div[@class="social_icons"]/ul/li/a[@ti
 ${FOOTER_SOCIAL_IG_ICON}    xpath=//div[@class="social_icons"]/ul/li/a[@title="Instagram"]
 ${FOOTER_SOCIAL_LINE_ICON}    xpath=//div[@class="social_icons"]/ul/li/a[@title="Line"]
 ${FOOTER_SOCIAL_YOUTUBE_ICON}    xpath=//div[@class="social_icons"]/ul/li/a[@title="Youtube"]
+${FOOTER_BREADCRUMBS}    xpath=//div[@class="breadcrumbs"]//li[@class="item cms_page"]
+${FOOTER_BREADCRUMBS_FAQ}    xpath=//div[@class="breadcrumbs"]//li[@class="item faq"]
+${FOOTER_BREADCRUMBS_CONTACT_US}    xpath=//div[@class="breadcrumbs"]//li[@class="item Contact Us"]
+${FOOTER_JPS_CLUB_ICON}    xpath=//nav[@id="mainNavbar"]//div//div//div//img[@class="brand__logo"]
+
 
 #MY_ORDER_GUEST
 ${MY_ORDER_GUEST_ORDER_REFERENCE_NUMBER_FIELD}    xpath=//div[@class="control"]//input[@name="oar_order_id"]
 ${MY_ORDER_GUEST_EMAIL_ADDRESS_FIELD}    xpath=//div[@class="control"]//input[@name="oar_email"]
 ${MY_ORDER_GUEST_BILLING_LAST_NAME_FIELD}    xpath=//div[@class="control"]//input[@name="oar_billing_lastname"]
-${MY_ORDER_GUEST_SEARCH_BUTTON}    xpath=//div[@class="actions-toolbar row"]//button[@class="action submit primary btn btn--primary"]
+${MY_ORDER_GUEST_SEARCH_BUTTON}    xpath=//div[@class="actions-toolbar row"]//button[@class="action submit primary btn btn--primary"]  
+${MY_ORDER_GUEST_ORDER_REFERENCE_NUMBER_ERROR}    xpath=//div[@id="oar-order-id-error"]
+${MY_ORDER_GUEST_EMAIL_ADDRESS_ERROR}    xpath=//div[@id="oar_email-error"]
+${MY_ORDER_GUEST_BILLING_LAST_NAME_ERROR}    xpath=//div[@id="oar-billing-lastname-error"]
+
+#ORDER_INFORMATION_PAGE
+${ORDER_INFO_GUEST_ORDER_REFERENCE}    xpath=//div[@class="order-id"]//span[@class="label"][contains(text(),'Order Reference')]
+${ORDER_INFO_GUEST_ORDER_REFERENCE_VALUE}    xpath=//div[@class="order-id"]//span[@class="value"]
+
 
 #LOGIN
 ${LOGIN_ICON}    css=#html-body > div.page-wrapper > header > div.container > div > div.page-header__right > div.header-links-wrapper.cps-login.text-center

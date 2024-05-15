@@ -38,7 +38,34 @@ ${ADD_NEW_ADDRESS_LAST_NAME_TEXT}    NewLastname
 #FOOTER
 ${JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey0001@gmail.com
 ${JASPAL_COMMUNITY_ENTER_EMAIL_1}    kittiyanuey0002@gmail.com
-${JASPAL_COMMUNITY_ENTER_EMAIL_INVALID}    invalidemail.com   
+${JASPAL_COMMUNITY_ENTER_EMAIL_INVALID}    invalidemail.com
+${BREADCRUMBS_ORDER_INFORMATION}    Order Information
+${BREADCRUMBS_MM_OUR_STORY}    MM Our Story     
+${BREADCRUMBS_WORK_WITH_US}    Work With Us
+${BREADCRUMBS_FAQ}    Frequently Asked Question
+${BREADCRUMBS_EXCHANGE}    Exchange and Returns Policy
+${BREADCRUMBS_CONTACT_US}    Contact Us
+${JASPAL_GROUP}    JASPAL GROUP
+${STORE_LOCATOR}    Store Locator
+${MY_ORDERS}    My Orders
+${ONLINE_CREDITS}    Online Credits
+${FOOTER_PDPA_ERROR_TEXT}    Please agree to the PDPA policy.
+${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_MESSAGE}    Thank you for your subscription.
+${ORDER_REFERENCE_NUMBER}    Order Reference Number
+${GUEST_ORDER_REFERENCE_NUMBER}    MIMEN240000003103
+${ORDER_EMAIL_ADDRESS}    Email Address    
+${MY_ORDER_GUEST_EMAIL_ADDRESS_DATA}    kittiya_test@gmail.com
+${MY_ORDER_GUEST_BILLING_LAST_NAME}    Billing Last Name
+${MY_ORDER_GUEST_BILLING_LAST_NAME_DATA}    Thipathikeat
+${GUEST_ORDER_REFERENCE_NUMBER_ERROR_TEXT}    This is a required field.
+${GUEST_EMAIL_ADDRESS_ERROR_TEXT}    This is a required field.
+${GUEST_BILLING_LAST_NAME_ERROR_TEXT}    This is a required field.
+${MY_ORDER_NEWSLETTER_ERROR_TEXT}    This is a required field.
+${ENTER_EMAIL_EMPTY_ERROR}    This is a required field.
+${ENTER_EMAIL_INVALID_ERROR}    Please enter a valid email address (Ex: sally@domain.com)
+
+
+
 
 #MY_ORDER_GUEST
 ${GUEST_ORDER_NUMBER}    MIMEN240000003103
