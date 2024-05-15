@@ -40,14 +40,14 @@ Global Footer_TC_1: Verify Footer Lables_Guest
     #Click the MM logo
     Click Element    ${WEB_LOGO_MM}
     #Scroll down to bottom of page
-    #Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
-    #Wait Until Page Contains Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    Wait Until Page Contains Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
     #Click on who we are in footer
-    #Click Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
-    #Verify WORK_WITH_US page
-    #Wait Until Element Contains    xpath=//div[@class="breadcrumbs"]//li[@class="item cms_page"]    Work With Us        --> BUG    
+    Click Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
+    #Verify WORK_WITH_US page--> BUG 
+    Wait Until Element Contains    ${FOOTER_BREADCRUMBS}    ${BREADCRUMBS_WORK_WITH_US}  
     #Click the MM logo
-    #Click Element    ${WEB_LOGO_MM}
+    Click Element    ${WEB_LOGO_MM}
     #Scroll down to bottom of page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     Wait Until Page Contains Element    ${FOOTER_ABOUT_US_JASPAL_GROUP}
@@ -159,14 +159,14 @@ Global Footer_TC_2: Verify Footer Lables_Register
     #Click the MM logo
     Click Element    ${WEB_LOGO_MM}
     #Scroll down to bottom of page
-    #Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
-    #Wait Until Page Contains Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
+    Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
+    Wait Until Page Contains Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
     #Click on who we are in footer
-    #Click Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
-    #Verify WORK_WITH_US page
-    #Wait Until Element Contains    xpath=//div[@class="breadcrumbs"]//li[@class="item cms_page"]    Work With Us        --> BUG    
+    Click Element    ${FOOTER_ABOUT_US_WORK_WITH_US}
+    #Verify WORK_WITH_US page--> BUG 
+    Wait Until Element Contains    ${FOOTER_BREADCRUMBS}    ${BREADCRUMBS_WORK_WITH_US}  
     #Click the MM logo
-    #Click Element    ${WEB_LOGO_MM}
+    Click Element    ${WEB_LOGO_MM}
     #Scroll down to bottom of page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     Wait Until Page Contains Element    ${FOOTER_ABOUT_US_JASPAL_GROUP}
