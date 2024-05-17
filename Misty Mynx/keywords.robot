@@ -51,7 +51,7 @@ Delete Account
     Wait Until Element Contains    xpath=//header[@class="modal-header"]/h1[contains(@id, "modal-title-")]    Delete items
     Click Element    xpath=//button[@class="action-primary action-accept"]/span[text()='OK']
     Wait Until Page Contains     were deleted.     
-    Sleep    8s
+    Sleep    5s
 
 Accept Cookies
     Wait Until Page Contains Element    xpath=//div[@role="document"]//p[text()='The MISTY MYNX site uses cookies.']

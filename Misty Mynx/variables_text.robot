@@ -64,9 +64,6 @@ ${MY_ORDER_NEWSLETTER_ERROR_TEXT}    This is a required field.
 ${ENTER_EMAIL_EMPTY_ERROR}    This is a required field.
 ${ENTER_EMAIL_INVALID_ERROR}    Please enter a valid email address (Ex: sally@domain.com)
 
-
-
-
 #MY_ORDER_GUEST
 ${GUEST_ORDER_NUMBER}    MIMEN240000003103
 ${GUEST_EMAIL_ADDRESS}    kittiya_test@gmail.com

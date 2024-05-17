@@ -221,7 +221,6 @@ ${FOOTER_BREADCRUMBS_FAQ}    xpath=//div[@class="breadcrumbs"]//li[@class="item 
 ${FOOTER_BREADCRUMBS_CONTACT_US}    xpath=//div[@class="breadcrumbs"]//li[@class="item Contact Us"]
 ${FOOTER_JPS_CLUB_ICON}    xpath=//nav[@id="mainNavbar"]//div//div//div//img[@class="brand__logo"]
 
-
 #MY_ORDER_GUEST
 ${MY_ORDER_GUEST_ORDER_REFERENCE_NUMBER_FIELD}    xpath=//div[@class="control"]//input[@name="oar_order_id"]
 ${MY_ORDER_GUEST_EMAIL_ADDRESS_FIELD}    xpath=//div[@class="control"]//input[@name="oar_email"]
@@ -234,7 +233,6 @@ ${MY_ORDER_GUEST_BILLING_LAST_NAME_ERROR}    xpath=//div[@id="oar-billing-lastna
 #ORDER_INFORMATION_PAGE
 ${ORDER_INFO_GUEST_ORDER_REFERENCE}    xpath=//div[@class="order-id"]//span[@class="label"][contains(text(),'Order Reference')]
 ${ORDER_INFO_GUEST_ORDER_REFERENCE_VALUE}    xpath=//div[@class="order-id"]//span[@class="value"]
-
 
 #LOGIN
 ${LOGIN_ICON}    css=#html-body > div.page-wrapper > header > div.container > div > div.page-header__right > div.header-links-wrapper.cps-login.text-center
