@@ -5,7 +5,7 @@ Resource    variables_locator.robot
 Resource    variables_text.robot
 
 *** Test Cases ***
-Home_TC_1: Verify_Back To Top_Guest
+Home_TC_1: Verify_Back To Top_Guest.
     Open Website
     Accept Cookies
     #Scroll down to bottom of page
@@ -17,7 +17,7 @@ Home_TC_1: Verify_Back To Top_Guest
     Delete All Cookies
     Close Browser
 
-Home_TC_2: Verify_Back To Top_Register
+Home_TC_2: Verify_Back To Top_Register.
     Open Website
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL}    ${CREATE_ACCOUNT_PASSWORD}

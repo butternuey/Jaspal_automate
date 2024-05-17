@@ -6,7 +6,7 @@ Resource    variables_text.robot
 
 *** Test Cases ***
 #Create Account
-Create_Account_TC_1: Verify User Able to Register successfully
+Create_Account_TC_1: Verify User Able to Register successfully.
     [Documentation]    User able to register successfully when fill in all mandatory field.
     Open Website
     Accept Cookies
@@ -53,7 +53,7 @@ Create_Account_TC_1: Verify User Able to Register successfully
     Delete All Cookies
     Close Browser
 
-Create_Account_TC_2: Verify User Has to Fill All Mandatory Fields to Register
+Create_Account_TC_2: Verify User Has to Fill All Mandatory Fields to Register.
     [Documentation]    Does not fill in all Mandatory field to verify error text
     Open Website
     Accept Cookies
@@ -105,8 +105,8 @@ Create_Account_TC_2: Verify User Has to Fill All Mandatory Fields to Register
     Delete All Cookies
     Close Browser
 
-Create_Account_TC_3: Verify User Has to Fill All Mandatory Fields to Register
-    [Documentation]    Does not select PDPA Checkbox to verify error text
+Create_Account_TC_3: Verify User Has to Fill All Mandatory Fields to Register.
+    [Documentation]    Does not select PDPA Checkbox to verify error text.
     Open Website
     Accept Cookies
     Create Account
@@ -195,7 +195,7 @@ Create_Account_TC_4: Verify Password and Re-Enter Password Should Match
     Delete All Cookies
     Close Browser
 
-Create_Account_TC_5: Verify user can write only alphabtes in firstName and lastName
+Create_Account_TC_5: Verify user can write only alphabtes in firstName and lastName.
     Open Website
     Accept Cookies
     Create Account
@@ -213,8 +213,8 @@ Create_Account_TC_5: Verify user can write only alphabtes in firstName and lastN
     Delete All Cookies
     Close Browser
 
-Create_Account_TC_6: Verify user should enter valid phone number
-    [Documentation]    User enter phone number with A-Z or start with 0 
+Create_Account_TC_6: Verify user should enter valid phone number.
+    [Documentation]    User enter phone number with A-Z or start with 0.
     Open Website
     Accept Cookies
     Create Account

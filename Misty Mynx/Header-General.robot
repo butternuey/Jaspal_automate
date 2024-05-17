@@ -5,7 +5,7 @@ Resource    variables_locator.robot
 Resource    variables_text.robot
 
 *** Test Cases ***
-Header-General_TC_1: Search Product_Guest
+Header-General_TC_1: Search Product_Guest.
     Open Website
     Accept Cookies
     #Click on Search icon
@@ -20,7 +20,7 @@ Header-General_TC_1: Search Product_Guest
     Delete All Cookies
     Close Browser
 
-Header-General_TC_2: Search Product_Register
+Header-General_TC_2: Search Product_Register.
     Open Website
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL}    ${CREATE_ACCOUNT_PASSWORD}
@@ -38,7 +38,7 @@ Header-General_TC_2: Search Product_Register
     Delete All Cookies
     Close Browser
 
-Header-General_TC_3: Login And Logout With Valid Credentials
+Header-General_TC_3: Login And Logout With Valid Credentials.
     Open Website
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL}    ${CREATE_ACCOUNT_PASSWORD}
@@ -47,7 +47,7 @@ Header-General_TC_3: Login And Logout With Valid Credentials
     Delete All Cookies
     Close Browser
 
-Header-General_TC_4: Login With Invalid Credentials
+Header-General_TC_4: Login With Invalid Credentials.
     Open Website
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL_INVALID}    ${CREATE_ACCOUNT_PASSWORD_INVALID}
@@ -55,7 +55,7 @@ Header-General_TC_4: Login With Invalid Credentials
     Delete All Cookies
     Close Browser
 
-Header-General_TC_5: Verify Mandatory Fields In Login
+Header-General_TC_5: Verify Mandatory Fields In Login.
     Open Website
     Accept Cookies
     Login    ${EMPTY}    ${EMPTY}
@@ -64,7 +64,7 @@ Header-General_TC_5: Verify Mandatory Fields In Login
     Delete All Cookies
     Close Browser
 
-Header-General_TC_6: Verify Mega Menu / Bread Crumbs_Guest
+Header-General_TC_6: Verify Mega Menu / Bread Crumbs_Guest.
     Open Website
     Accept Cookies
     #Click New In collection
@@ -82,7 +82,7 @@ Header-General_TC_6: Verify Mega Menu / Bread Crumbs_Guest
     Delete All Cookies
     Close Browser
 
-Header-General_TC_7: Verify Mega Menu / Bread Crumbs_Register
+Header-General_TC_7: Verify Mega Menu / Bread Crumbs_Register.
     Open Website
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL}    ${CREATE_ACCOUNT_PASSWORD}
@@ -103,7 +103,7 @@ Header-General_TC_7: Verify Mega Menu / Bread Crumbs_Register
     Delete All Cookies
     Close Browser
 
-Header-General_TC_8: Able to Switch Language_Guest
+Header-General_TC_8: Able to Switch Language_Guest.
     Open Website
     Accept Cookies
     #Verify EN Store  
@@ -115,7 +115,7 @@ Header-General_TC_8: Able to Switch Language_Guest
     Delete All Cookies
     Close Browser
 
-Header-General_TC_9: Able to Switch Language_Register
+Header-General_TC_9: Able to Switch Language_Register.
     Open Website
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL}    ${CREATE_ACCOUNT_PASSWORD}
@@ -130,7 +130,7 @@ Header-General_TC_9: Able to Switch Language_Register
     Delete All Cookies
     Close Browser
 
-Header-General_TC_10: Able to Switch Currency_Guest
+Header-General_TC_10: Able to Switch Currency_Guest.
     Open Website
     Accept Cookies
     #Verify THB
@@ -143,7 +143,7 @@ Header-General_TC_10: Able to Switch Currency_Guest
     Delete All Cookies
     Close Browser
 
-Header-General_TC_11: Able to Switch Currency_Register
+Header-General_TC_11: Able to Switch Currency_Register.
     Open Website
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL}    ${CREATE_ACCOUNT_PASSWORD}

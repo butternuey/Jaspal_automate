@@ -5,7 +5,7 @@ Resource    variables_locator.robot
 Resource    variables_text.robot
 
 *** Test Cases ***
-Global Footer_TC_1: Verify Footer Lables_Guest
+Global Footer_TC_1: Verify Footer Lables_Guest.
     Open Website
     Accept Cookies
     #Scroll down to bottom of page
@@ -123,7 +123,7 @@ Global Footer_TC_1: Verify Footer Lables_Guest
     Delete All Cookies
     Close Browser
 
-Global Footer_TC_2: Verify Footer Lables_Register
+Global Footer_TC_2: Verify Footer Lables_Register.
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
@@ -375,7 +375,7 @@ Global Footer_TC_7: My Order Search_Footer_GuestUser
     Delete All Cookies
     Close Browser
 
-Global Footer_TC_8: Verify Mandatory Fields_My Order Search_Footer_GuestUser
+Global Footer_TC_8: Verify Mandatory Fields_My Order Search_Footer_GuestUser.
     Open Website
     Accept Cookies
     #Scroll down to bottom of page
@@ -414,7 +414,7 @@ Global Footer_TC_8: Verify Mandatory Fields_My Order Search_Footer_GuestUser
     Delete All Cookies
     Close Browser
 
-Global Footer_TC_9: Verify Email As Mandatory in Newsletter Subcription_Guest
+Global Footer_TC_9: Verify Email As Mandatory in Newsletter Subcription_Guest.
     Open Website
     Accept Cookies
     #Scroll down to bottom of page
@@ -433,7 +433,7 @@ Global Footer_TC_9: Verify Email As Mandatory in Newsletter Subcription_Guest
     Delete All Cookies
     Close Browser
 
-Global Footer_TC_10: Verify Email As Mandatory in Newsletter Subcription_Register
+Global Footer_TC_10: Verify Email As Mandatory in Newsletter Subcription_Register.
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
@@ -457,7 +457,7 @@ Global Footer_TC_10: Verify Email As Mandatory in Newsletter Subcription_Registe
     Delete All Cookies
     Close Browser
 
-Global Footer_TC_11: Verify Valid EmailID in Newsletter Subcription_Guest
+Global Footer_TC_11: Verify Valid EmailID in Newsletter Subcription_Guest.
     Open Website
     Accept Cookies
     #Scroll down to bottom of page
@@ -476,7 +476,7 @@ Global Footer_TC_11: Verify Valid EmailID in Newsletter Subcription_Guest
     Delete All Cookies
     Close Browser
 
-Global Footer_TC_12: Verify Valid EmailID in Newsletter Subcription_Register
+Global Footer_TC_12: Verify Valid EmailID in Newsletter Subcription_Register.
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}

@@ -219,7 +219,8 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Delete All Cookies
     Close Browser
 
-Checkout_TC_3: To Verify registered customer able to add multiple shipping address in Shipping Details Tab during the checkout process.
+Checkout_TC_3: To verify registered customer able to create new shipping address in Shipping Details tab during the checkout process.
+    [Documentation]    Add new address
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
@@ -331,7 +332,7 @@ Checkout_TC_3: To Verify registered customer able to add multiple shipping addre
     Delete All Cookies
     Close Browser
 
-Checkout_TC_4: To Verify registered customer able to add multiple shipping address in Shipping Details Tab during the checkout process
+Checkout_TC_4: To Verify registered customer able to add multiple shipping address in Shipping Details Tab during the checkout process.
     [Documentation]    Select address by select from address book
     Open Website
     Accept Cookies
@@ -419,7 +420,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Delete All Cookies
     Close Browser
 
-Checkout_TC_5: To verify registered customer view the Shipping Details and Payment & review tabs during the checkout process
+Checkout_TC_5: To verify registered customer view the Shipping Details and Payment & review tabs during the checkout process.
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}

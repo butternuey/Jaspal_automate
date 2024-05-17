@@ -5,7 +5,7 @@ Resource    variables_locator.robot
 Resource    variables_text.robot
 
 *** Test Cases ***
-Header-Mini Cart_TC_1: Add/Edit/Delete Product_Mini Cart_Guest
+Header-Mini Cart_TC_1: Add/Update/Delete Product_Mini Cart_Guest.
     #Open Browser
     Open Website
     #Accept the Cookies
@@ -65,7 +65,7 @@ Header-Mini Cart_TC_1: Add/Edit/Delete Product_Mini Cart_Guest
     Delete All Cookies
     Close Browser
 
-Header-Mini Cart_TC_2: Add/Edit/Delete Product_Mini Cart_Register
+Header-Mini Cart_TC_2: Add/Update/Delete Product_Mini Cart_Register.
     #Open Browser
     Open Website
     #Accept the Cookies
@@ -128,7 +128,7 @@ Header-Mini Cart_TC_2: Add/Edit/Delete Product_Mini Cart_Register
     Delete All Cookies
     Close Browser
 
-Header-Mini Cart_TC_3: Search Product_Guest
+Header-Mini Cart_TC_3: Verify Bag Empty Message_Guest.
     #Open Browser
     Open Website
     #Accept the Cookies
@@ -142,7 +142,7 @@ Header-Mini Cart_TC_3: Search Product_Guest
     Delete All Cookies
     Close Browser
 
-Header-Mini Cart_TC_4: Verify Bag Empty Message_Register
+Header-Mini Cart_TC_4: Verify Bag Empty Message_Register.
     #Open Browser
     Open Website
     #Accept the Cookies
@@ -160,7 +160,7 @@ Header-Mini Cart_TC_4: Verify Bag Empty Message_Register
     Delete All Cookies
     Close Browser
 
-Header-Mini Cart_TC_5: To verify guest user view the shopping bag page
+Header-Mini Cart_TC_5: To verify guest user view the shopping bag page.
     #Open Browser
     Open Website
     #Accept the Cookies
@@ -239,7 +239,7 @@ Header-Mini Cart_TC_5: To verify guest user view the shopping bag page
     Delete All Cookies
     Close Browser
 
-Header-Mini Cart_TC_6: To verify guest user view the shopping bag page.
+Header-Mini Cart_TC_6: To verify register user view the shopping bag page.
     #Open Browser
     Open Website
     #Accept the Cookies
@@ -586,7 +586,7 @@ Header-Mini Cart_TC_11: To verify guest customer able to add product to Wishlist
     Delete All Cookies
     Close Browser
 
-Header-Mini Cart_TC_12: To verify guest customer able to add product to Wishlist from shopping bag page.
+Header-Mini Cart_TC_12: To verify registered customer able to add product to Wishlist from shopping bag page.
     #Open Browser
     Open Website
     #Accept the Cookies
@@ -704,7 +704,7 @@ Header-Mini Cart_TC_13: To verify guest customer is not able to see JPS section.
     Delete All Cookies
     Close Browser  
 
-Header-Mini Cart_TC_14: To verify as guest customer is able to Redeem promotion code
+Header-Mini Cart_TC_14: To verify as guest customer is able to Redeem promotion code.
     #Open Browser
     Open Website
     #Accept the Cookies

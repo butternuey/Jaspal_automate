@@ -7,5 +7,6 @@ Resource   keywords.robot
 
 *** Test Cases ***
 Test Delete
+    [Documentation]    To delete account that created.
     Delete Account
     Close Browser
