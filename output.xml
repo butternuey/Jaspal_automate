@@ -1,105 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.12.2 on win32)" generated="20240515 16:31:27.227" rpa="false" schemaversion="2">
-<suite id="s1" name="Global Footer" source="c:\Users\kittiya\Desktop\Nuey_robot_ecom\Misty Mynx\Global Footer.robot">
-<test id="s1-t1" name="Global Footer_TC_11: Verify Valid EmailID in Newsletter Subcription_Guest">
+<robot generator="Robot 4.1.3 (Python 3.12.2 on win32)" generated="20240517 16:57:32.018" rpa="false" schemaversion="2">
+<suite id="s1" name="Global Footer" source="c:\Users\kittiya\Desktop\Nuey_robot_ecom\Jaspal\Global Footer.robot">
+<test id="s1-t1" name="Global Footer_TC_7: My Order Search_Footer_GuestUser">
 <kw name="Open Website" library="keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>gc</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240515 16:31:27.427" level="INFO">Opening browser 'gc' to base url 'https://mcstaging-2-4.mistymynx.com/'.</msg>
-<status status="PASS" starttime="20240515 16:31:27.427" endtime="20240515 16:31:30.274"/>
+<msg timestamp="20240517 16:57:32.246" level="INFO">Opening browser 'gc' to base url 'https://mcstaging-2-4.jaspal.com/'.</msg>
+<status status="PASS" starttime="20240517 16:57:32.244" endtime="20240517 16:57:36.666"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240515 16:31:30.275" endtime="20240515 16:31:30.808"/>
+<status status="PASS" starttime="20240517 16:57:36.667" endtime="20240517 16:57:36.827"/>
 </kw>
-<status status="PASS" starttime="20240515 16:31:27.426" endtime="20240515 16:31:30.808"/>
+<status status="PASS" starttime="20240517 16:57:32.244" endtime="20240517 16:57:36.828"/>
 </kw>
 <kw name="Accept Cookies" library="keywords">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>xpath=//div[@role="document"]//p[text()='The MISTY MYNX site uses cookies.']</arg>
+<arg>xpath=//div[@role="document"]//p[text()='The JASPAL site uses cookies.']</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20240515 16:31:30.809" endtime="20240515 16:31:30.822"/>
+<status status="PASS" starttime="20240517 16:57:36.830" endtime="20240517 16:57:36.981"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//button[@class="action allow primary btn btn--primary"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240515 16:31:30.823" level="INFO">Clicking element 'xpath=//button[@class="action allow primary btn btn--primary"]'.</msg>
-<status status="PASS" starttime="20240515 16:31:30.823" endtime="20240515 16:31:31.468"/>
+<msg timestamp="20240517 16:57:36.982" level="INFO">Clicking element 'xpath=//button[@class="action allow primary btn btn--primary"]'.</msg>
+<status status="PASS" starttime="20240517 16:57:36.981" endtime="20240517 16:57:37.331"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240515 16:31:33.469" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20240515 16:31:31.468" endtime="20240515 16:31:33.469"/>
+<msg timestamp="20240517 16:57:39.333" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240517 16:57:37.332" endtime="20240517 16:57:39.333"/>
 </kw>
-<status status="PASS" starttime="20240515 16:31:30.808" endtime="20240515 16:31:33.469"/>
+<status status="PASS" starttime="20240517 16:57:36.829" endtime="20240517 16:57:39.334"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.scrollTo(0, document.body.scrollHeight)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20240515 16:31:33.472" level="INFO">Executing JavaScript:
+<msg timestamp="20240517 16:57:39.336" level="INFO">Executing JavaScript:
 window.scrollTo(0, document.body.scrollHeight)
 Without any arguments.</msg>
-<status status="PASS" starttime="20240515 16:31:33.471" endtime="20240515 16:31:33.912"/>
+<status status="PASS" starttime="20240517 16:57:39.335" endtime="20240517 16:57:39.938"/>
 </kw>
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<arg>${FOOTER_JOIN_THE_JASPAL_COMMUNITY}</arg>
+<arg>${FOOTER_MY_ACCOUNT_MY_ORDERS}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20240515 16:31:33.914" endtime="20240515 16:31:34.008"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${FOOTER_PDPA_CHECKBOX}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240515 16:31:34.012" level="INFO">Clicking element 'xpath=//input[@id="newsletter-agreement"]'.</msg>
-<status status="PASS" starttime="20240515 16:31:34.010" endtime="20240515 16:31:34.182"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL}</arg>
-<arg>${JASPAL_COMMUNITY_ENTER_EMAIL_INVALID}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240515 16:31:34.186" level="INFO">Typing text 'invalidemail.com' into text field 'xpath=//div[@class="field newsletter"]//div[@class="control"]//input[@id="newsletter"]'.</msg>
-<status status="PASS" starttime="20240515 16:31:34.184" endtime="20240515 16:31:34.437"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240515 16:31:34.438" level="INFO">Clicking element 'xpath=//button[@class="action subscribe primary"]'.</msg>
-<status status="PASS" starttime="20240515 16:31:34.437" endtime="20240515 16:31:34.575"/>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ERROR}</arg>
-<arg>${ENTER_EMAIL_INVALID_ERROR}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20240515 16:31:34.575" endtime="20240515 16:31:34.600"/>
+<status status="PASS" starttime="20240517 16:57:39.939" endtime="20240517 16:57:40.232"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240515 16:31:35.602" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240515 16:31:34.601" endtime="20240515 16:31:35.602"/>
+<msg timestamp="20240517 16:57:41.234" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240517 16:57:40.232" endtime="20240517 16:57:41.234"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FOOTER_MY_ACCOUNT_MY_ORDERS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240517 16:57:41.244" level="INFO">Clicking element 'xpath=//div[@class="footer-menus"]/div[@class="order-link"]/a/span[text()='My Orders']'.</msg>
+<status status="PASS" starttime="20240517 16:57:41.244" endtime="20240517 16:57:41.796"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${FOOTER_BREADCRUMBS}</arg>
+<arg>${BREADCRUMBS_ORDER_INFORMATION}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20240517 16:57:41.797" endtime="20240517 16:57:41.949"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${ORDER_REFERENCE_NUMBER}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240517 16:57:41.949" endtime="20240517 16:57:41.968"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240517 16:57:43.970" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240517 16:57:41.969" endtime="20240517 16:57:43.970"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${MY_ORDER_GUEST_ORDER_REFERENCE_NUMBER_FIELD}</arg>
+<arg>${GUEST_ORDER_REFERENCE_NUMBER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240517 16:57:43.972" level="INFO">Typing text 'MIMEN240000003103' into text field 'xpath=//div[@class="control"]//input[@name="oar_order_id"]'.</msg>
+<status status="PASS" starttime="20240517 16:57:43.971" endtime="20240517 16:57:44.075"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${ORDER_EMAIL_ADDRESS}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240517 16:57:44.076" endtime="20240517 16:57:44.089"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${MY_ORDER_GUEST_EMAIL_ADDRESS_FIELD}</arg>
+<arg>${MY_ORDER_GUEST_EMAIL_ADDRESS_DATA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240517 16:57:44.090" level="INFO">Typing text 'kittiya_test@gmail.com' into text field 'xpath=//div[@class="control"]//input[@name="oar_email"]'.</msg>
+<status status="PASS" starttime="20240517 16:57:44.089" endtime="20240517 16:57:44.284"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${MY_ORDER_GUEST_BILLING_LAST_NAME}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20240517 16:57:44.285" endtime="20240517 16:57:44.301"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${MY_ORDER_GUEST_BILLING_LAST_NAME_FIELD}</arg>
+<arg>${MY_ORDER_GUEST_BILLING_LAST_NAME_DATA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240517 16:57:44.303" level="INFO">Typing text 'Thipathikeat' into text field 'xpath=//div[@class="control"]//input[@name="oar_billing_lastname"]'.</msg>
+<status status="PASS" starttime="20240517 16:57:44.302" endtime="20240517 16:57:44.524"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MY_ORDER_GUEST_SEARCH_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240517 16:57:44.525" level="INFO">Clicking element 'xpath=//div[@class="actions-toolbar row"]//button[@class="action submit primary btn btn--primary"]'.</msg>
+<status status="PASS" starttime="20240517 16:57:44.525" endtime="20240517 16:57:45.470"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240517 16:57:46.472" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240517 16:57:45.471" endtime="20240517 16:57:46.472"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${ORDER_INFO_GUEST_ORDER_REFERENCE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20240517 16:57:51.694" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-104.png"&gt;&lt;img src="selenium-screenshot-104.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240517 16:57:51.697" level="FAIL">Element 'xpath=//div[@class="order-id"]//span[@class="label"][contains(text(),'Order Reference')]' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20240517 16:57:46.474" endtime="20240517 16:57:51.698"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240517 16:57:51.699" endtime="20240517 16:57:51.699"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${GUEST_ORDER_REFERENCE}</var>
+<arg>${ORDER_INFO_GUEST_ORDER_REFERENCE_VALUE}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240517 16:57:51.699" endtime="20240517 16:57:51.699"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>ORDER REFERENCE : ${GUEST_ORDER_REFERENCE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240517 16:57:51.700" endtime="20240517 16:57:51.700"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240517 16:57:51.700" endtime="20240517 16:57:51.700"/>
 </kw>
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20240515 16:31:35.603" endtime="20240515 16:31:35.714"/>
+<status status="NOT RUN" starttime="20240517 16:57:51.700" endtime="20240517 16:57:51.700"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240515 16:31:35.714" endtime="20240515 16:31:37.996"/>
+<status status="NOT RUN" starttime="20240517 16:57:51.701" endtime="20240517 16:57:51.701"/>
 </kw>
-<status status="PASS" starttime="20240515 16:31:27.426" endtime="20240515 16:31:37.997"/>
+<status status="FAIL" starttime="20240517 16:57:32.243" endtime="20240517 16:57:51.701">Element 'xpath=//div[@class="order-id"]//span[@class="label"][contains(text(),'Order Reference')]' did not appear in 5 seconds.</status>
 </test>
-<status status="PASS" starttime="20240515 16:31:27.232" endtime="20240515 16:31:38.000"/>
+<status status="FAIL" starttime="20240517 16:57:32.024" endtime="20240517 16:57:51.703"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Global Footer">Global Footer</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Global Footer">Global Footer</stat>
 </suite>
 </statistics>
 <errors>

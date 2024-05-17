@@ -453,7 +453,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     #Click on Checkout button on Mini Cart
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     Sleep    8s
-     ${LANDING_PAGE}=    Run Keyword And Return Status    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
     Execute Javascript    window.scrollTo(0, 0)
     Sleep    3s
     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
@@ -546,6 +546,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
     #Click login link oon shipping page
     Execute Javascript    window.scrollTo(0, 0)
+    Sleep    2s
     Click Element    ${SHIPPING_LOGIN_LINK}
     #Verify Login popup
     Wait Until Element Contains    ${LOGIN_POPUP}    ${LOGIN_POPUP_TEXT}
@@ -557,13 +558,22 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Input Text    ${LOGIN_PASSWORD_TEXTBOX}    ${LOGIN_PASSWORD_EXISTING_CUSTOMER}    
     #Click login button
     Click Element    ${LOGIN_BUTTON}
-    Sleep    1s
+    Sleep    3s
     Wait Until Element Is Not Visible    ${LOGIN_POPUP}
-    Sleep    2s
-    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
+    Sleep    8s
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
     Execute Javascript    window.scrollTo(0, 0)
-    Sleep    2s
-    Click Element    ${WEB_LOGO_MM}
+    Sleep    3s
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
+        Sleep    2s
+        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    ELSE
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
+        
+    END
+    Execute Javascript    window.scrollTo(0, 0)
+    Sleep    5s
+    Click Element    ${WEB_LOGO}
     Sleep    5s
     Wait until page contains Element    ${LOGIN_ICON}
     Click Element    ${LOGIN_ICON}
@@ -608,8 +618,10 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
 #     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
 #     Sleep    8s
 #     ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+#     Execute Javascript    window.scrollTo(0, 0)
 #     Sleep    3s
 #     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
+#         Sleep    3s
 #         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
 #     ELSE
 #     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
@@ -618,6 +630,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
 #     #--------------------------------------------- Shipping Page ---------------------------------------------------
 #     #Get Default shipping address
 #     Sleep    2s
+#     Execute Javascript    window.scrollTo(0, 0)
 #     ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
 #     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
 #     #Verify the Order Information title on Checkout page
@@ -637,7 +650,6 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
 #     #Verify the item list title on Checkout page
 #     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
 #     #Verify Choose Shipping Method
-#     Sleep    2s
 #     Wait Until Page Contains    ${SHIPPING_SHIPPING_METHOD}
 #     Click Element    ${SHIPPING_SHIPPING_METHOD_NEXT_DAY} 
 #     #Verify the Order Information title on Checkout page
@@ -655,7 +667,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
 #     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
 #     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
 #     #Click Proceed to payment
-#     Sleep    3s
+#     Sleep    8s
 #     Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
 #     Sleep    2s
 #     #-------------------------- Payment Page ---------------------------------------------
