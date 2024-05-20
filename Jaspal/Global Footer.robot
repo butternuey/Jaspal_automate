@@ -128,6 +128,7 @@ Global Footer_TC_2: Verify Footer Lables_Register.
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     Sleep    1s
     #Scroll down to bottom of page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
@@ -267,6 +268,7 @@ Global Footer_TC_4: Verify Various Social Media Options_Register
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Scroll down to bottom of page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     #Verify Facebook Icon
@@ -319,6 +321,7 @@ Global Footer_TC_6: Newsletter Subcription_Register
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     Sleep    1s
     #Scroll down to bottom of page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
@@ -446,6 +449,7 @@ Global Footer_TC_10: Verify Email As Mandatory in Newsletter Subcription_Registe
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Scroll down to bottom of page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     #Verify the JOIN_THE_JASPAL_COMMUNITY
@@ -489,6 +493,7 @@ Global Footer_TC_12: Verify Valid EmailID in Newsletter Subcription_Register.
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Scroll down to bottom of page
     Execute Javascript    window.scrollTo(0, document.body.scrollHeight)
     #Verify the JOIN_THE_JASPAL_COMMUNITY

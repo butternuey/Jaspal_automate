@@ -51,16 +51,16 @@ ${ONLINE_CREDITS}    Online Credits
 ${FOOTER_PDPA_ERROR_TEXT}    Please agree to the PDPA policy.
 ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_MESSAGE}    Thank you for your subscription.
 ${ORDER_REFERENCE_NUMBER}    Order Reference Number
-${GUEST_ORDER_REFERENCE_NUMBER}    MIMEN240000003103
+${GUEST_ORDER_REFERENCE_NUMBER}    JASEN240000005602
 ${ORDER_EMAIL_ADDRESS}    Email Address    
 ${MY_ORDER_GUEST_EMAIL_ADDRESS_DATA}    kittiya_test@gmail.com
 ${MY_ORDER_GUEST_BILLING_LAST_NAME}    Billing Last Name
 ${MY_ORDER_GUEST_BILLING_LAST_NAME_DATA}    Thipathikeat
-${GUEST_ORDER_REFERENCE_NUMBER_ERROR_TEXT}    This is a required field.
-${GUEST_EMAIL_ADDRESS_ERROR_TEXT}    This is a required field.
-${GUEST_BILLING_LAST_NAME_ERROR_TEXT}    This is a required field.
-${MY_ORDER_NEWSLETTER_ERROR_TEXT}    This is a required field.
-${ENTER_EMAIL_EMPTY_ERROR}    This is a required field.
+${GUEST_ORDER_REFERENCE_NUMBER_ERROR_TEXT}    The field is mandatory.
+${GUEST_EMAIL_ADDRESS_ERROR_TEXT}    The field is mandatory.
+${GUEST_BILLING_LAST_NAME_ERROR_TEXT}    The field is mandatory.
+${MY_ORDER_NEWSLETTER_ERROR_TEXT}    The field is mandatory..
+${ENTER_EMAIL_EMPTY_ERROR}    The field is mandatory.
 ${ENTER_EMAIL_INVALID_ERROR}    Please enter a valid email address (Ex: sally@domain.com)
 
 #MY_ORDER_GUEST

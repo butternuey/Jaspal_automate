@@ -17,9 +17,8 @@ Login
     Click Element    ${LOGIN_PASSWORD_TEXTBOX}
     Input Text    ${LOGIN_PASSWORD_TEXTBOX}    ${LOGIN_PASSWORD}
     Click Element    ${LOGIN_BUTTON}
-    Sleep    1s
-    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
-    Sleep    1s
+    Sleep    3s
+
 Logout
     Wait Until Page Contains Element    ${LOGIN_ICON}
     Click Element    ${LOGIN_ICON}
@@ -57,3 +56,17 @@ Accept Cookies
     Wait Until Page Contains Element    xpath=//div[@role="document"]//p[text()='The JASPAL site uses cookies.']
     Click Element    xpath=//button[@class="action allow primary btn btn--primary"]
     Sleep    2s
+
+Close Free Gift Popup
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}    10s
+    Sleep    2s
+    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
+    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}    10s
+
+Delete Item And Verify Empty Bag
+    #Verify the Delete button in view bags
+    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}    10s
+    #Click delete button
+    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
+    #Verify my bag page is empty
+    Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_EMPTY_TEXT}    10s

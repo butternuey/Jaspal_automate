@@ -72,6 +72,7 @@ Header-Mini Cart_TC_2: Add/Update/Delete Product_Mini Cart_Register.
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #----------------------- Add Product in minicart -------------------------------
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
@@ -149,6 +150,7 @@ Header-Mini Cart_TC_4: Verify Bag Empty Message_Register.
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Mini cart icon
     Click Element    ${MINI_CART_ICON}
     Sleep    1s
@@ -174,7 +176,7 @@ Header-Mini Cart_TC_5: To verify guest user view the shopping bag page.
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
-     #Click on ADD TO BAG button
+    #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
@@ -195,10 +197,7 @@ Header-Mini Cart_TC_5: To verify guest user view the shopping bag page.
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT} 
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    2s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
     #Verify the move to wish list button
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST}
     #Verify the Delete button in view bags
@@ -246,6 +245,7 @@ Header-Mini Cart_TC_6: To verify register user view the shopping bag page.
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -255,7 +255,7 @@ Header-Mini Cart_TC_6: To verify register user view the shopping bag page.
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
-     #Click on ADD TO BAG button
+    #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
@@ -276,10 +276,7 @@ Header-Mini Cart_TC_6: To verify register user view the shopping bag page.
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT} 
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    2s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
     #Verify the move to wish list button
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER}
     #Verify the Delete button in view bags
@@ -335,7 +332,7 @@ Header-Mini Cart_TC_7: To verify guest able to delete the product from shopping 
     Sleep    2s
     #Click on product list
     Click Element    ${PLP_PRODUCT_1}
-     #Click on ADD TO BAG button
+    #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
     Sleep    4s
@@ -354,20 +351,16 @@ Header-Mini Cart_TC_7: To verify guest able to delete the product from shopping 
     Click Element    ${VIEW_MY_BAG_BUTTON}
     #---------------------- VIEW MY BAG Page --------------------------------
     #Verify View my bag page
-    Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT} 
-    #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    2s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    #Verify the Delete button in view bags
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
-    #Click delete button
-    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
-    #Verify my bag page is empty
-    Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_EMPTY_TEXT}
+    Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT}
+    #Check Free gift popup
+    Sleep    5s
+    #Close Free Gift Popup
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
+    #Delete Item And Verify Empty Bag 
+    Delete Item And Verify Empty Bag   
     Delete All Cookies
     Close Browser
+        
 
 Header-Mini Cart_TC_8: To verify registered customer able to delete the product from shopping bag page.
     #Open Browser
@@ -376,6 +369,7 @@ Header-Mini Cart_TC_8: To verify registered customer able to delete the product 
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -407,16 +401,10 @@ Header-Mini Cart_TC_8: To verify registered customer able to delete the product 
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT} 
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    5s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    #Verify the Delete button in view bags
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
-    #Click delete button
-    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
-    #Verify my bag page is empty
-    Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_EMPTY_TEXT}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
+    #Delete Item And Verify Empty Bag 
+    Delete Item And Verify Empty Bag
+    Logout
     Delete All Cookies
     Close Browser
 
@@ -455,10 +443,7 @@ Header-Mini Cart_TC_9: To verify guest able to Update the product quantity from 
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT} 
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    5s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
     #Click on the increase button to update the product
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INCREASE_QTY}
     Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INCREASE_QTY}
@@ -477,6 +462,7 @@ Header-Mini Cart_TC_10: To verify registered customer able to Update the product
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
@@ -506,10 +492,7 @@ Header-Mini Cart_TC_10: To verify registered customer able to Update the product
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT} 
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    3s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
     #Click on the increase button to update the product
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INCREASE_QTY}
     Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_INCREASE_QTY}
@@ -528,6 +511,7 @@ Header-Mini Cart_TC_10: To verify registered customer able to Update the product
     Logout
     Delete All Cookies
     Close Browser
+
 Header-Mini Cart_TC_11: To verify guest customer able to add product to Wishlist from shopping bag page.
     #Open Browser
     Open Website
@@ -563,10 +547,7 @@ Header-Mini Cart_TC_11: To verify guest customer able to add product to Wishlist
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT} 
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    5s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
     #Verify the Wishlist icon on Shopping bag page
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST}
     #Click on Wishlist icon on shopping bag
@@ -593,6 +574,7 @@ Header-Mini Cart_TC_12: To verify registered customer able to add product to Wis
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -624,10 +606,7 @@ Header-Mini Cart_TC_12: To verify registered customer able to add product to Wis
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT}
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    5s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
     #Verify the Wishlist icon on Shopping bag page
     Sleep    2s
     Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_MOVE_TO_WISTLIST_REGISER_USER}
@@ -693,10 +672,7 @@ Header-Mini Cart_TC_13: To verify guest customer is not able to see JPS section.
     #Verify View my bag page
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_TEXT}
     #Close Free gift popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
-    Sleep    5s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}
+    #Close Free Gift Popup --> Uncomment this keyword when active Free gift popup from magento only
     #Verify the Order Information title on my bag page
     Wait Until Page Contains Element    ${VIEW_MY_BAG_ORDER_INFORMATION_SECTION}
     #Verify JPS Club section Should not show on my bag page
@@ -803,6 +779,7 @@ Header-Mini Cart_TC_15: To verify as register customer is able to Redeem promoti
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -899,6 +876,7 @@ Header-Mini Cart_TC_16: To Verify customer able to add Free gift product to bag 
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -991,6 +969,7 @@ Header-Mini Cart_TC_17: To Verify customer able to add Gift box product to bag f
     Accept Cookies
     #Login
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product

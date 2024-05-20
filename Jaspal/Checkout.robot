@@ -137,6 +137,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -224,6 +225,7 @@ Checkout_TC_3: To verify registered customer able to create new shipping address
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -337,6 +339,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
@@ -424,6 +427,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     #Click on Search icon
     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
     #Serch Product
