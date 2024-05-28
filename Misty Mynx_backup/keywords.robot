@@ -7,6 +7,9 @@ Resource    variables_text.robot
 Open Website
     Open Browser    ${URL}    gc  
     Maximize Browser Window
+Open Worn Website
+    Open Browser    ${WORN_URL}    gc  
+    Maximize Browser Window
 Login
     [Arguments]    ${LOGIN_EMAIL}    ${LOGIN_PASSWORD}
     Click Element    ${LOGIN_ICON}
@@ -17,23 +20,24 @@ Login
     Click Element    ${LOGIN_PASSWORD_TEXTBOX}
     Input Text    ${LOGIN_PASSWORD_TEXTBOX}    ${LOGIN_PASSWORD}
     Click Element    ${LOGIN_BUTTON}
-    Sleep    3s
-
+    Sleep    1s
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
+    Sleep    1s
 Logout
     Wait Until Page Contains Element    ${LOGIN_ICON}
     Click Element    ${LOGIN_ICON}
     Click Element    ${LOGOUT_MENU}
-    Wait Until Page Contains Element    ${WEB_LOGO}
+    Wait Until Page Contains Element    ${WEB_LOGO_MM}
 Create Account
     Click Element    ${LOGIN_ICON}
     Click Element    ${CREATE_ACCOUNT_MENU}
     Wait Until Element Contains    ${CREATE_ACCOUNT_POPUP}    CREATE ACCOUNT
     
 Delete Account
-    Open Browser    ${ADMIN_JAS_URL}    Chrome
+    Open Browser    ${ADMIN_MM_URL}    Chrome
     Delete All Cookies
     #Should enter data by Login Magento >> input 2FA >> inspect >> application >> cookies >> admin ad
-    Add Cookie    admin    45a3128b344612c074bd20761f01ab56
+    Add Cookie    admin    6ce10e5b525df4a80c3bbe0ba161ab45
     Reload Page
     Maximize Browser Window
     Click Element    ${ADMIN_CUSTOMER_MENU}
@@ -44,7 +48,7 @@ Delete Account
     Input Text    ${ADMIN_CUSTOMER_ALL_CUSTOMER_SEARCH_FIELD}    kittiyanuey994@gmail.com
     sleep    5s
     #Check 
-    Click Element    xpath=//div[text()='kittiyanuey994@gmail.com']//ancestor::tr/td/div[text()='JASPAL Main Website']//ancestor::tr//input[@class='admin__control-checkbox']
+    Click Element    xpath=//div[text()='kittiyanuey994@gmail.com']//ancestor::tr/td/div[text()='MistyMynx Main Website']//ancestor::tr//input[@class='admin__control-checkbox']
     Click Element    xpath=//div[@class='action-select-wrap']/button[@class='action-select']
     Click Element     xpath=//div[contains(@data-bind, "listing_massaction")]//div[@class="action-menu-items"]//span[text()='Delete']
     Wait Until Element Contains    xpath=//header[@class="modal-header"]/h1[contains(@id, "modal-title-")]    Delete items
@@ -53,20 +57,21 @@ Delete Account
     Sleep    5s
 
 Accept Cookies
-    Wait Until Page Contains Element    xpath=//div[@role="document"]//p[text()='The JASPAL site uses cookies.']
+    Wait Until Page Contains Element    xpath=//div[@role="document"]//p[text()='The MISTY MYNX site uses cookies.']
     Click Element    xpath=//button[@class="action allow primary btn btn--primary"]
     Sleep    2s
 
-Close Free Gift Popup
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP}    20s
-    Sleep    5s
-    Click Element    ${VIEW_MY_BAG_FREE_GIFT_POPUP_CLOSE}
-    Wait Until Element Is Not Visible    ${VIEW_MY_BAG_FREE_GIFT_POPUP}    10s
-
-Delete Item And Verify Empty Bag
-    #Verify the Delete button in view bags
-    Wait Until Page Contains Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}    10s
-    #Click delete button
-    Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
-    #Verify my bag page is empty
-    Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_EMPTY_TEXT}    10s
+	
+Change Password
+     Click Button    ${CHANGE_PASSWORD_BTN_2}
+     Wait Until Page Contains    ${EDIT_PROFILE_2}
+     Execute Javascript    window.scrollTo(0,900)
+     Wait Until Page Contains Element    ${CURRENT_PASSWORD_TXT_2}                        
+     Input Text    ${CURRENT_PASSWORD_TXT_2}    ${CURRENT_PASSWORD_2}  
+     Click Element    ${NEW_PASSWORD_TXT_2}
+     Input Password    ${NEW_PASSWORD_TXT_2}     ${NEW_PASSWORD_2}
+     Click Element    ${CONFIRM_PASSWORD_TXT_2}    
+     Input Password    ${CONFIRM_PASSWORD_TXT_2}     ${CONFIRM_PASSWORD_2}
+     Sleep    5s
+     Click Element    ${UPDATE_PASSWORD_BTN_2}
+     Close All Browsers

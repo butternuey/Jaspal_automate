@@ -68,17 +68,17 @@ Header-General_TC_6: Verify Mega Menu / Bread Crumbs_Guest.
     Open Website
     Accept Cookies
     #Click New In collection
-    Click Element    ${HEADER_COLLECTION_SALE} 
-    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_SALE}
+    Click Element    ${HEADER_COLLECTION_NEW_IN} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_NEW_IN}
     #Click Collection collection
-    Click Element    ${HEADER_COLLECTION_WOMEN} 
-    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_WOMEN}        
+    Click Element    ${HEADER_COLLECTION_COLLECTION} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_COLLECTION}        
     #Click Active collection
-    Click Element    ${HEADER_COLLECTION_MEN}
-    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_MEN} 
-    # #Click QA Product collection
-    # Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
-    # Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
+    Click Element    ${HEADER_COLLECTION_ACTIVE}
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_ACTIVE} 
+    #Click QA Product collection
+    Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
     Delete All Cookies
     Close Browser
 
@@ -87,18 +87,18 @@ Header-General_TC_7: Verify Mega Menu / Bread Crumbs_Register.
     Accept Cookies
     Login    ${CREATE_ACCOUNT_EMAIL}    ${CREATE_ACCOUNT_PASSWORD}
     Wait Until Element Is Not Visible    ${LOGIN_POPUP}
-     #Click New In collection
-    Click Element    ${HEADER_COLLECTION_SALE} 
-    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_SALE}
+    #Click New In collection
+    Click Element    ${HEADER_COLLECTION_NEW_IN} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_NEW_IN}
     #Click Collection collection
-    Click Element    ${HEADER_COLLECTION_WOMEN} 
-    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_WOMEN}        
+    Click Element    ${HEADER_COLLECTION_COLLECTION} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_COLLECTION}        
     #Click Active collection
-    Click Element    ${HEADER_COLLECTION_MEN}
-    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_MEN} 
-    # #Click QA Product collection
-    # Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
-    # Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
+    Click Element    ${HEADER_COLLECTION_ACTIVE}
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_ACTIVE} 
+    #Click QA Product collection
+    Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
     Logout
     Delete All Cookies
     Close Browser

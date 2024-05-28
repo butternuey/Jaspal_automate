@@ -106,7 +106,7 @@ Create_Account_TC_2: Verify User Has to Fill All Mandatory Fields to Register.
     Close Browser
 
 Create_Account_TC_3: Verify User Has to Fill All Mandatory Fields to Register.
-    [Documentation]    Does not select PDPA Checkbox to verify error text
+    [Documentation]    Does not select PDPA Checkbox to verify error text.
     Open Website
     Accept Cookies
     Create Account

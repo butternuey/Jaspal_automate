@@ -7,11 +7,6 @@ ${COLLECTION_NEW_IN}    New In
 ${COLLECTION_COLLECTION}    Collection   
 ${COLLECTION_ACTIVE}    Active  
 ${COLLECTION_QA_PRODUCT}    QA Product
-${COLLECTION_SALE}    SALE
-${COLLECTION_WOMEN}    Women
-${COLLECTION_MEN}    Men
-${COLLECTION_CAMPAIGN}    Campaign
-
 
 #MINI_CART
 ${MINI_CART_TEXT}    My Bag
@@ -28,7 +23,8 @@ ${PROMOTION_CODE}    CRM10
 ${MY_WISHLIST_TEXT}    MY WISHLIST
 
 #Product
-${PRODUCT_1}    Floral Long Sleeve Midi Dress
+${PRODUCT_1}    Mynx Love Tee
+${PRODUCT_2}    Logo Tape Pullover
 
 #SUCCESS
 ${SUCCESS_TEXT}    SUCCESS
@@ -44,7 +40,7 @@ ${JASPAL_COMMUNITY_ENTER_EMAIL}    kittiyanuey0001@gmail.com
 ${JASPAL_COMMUNITY_ENTER_EMAIL_1}    kittiyanuey0002@gmail.com
 ${JASPAL_COMMUNITY_ENTER_EMAIL_INVALID}    invalidemail.com
 ${BREADCRUMBS_ORDER_INFORMATION}    Order Information
-${BREADCRUMBS_OUR_STORY}    Our Story     
+${BREADCRUMBS_MM_OUR_STORY}    MM Our Story     
 ${BREADCRUMBS_WORK_WITH_US}    Work With Us
 ${BREADCRUMBS_FAQ}    Frequently Asked Question
 ${BREADCRUMBS_EXCHANGE}    Exchange and Returns Policy
@@ -56,16 +52,16 @@ ${ONLINE_CREDITS}    Online Credits
 ${FOOTER_PDPA_ERROR_TEXT}    Please agree to the PDPA policy.
 ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_MESSAGE}    Thank you for your subscription.
 ${ORDER_REFERENCE_NUMBER}    Order Reference Number
-${GUEST_ORDER_REFERENCE_NUMBER}    JASEN240000005602
+${GUEST_ORDER_REFERENCE_NUMBER}    MIMEN240000003103
 ${ORDER_EMAIL_ADDRESS}    Email Address    
 ${MY_ORDER_GUEST_EMAIL_ADDRESS_DATA}    kittiya_test@gmail.com
 ${MY_ORDER_GUEST_BILLING_LAST_NAME}    Billing Last Name
 ${MY_ORDER_GUEST_BILLING_LAST_NAME_DATA}    Thipathikeat
-${GUEST_ORDER_REFERENCE_NUMBER_ERROR_TEXT}    The field is mandatory.
-${GUEST_EMAIL_ADDRESS_ERROR_TEXT}    The field is mandatory.
-${GUEST_BILLING_LAST_NAME_ERROR_TEXT}    The field is mandatory.
-${MY_ORDER_NEWSLETTER_ERROR_TEXT}    The field is mandatory..
-${ENTER_EMAIL_EMPTY_ERROR}    The field is mandatory.
+${GUEST_ORDER_REFERENCE_NUMBER_ERROR_TEXT}    This is a required field.
+${GUEST_EMAIL_ADDRESS_ERROR_TEXT}    This is a required field.
+${GUEST_BILLING_LAST_NAME_ERROR_TEXT}    This is a required field.
+${MY_ORDER_NEWSLETTER_ERROR_TEXT}    This is a required field.
+${ENTER_EMAIL_EMPTY_ERROR}    This is a required field.
 ${ENTER_EMAIL_INVALID_ERROR}    Please enter a valid email address (Ex: sally@domain.com)
 
 #MY_ORDER_GUEST
@@ -99,19 +95,19 @@ ${CREATE_ACCOUNT_GENDER_VALUE}    7
 ${CREATE_ACCOUNT_ISD_CODE}    66
 ${CREATE_ACCOUNT_PHONENUMBER}    820252263
 ${CREATE_ACCOUNT_PHONENUMBER_INVALID}    0820252263s
-${CREATE_ACCOUNT_FIRSTNAME_EMPTY_ERROR_TEXT}    The field is mandatory.
+${CREATE_ACCOUNT_FIRSTNAME_EMPTY_ERROR_TEXT}    This is a required field.
 ${CREATE_ACCOUNT_FIRSTNAME_LATTERS_ERROR_TEXT}    Please use letters only (a-z or A-Z) in this field.   
-${CREATE_ACCOUNT_LASTNAME_EMPTY_ERROR_TEXT}    The field is mandatory.
+${CREATE_ACCOUNT_LASTNAME_EMPTY_ERROR_TEXT}    This is a required field.
 ${CREATE_ACCOUNT_LASTNAME_LATTERS_ERROR_TEXT}    Please use letters only (a-z or A-Z) in this field.       
-${CREATE_ACCOUNT_EMAIL_EMPTY_ERROR_TEXT}    The field is mandatory.   
-${CREATE_ACCOUNT_PASSWORD_EMPTY_ERROR_TEXT}    The field is mandatory.   
-${CREATE_ACCOUNT_RE_ENTER_PASSWORD_EMPTY_ERROR_TEXT}    The field is mandatory.
+${CREATE_ACCOUNT_EMAIL_EMPTY_ERROR_TEXT}    This is a required field.   
+${CREATE_ACCOUNT_PASSWORD_EMPTY_ERROR_TEXT}    This is a required field.   
+${CREATE_ACCOUNT_RE_ENTER_PASSWORD_EMPTY_ERROR_TEXT}    This is a required field.
 ${CREATE_ACCOUNT_RE_ENTER_PASSWORD_NOT_MATCH_ERROR_TEXT}    Your passwords don't match. Please verify and try again. 
-${CREATE_ACCOUNT_DOB_EMPTY_ERROR_TEXT}    The field is mandatory.    
-${CREATE_ACCOUNT_GENDER_EMPTY_ERROR_TEXT}    The field is mandatory.   
-${CREATE_ACCOUNT_PHONENUMBER_EMPTY_ERROR_TEXT}    The field is mandatory.
+${CREATE_ACCOUNT_DOB_EMPTY_ERROR_TEXT}    This is a required field.    
+${CREATE_ACCOUNT_GENDER_EMPTY_ERROR_TEXT}    This is a required field.   
+${CREATE_ACCOUNT_PHONENUMBER_EMPTY_ERROR_TEXT}    This is a required field.
 ${CREATE_ACCOUNT_PHONENUMBER_INVALID_ERROR_TEXT}    Please enter a valid number in this field.
-${CREATE_ACCOUNT_TC_PDPA_CHECKBOX_EMPTY_ERROR_TEXT}    Please check the checkbox to register into the JASPAL site    
+${CREATE_ACCOUNT_TC_PDPA_CHECKBOX_EMPTY_ERROR_TEXT}    Please check the checkbox to register into the MISTY MYNX site    
 
 #SHIPPING
 ${SHIPPING_INFORMATION_TEXT}    Shipping Information
