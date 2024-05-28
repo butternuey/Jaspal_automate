@@ -7,11 +7,6 @@ Resource    variables_text.robot
 Open Website
     Open Browser    ${URL}    gc  
     Maximize Browser Window
-
-Open Worn Website
-    Open Browser    ${WORN_URL}    gc  
-    Maximize Browser Window
-
 Login
     [Arguments]    ${LOGIN_EMAIL}    ${LOGIN_PASSWORD}
     Click Element    ${LOGIN_ICON}
@@ -62,18 +57,3 @@ Accept Cookies
     Wait Until Page Contains Element    xpath=//div[@role="document"]//p[text()='The MISTY MYNX site uses cookies.']
     Click Element    xpath=//button[@class="action allow primary btn btn--primary"]
     Sleep    2s
-
-Change Password
-     Click Button    ${CHANGE_PASSWORD_BTN_2}
-     Wait Until Page Contains    ${EDIT_PROFILE_2}
-     Execute Javascript    window.scrollTo(0,900)
-     Wait Until Page Contains Element    ${CURRENT_PASSWORD_TXT_2}                        
-     Input Text    ${CURRENT_PASSWORD_TXT_2}    ${CURRENT_PASSWORD_2}  
-     Click Element    ${NEW_PASSWORD_TXT_2}
-     Input Password    ${NEW_PASSWORD_TXT_2}     ${NEW_PASSWORD_2}
-     Click Element    ${CONFIRM_PASSWORD_TXT_2}    
-     Input Password    ${CONFIRM_PASSWORD_TXT_2}     ${CONFIRM_PASSWORD_2}
-     Sleep    5s
-     Click Element    ${UPDATE_PASSWORD_BTN_2}
-     Close All Browsers
-        

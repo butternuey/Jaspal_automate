@@ -1,7 +1,6 @@
 *** Variables ***
 #URL_WEBSITE
 ${URL}    https://mcstaging-2-4.mistymynx.com/
-${WORN_URL}    https://mcstaging-2-4.mistymynx.com/555
 
 #WEB_LOGO
 ${WEB_LOGO_MM}    css=#html-body > div.page-wrapper > header > div.container > div > a > img
@@ -18,7 +17,7 @@ ${HEADER_COLLECTION_COLLECTION}    xpath=//nav/ul/li/a/span[text()="Collection"]
 ${HEADER_COLLECTION_ACTIVE}    xpath=//nav/ul/li/a/span[text()="Active"]    
 ${HEADER_COLLECTION_QA_PRODUCT}    xpath=//nav/ul/li/a/span[text()="QA Product"]
 ${HEADER_BREADCRUMBS}    xpath=//div[@class="breadcrumbs"]
-${HEADER_DROPDOWN_LANGUAGE_ENG}    xpath=//div[@class="panel wrapper"]//div[contains(@class, "dropdown")]//span[contains(text(), "En")][@class="header-switcher-lebel"]
+${HEADER_DROPDOWN_LANGUAGE_ENG}    xpath=xpath=//div[@class="panel wrapper"]//div[contains(@class, "dropdown")]//span[contains(text(), "En")][@class="header-switcher-lebel"]
 ${HEADER_DROPDOWN_LANGUAGE_THAI}    xpath=//div[@class="panel wrapper"]//div[contains(@class, "dropdown")]//span[contains(text(), "Th")][@class="header-switcher-lebel"]
 ${HEADER_DROPDOWN_LANGUAGE_THAI_OPTION}    xpath=//div[@class="panel wrapper"]//div[contains(@class, "dropdown")]//a[contains(text(), "ไทย")]
 ${HEADER_DROPDOWN_CURRENCY_THB}    xpath=//div[@class="panel wrapper"]//div[contains(@class,'dropdown')]//div[@id="switcher-currency-trigger-nav"]//strong[@class="language-THB"]
@@ -250,9 +249,9 @@ ${LOGIN_FACEBOOK}    css=#customer-popup-login-form > fieldset > div.social-link
 ${LOGIN_GOOGLE}    css=#customer-popup-login-form > fieldset > div.social-links > a:nth-child(2)
 ${LOGIN_EMAIL_ERROR}    xpath=//div[@class="control"]//div[@id="email-login-error"]
 ${LOGIN_PASSWORD_ERROR}    xpath=//div[@class="field password form-group required margin-bottom-5"]//div[@id="pass-login-error"]    
+${LOGIN_EMAIL}
+${LOGIN_PASSWORD}
 ${LOGIN_HI}    xpath=//div[@class="header-links-menu panel header arrow_box"]//ul//li//span[contains(text(),"Hi,")]
-${LOGIN_EMAIL}    tanaporn.t@jaspal.co.th
-${LOGIN_PASSWORD}    Ae1234567#
 
 #LOGIN_ERROR
 ${LOGIN_ERROR_EMAIL}    css=#email-login-error
@@ -316,168 +315,3 @@ ${ADMIN_CUSTOMER_ALL_CUSTOMER_DELETE_CUSTOMER_POPUP}    xpath=//div[contains(@id
 ${ADMIN_CUSTOMER_ALL_CUSTOMER_DELETE_CUSTOMER_POPUP_CLOSE_ICON}    css=#html-body > div.modals-wrapper > aside.modal-popup.confirm._show > div.modal-inner-wrap > header > button
 ${ADMIN_CUSTOMER_ALL_CUSTOMER_DELETE_CUSTOMER_POPUP_OK_BUTTON}    xpath=//div[contains(text(), 'Are you sure you want to do this?')]/ancestor::div[@class='modal-inner-wrap']//button[contains(@class, 'action-primary') and contains(@class, 'action-accept')]
 ${ADMIN_CUSTOMER_ALL_CUSTOMER_DELETE_CUSTOMER_POPUP_CANCEL_BUTTON}    css=#html-body > div.modals-wrapper > aside.modal-popup.confirm._show > div.modal-inner-wrap > footer > button.action-secondary.action-dismiss
-
-#UPDATE_PASSWORD
-${MY_PROFILE_BTN_2}    xpath://*[@id="html-body"]/div[5]/header/div[2]/div/div[3]/div[2]/div[1]/ul/li[2]/div/ul/li[3]/a  
-${CHANGE_PASSWORD_BTN_2}    xpath://*[@id="editprofilepasswd"]
-${CURRENT_PASSWORD_TXT_2}   xpath=//fieldset[@class="fieldset password"]//div[@class="field password current required"]//div[@class="control"]//input[@name="current_password"]
-${NEW_PASSWORD_TXT_2}    xpath://*[@id="password"]
-${CONFIRM_PASSWORD_TXT_2}    xpath://*[@id="password-confirmation"]
-${UPDATE_PASSWORD_BTN_2}    xpath=//form[@class="form form-edit-account"]//button[@class="action save primary btn-active btn btn--primary"]//span[text()='Update Password']    
-${ERROR_CONFIRM_PASSWORD_2}    xpath://div[@id="password-confirmation-error"]     
-${ERROR_CURRENT_PASSWORD_2}    xpath://*[@id="html-body"]/div[6]/aside[4]/div[2]/header            
-${ERROR_CURRENT_BTN_2}    xpath://button[@class="action-primary action-accept"]    
-${ERROR_EMPTY_CURRENT_PWD_2}    xpath://div[@id="current-password-error"]    
-${ERROR_EMPTY_NEW_PWD_2}    xpath://div[@id="password-error"]
-${ERROR_EMPTY_CONFIRM_PWD_2}    xpath://div[@id="password-confirmation-error"]  
-
-#PDP
-${SEARCH_BTN_2}    xpath://div[@class="desktop-search-btn"]
-${SEARCH_TXT_2}    xpath://input[@id="search"]  
-${SEARCH_RESULT_2}    xpath://*[@id="search_mini_form"]/div[2]/button
-${RESULT_PRODUCT_2}    xpath://*[@id="maincontent"]/div[4]/div/div[3]
-${PDP_ADDTOBAG_BTN_2}    xpath://div[@class='addtocart-wrapper']/descendant::button
-${PDP_COLOR_ERROR_MSG_2}    xpath:(//div[contains(@class,'mage-error')])[1]
-${PDP_SIZE_ERROR_MSG_2}    xpath:(//div[contains(@class,'mage-error')])[2]
-${PROFILE_BTN_2}    xpath://*[@class="header-links-wrapper cps-login text-center"]/span/em
-${LOGOUT_2}    css=#html-body > div.page-wrapper > header > div.container > div > div.page-header__right > div.header-links-wrapper.cps-login.text-center.active > div.header-links-menu.panel.header.arrow_box > ul > li.authorization-link
-${MYNX_LOVE_TEE_2}    xpath://*[@id="maincontent"]/div[4]/div/div[4]/div[2]/ol/li/div/a/span/span
-${PDP_RESULT_MYNX_LOVE_TEE_2}    xpath://*[@id="html-body"]/div[5]/div[2]/div/ul/li[2]/strong
-${PDP_INCREASE_QTY_2}    xpath://span[@class="increaseQty"]   
-${PDP_DECREASE_QTY_2}    xpath://span[@class="decreaseQty"]
-${PDP_PRODUCT_COUNT_2}    xpath://div[contains(@class,'field qty')]/descendant::input
-${PDP_OK_BTN_2}    xpath://*[@class="action-primary action-accept"]
-${PDP_ZERO_QTY_MSG_2}    xpath://div[contains(text(),'greater')]   
-${PDP_POPUP_ERROR_MAX_2}    xpath://div[contains(text(),'only purchase')]
-${PDP_REG_BACKTOTOP_2}    xpath://div[@class='arrow']
-${PDP_REG_USER_FAV_2}    css=#product_addtocart_form > div.product-options-bottom > div > div > div.actions.addtocart-container > div.product-social-links > div.product-addto-links > div > button
-${PDP_GUEST_USER_FAV_2}    xpath:(//a[@data-action='add-to-wishlist'])[1]
-${PDP_FAV_ITEMLIST_2}    xpath://*[@id="product_addtocart_form"]/div[2]/div/div/div[2]/div[3]/div[1]/div/ul/li[1]/span
-${PDP_WLPOPUP_2}    xpath://p[@class="message success "]/span
-${SCROLL_TOP_2}    xpath://div[@class='scroll-top']
-
-#PLP
-${PLP_NEWIN_2}    xpath://*[@id="maincontent"]/div[4]/div/div[3]/div/div/div[2]/div/div/div/div/div/div[1]/div[1]/figure/a/img[1]
-${PLP_DAILY_WEAR_2}    xpath://*[@id="maincontent"]/div[4]/div/div[3]/div/div/div[7]/div/div/div/div/div/div[3]/div[2]/div/a
-${PLP_HEADER_TITLE_2}     xpath://li[@class="item category1676"]/strong
-${PLP_TITLE_2}    xpath://span[@data-ui-id='page-title-wrapper']
-${PLP_PRODUCT_COUNT_2}    xpath://*[@id="toolbar-amount"]
-${PLP_FILTER_2}    xpath://*[@id="layered-filter-block"]/div[1]/strong/span[1]
-#Filter On Price
-${PRICE_SLIDER_2}    xpath://*[@id="narrow-by-list"]/div/div[2]/div/div[3]/div
-${PLP_APPLY_FILTER_2}    xpath://*[@id="layered-filter-block"]/div[2]/div[3]/a
-${PLP_RESET_FILTER_2}    xpath://a[@class="action clear filter-clear"]/span
-#Filter On Size
-${PLP_FILTER_SMALL}    xpath://div[@class='swatch-option text selected']//[contains(@data-option-label, "L")]
-${PLP_FILTER_SMALL_2}    xpath://a[@data-label='size=S'][1]
-#Filter On Color
-${PLP_FILTER_COLOR}    xpath://div[contains(text(), 'Navy')]
-#Sort
-${PLP_SORT_2}    xpath://*[@id="maincontent"]/div[2]/div[1]/div[3]/div[2]/div[4]/div/div  
-${PLP_SORT_SIZE_2}    xpath://*[@id="maincontent"]/div[2]/div[1]/div[3]/div[2]/div[4]/div/ul 
-${PLP_SORT_MOST_STOCKED_2}    xpath://*[@id="maincontent"]/div[2]/div[1]/div[3]/div[2]/div[4]/div/ul/li[2]  
-${PLP_SORT_NEWEST_TO_OLDEST_2}    xpath://*[@id="maincontent"]/div[4]/div/div[4]/div[1]/div[4]/div/ul/li[3]
-${PLP_SORT_LOW2HIGH_2}    xpath://*[@id="maincontent"]/div[2]/div[1]/div[3]/div[2]/div[4]/div/ul/li[4]
-${PLP_SORT_HIGH2LOW_2}    xpath://*[@id="maincontent"]/div[2]/div[1]/div[3]/div[2]/div[4]/div/ul/li[5]
-#Wishlist
-${PLP_SEARCH_2}    xpath://*[@id="search"]
-${PLP_SEARCH_RESULT_2}    xpath://li[@class="item search"]/strong
-${PLP_PRODUCT_LIST_2}    xpath://*[@id="maincontent"]/div[4]/div/div[4]/div[2]/ol/li/div
-${PLP_RESULT_PRODUCT_2}    xpath://li[@class="item product"]/strong
-${PLP_MOVETO_WL_2}    xpath://*[@id="maincontent"]/div[4]/div/div[4]/div[2]/ol/li/div/div/div[3]/div[1]/div[2]/div/button
-${PLP_ITEMLIST_WL_2}    xpath://*[@id="maincontent"]/div[4]/div/div[4]/div[2]/ol/li/div/div/div[3]/div[1]/div[2]/div/ul/li[1]/span
-${PLP_POPUPTO_WL_2}    css=#html-body > div.modals-wrapper > aside.modal-popup.messages._show > div.modal-inner-wrap
-${PLP_CF_MW_2}    xpath://button[@class="action-primary action-accept"]/span
-${ACCOUNT_MY_WISHLIST_2}    xpath:(//a[contains(text(),'My Wishlist')])[2]
-${MY_WISHLIST_TITLE_2}    xpath://h1[@class="page-title-wrapper"]
-${CHECKBOX_MW_2}    xpath://*[@id="wishlist-select-all"]
-${ADD_ALL_TOBAG_MW_2}    xpath://*[@id="wishlist-view-form"]/div[1]/div/div[6]/div/div/div[2]/div/div[3]/div/button
-${PLP_POPUP_TOBAG_MW_2}    xpath://*[@id="html-body"]/div[8]/aside[3]/div[2]
-
-#MY ACCOUNT
-${ACC_DASHBOARD_2}    xpath://div[@class='header-links-menu panel header arrow_box']/descendant::a[contains(text(),'Dashboard')]
-${DASHBOARD_TITLE_2}    xpath://li[@class="nav item current"]/strong
-${MYORDER_MENU_2}    xpath://ul[@class='nav items']/descendant::a[contains(text(),'My Orders')]
-${MYORDER_TITLE_2}    xpath://div[@class='column main']/descendant::span[contains(text(),'My Orders')]
-${MYORDER_FILTER_STATUS_2}    xpath://input[@class='chosen-search-input default']
-${MYORDER_FILTER_DDL_2}    xpath://div[@class='chosen-drop']/descendant::li
-${MYORDER_APPLY_FILTER_2}    xpath://button[contains(text(),'Apply Filter')]
-${MYORDER_FILTER_RESET_2}    xpath://div[@class='column main']/descendant::p[contains(text(),'RESET')]
-${MYORDER_FILTER_STATUS_2}    xpath://li[@class='search-field']/descendant::input[@value='FILTER BY STATUS']
-${MYPROFILE_MENU_2}    xpath://ul[@class='nav items']/descendant::a[contains(text(),'My Profile')]
-${MYPROFILE_TITLE_2}    xpath://*[@id="maincontent"]/div[2]/div[1]/div[1]/div[1]/h1
-${MYPROFILE_EDIT_2}    xpath://a[@id='editprofile']
-${MYPROFILE_CHANGE_EMAIL_CHECKBOX_2}    xpath://div[@class='choice custom-checkbox control']/descendant::input[@id='change-email']
-${MYPROFILE_EMAIL_EDIT_2}    xpath://div[@class='control']/descendant::input[@id='edit-email']
-${MYPROFILE_PWD_2}    xpath:(//div[@class='control']/descendant::input[@name='current_password'])[1]
-${MYPROFILE_SUCCESS_POPUP_2}    xpath://*[@id="html-body"]/div[6]/aside[4]/div[2]
-${MYPROFILE_OK_BTN_2}    xpath://*[@id="html-body"]/div[6]/aside[4]/div[2]/footer/button
-${SOCIAL_LINK_FACEBOOK_2}    xpath://span[contains(text(),'Facebook')]
-${SOCIAL_LINK_GOOGLE_2}    xpath://span[contains(text(),'Google')]
-${MYWISHLIST_MENU_2}    xpath://div[contains(@class,'sidebar')]/descendant::a[contains(text(),'My Wishlist')]
-${MYWISHLIST_TITLE_2}    xpath://div[@class='container']/descendant::h1[contains(text(),'MY WISHLIST')]
-#Create Wishlist 
-${WISHLIST_CREATE_2}    xpath://div[@class='create']/descendant::span[contains(text(),'Create Wishlist')]
-${WISHLIST_NAME_2}    xpath://input[@id='wishlist-name']
-${WISHLIST_CHECKBOX_2}    xpath://div[@class='field choice']/descendant::input[@id='wishlist-public']
-${WISHLIST_CREATE_BTN_2}    xpath://div[@class='actions-toolbar']/descendant::button[@title='Save']
-${WISHLIST_CF_POPUP_2}    xpath:(//footer[@class='modal-footer']/descendant::button[@type='button'])[2]
-${WISHLIST_DFAULT_2}    xpath://div[@class='container']/descendant::div[contains(text(),'Private Wishlist')][1]
-${WISHLIST_INFO_2}    xpath://div[@class='container']/descendant::div[contains(text(),'Public Wishlist')][1]
-#Delete Wishlist
-${WISHLIST_DELETE_2}    xpath://div[@class='row wishlist-title']/descendant::button[@title='Delete Wishlist']
-${WISHLIST_DELETE_CFPOPUP_2}    xpath:(//footer[@class='modal-footer']/descendant::span[contains(text(),'OK')])[1]
-#View Wishlist
-${ACC_MY_WISHLIST_2}    xpath:(//a[contains(text(),'My Wishlist')])[2]
-${ACC_VERIFY_WISHLIST_TXT_2}    xpath://div[@class='row wishlist-title']/div[1]/strong[1]
-#Edit Wishlist
-${EDIT_WISHLIST_BTN_2}    xpath://div[@class='row wishlist-title']/descendant::a[@title='Edit Wishlist']
-${EDIT_WISHLIST_NAME_2}    xpath://div[@class='field']/descendant::input[@type='text']
-${WISHLIST_PRIVATE_TXT_2}    xpath:(//div[contains(text(),'Private Wishlist')])[1]
-${WISHLIST_SAVE_BTN_2}    xpath:(//footer[@class='modal-footer']/descendant::button[@class='action primary btn btn--primary'])[1]
-
-#UTILITY PAGES
-${FOOTER_CONTACTUS_2}    xpath://span[contains(text(),'Contact Us')]
-${CONTACTUS_PAGE_2}    xpath://strong[contains(text(),'Contact Us')]
-${CONTACTUS_FNAME_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='firstname']
-${CONTACTUS_LNAME_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='lastname']
-${CONTACTUS_EMAIL_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='email']
-${CONTACTUS_ISD_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='isd_code']
-${CONTACTUS_TELEPHONE_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='telephone']
-${CONTACTUS_REASON_LIST_2}    xpath://div[@class='control custom-select']/descendant::select
-${CONTACTUS_REASON_2}    xpath:(//select[@id='reason']/descendant::option)[2]
-${CONTACTUS_COMMENT_2}    xpath://textarea[@id='comment']
-${CONTACTUS_SUBMIT_2}    xpath://form[@class='form-contact-edit']/descendant::button[@class='action submit btn btn--primary']
-${CONTACTUS_POPUP_2}    xpath://span[contains(text(),'Thanks for contacting us! We will get back to you shortly.')]
-${CONTACTUS_OK_2}    xpath://span[contains(text(),'OK')]
-${URL_404ERROR_2}    xpath://*[@id="maincontent"]/div[2]/h1/span
-
-#PAYMENT AND ORDER CF
-#Shpping
-${PO_MYBAG_2}    xpath://span[@class='counter qty']/span[@class='counter-label']
-${PO_MYBAG_ICON_2}    xpath://span[@class='counter-number']
-${PO_MINICART_CHECKOUT_2}    xpath://div[@class='primary']/descendant::button[@id='top-cart-btn-checkout']
-${PO_SHPPING_TITLE_2}    xpath://div[@class="step-title"]
-${PO_SELECT_PROVINCE_2}    xpath:(//div[@id="checkout"]/descendant::div[@class="pdsd-label"])[1]
-${PO_PROVINCE_2}    xpath:(//div[@class="pdsd-province"]/descendant::p)[1]
-${PO_DISTRICT_2}    xpath:(//div[@class="pdsd-district"]/descendant::p)[1]
-${PO_SUBDISTRICT_2}    xpath:(//div[@class="pdsd-subdistrict"]/descendant::p)[1]
-${PO_POSTCODE_2}    xpath:(//select[@name="postcode"]/option[@value="37210"])[1]
-${PO_HOUSE_NUMBER_2}    xpath:(//input[@name='custom_attributes[house_number]'])[1]
-${PO_ROAD_2}    xpath:(//input[contains(@name,"street")])[1]
-${PO_PHONE_NUMBER_2}    xpath:(//input[@name='telephone'])[1]
-${PO_SHIPPING_METHOD_2}    xpath:(//*[@id="checkout-shipping-method-section"])[1]
-${PO_PROCEED_TO_PAYMENT_2}    xpath://button[@class="button action primary"]
-${PO_PAYMENT_TITLE_2}   xpath://div[@class="shipping-information-title main-heading"]
-${PO_SUBTOTAL_2}    xpath://tr[@class="totals sub"]
-#Payment
-${PO_CREDITCARD_2}    xpath://label[@class="label"]/descendant::span[text()='CREDIT/DEBIT CARD']
-${PO_CARD_NAME_2}    xpath://input[@id="omise_ccCardHolderName"]
-${PO_CARD_NUMBER_2}    xpath://input[@id="omise_ccCardNumber"]
-${PO_CARD_MONTH_2}   xpath://select[@id="omise_ccCardExpirationMonth"]
-${PO_CARD_YEAR_2}    xpath://select[@id="omise_ccCardExpirationYear"]
-${PO_CARD_CVV_2}    xpath://input[@id="omise_ccCardSecurityCode"]
-${PO_PROCEED_To_VIEWORDER_2}    xpath://button[@class="button action primary"]
-${PO_REVIEW_ORDER_2}    xpath://h2[text()='Review Order']
-${PO_PLACE_ORDER_2}    xpath://button[@class="button action primary"]
-${PO_THANK_MSG_2}    xpath://div[@class="order-body"]
