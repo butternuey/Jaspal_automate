@@ -310,6 +310,7 @@ Global Footer_TC_5: Newsletter Subcription_Guest
     #Click the enter button to subscribe the newspaper
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_ENTER_EMAIL_ARROW}
     #Verify success message
+    Sleep    2s
     Wait Until Element Contains    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_POPUP}    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_MESSAGE}
     #Click on ok button on popup
     Click Element    ${FOOTER_JOIN_THE_JASPAL_COMMUNITY_SUCCESS_POPUP_OK_BUTTON}

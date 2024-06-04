@@ -5,6 +5,7 @@ Resource    variables_locator.robot
 Resource    variables_text.robot
 
 *** Test Cases ***
+#Have to active Freegift befor test
 Header-Mini Cart_TC_1: Add/Update/Delete Product_Mini Cart_Guest.
     #Open Browser
     Open Website
@@ -23,6 +24,7 @@ Header-Mini Cart_TC_1: Add/Update/Delete Product_Mini Cart_Guest.
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -85,6 +87,7 @@ Header-Mini Cart_TC_2: Add/Update/Delete Product_Mini Cart_Register.
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -177,6 +180,7 @@ Header-Mini Cart_TC_5: To verify guest user view the shopping bag page.
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -258,6 +262,7 @@ Header-Mini Cart_TC_6: To verify register user view the shopping bag page.
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -338,6 +343,7 @@ Header-Mini Cart_TC_7: To verify guest able to delete the product from shopping 
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -388,6 +394,7 @@ Header-Mini Cart_TC_8: To verify registered customer able to delete the product 
     #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -437,6 +444,7 @@ Header-Mini Cart_TC_9: To verify guest able to Update the product quantity from 
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -488,6 +496,7 @@ Header-Mini Cart_TC_10: To verify registered customer able to Update the product
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -545,6 +554,7 @@ Header-Mini Cart_TC_11: To verify guest customer able to add product to Wishlist
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -605,6 +615,7 @@ Header-Mini Cart_TC_12: To verify registered customer able to add product to Wis
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -675,6 +686,7 @@ Header-Mini Cart_TC_13: To verify guest customer is not able to see JPS section.
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -721,6 +733,7 @@ Header-Mini Cart_TC_14: To verify as guest customer is able to Redeem promotion 
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -815,6 +828,7 @@ Header-Mini Cart_TC_15: To verify as register customer is able to Redeem promoti
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -911,6 +925,7 @@ Header-Mini Cart_TC_16: To Verify customer able to add Free gift product to bag 
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -1003,6 +1018,7 @@ Header-Mini Cart_TC_17: To Verify customer able to add Gift box product to bag f
      #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message

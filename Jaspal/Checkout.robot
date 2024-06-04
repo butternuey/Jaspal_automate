@@ -22,6 +22,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -40,6 +41,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Verify shipping page
+    Execute Javascript    window.scrollTo(0,0)
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
@@ -87,6 +89,7 @@ Checkout_TC_1: To Verfiy guest customer is able to see checkout page
     #Country
     Click Element    ${SHIPPING_SHIPPING_SECTION_COUNTRY_THAILAND}
     #PDSD
+    Sleep    3s
     Click Element    ${SHIPPING_SHIPPING_SECTION_PDSD_FIELD}
     Click Element    ${SHIPPING_SHIPPING_SECTION_PDSD_P_BANGKOK}
     Click Element    ${SHIPPING_SHIPPING_SECTION_PDSD_D_MINBURI}
@@ -150,6 +153,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -175,6 +179,7 @@ Checkout_TC_2: To verfiy registerd customer is able to see checkout page
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
+    Execute Javascript    window.scrollTo(0,0)
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Verify the Order Information title on Checkout page
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
@@ -238,6 +243,7 @@ Checkout_TC_3: To verify registered customer able to create new shipping address
     #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -263,12 +269,13 @@ Checkout_TC_3: To verify registered customer able to create new shipping address
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
+    Execute Javascript    window.scrollTo(0,0)
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Get Default shipping address
     ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
     #Click on Add New Address
-    Sleep    2s
+    Sleep    3s
     Click Element    ${SHIPPING_SHIPPING_SECTION_ADD_NEW_ADDRESS_BUTTON}
     #Verify Add New Address Popup
     Sleep    1s
@@ -305,7 +312,7 @@ Checkout_TC_3: To verify registered customer able to create new shipping address
     ${NEW_REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
     Log To Console    New Shipping information/Name-Lastname: ${NEW_REGISTER_SHIPPING_DEFAULT}
     #Click Proceed to payment
-    Sleep    1s
+    Sleep    5s
     Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
     #-------------------------- Payment Page ---------------------------------------------
     Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
@@ -352,6 +359,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -377,6 +385,7 @@ Checkout_TC_4: To Verify registered customer able to add multiple shipping addre
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
+    Execute Javascript    window.scrollTo(0,0)
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Get Default shipping address
     ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
@@ -440,6 +449,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -466,6 +476,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
+    Execute Javascript    window.scrollTo(0,0)
     #--------------------------------------------- Shipping Page ---------------------------------------------------
     #Get Default shipping address
     ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
@@ -485,7 +496,7 @@ Checkout_TC_5: To verify registered customer view the Shipping Details and Payme
     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
     #Verify the item list title on Checkout page
-    Sleep    2s
+    Sleep    3s
     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
     Click Element    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}
      #Verify item name
@@ -529,6 +540,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     #Click on ADD TO BAG button
     Sleep    2s
     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
     Sleep    4s
     Click Element    ${PDP_ADD_TO_CART_BUTTON}
     #Check success message
@@ -549,7 +561,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     #Verify shipping page
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
     #Click login link oon shipping page
-    Execute Javascript    window.scrollTo(0, 0)
+    Execute Javascript    window.scrollTo(0,0)
     Sleep    2s
     Click Element    ${SHIPPING_LOGIN_LINK}
     #Verify Login popup
@@ -566,7 +578,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Wait Until Element Is Not Visible    ${LOGIN_POPUP}
     Sleep    8s
     ${LANDING_PAGE}=    Run Keyword And Return Status    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
-    Execute Javascript    window.scrollTo(0, 0)
+    Execute Javascript    window.scrollTo(0,0)
     Sleep    3s
     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
         Sleep    2s
@@ -575,7 +587,7 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
     END
-    Execute Javascript    window.scrollTo(0, 0)
+    Execute Javascript    window.scrollTo(0,0)
     Sleep    5s
     Click Element    ${WEB_LOGO}
     Sleep    5s
@@ -587,119 +599,121 @@ Checkout_TC_6: To verify customer is able to login at the checkout page
     Delete All Cookies
     Close Browser
 
-# Checkout_TC_7: To verify registered customer able to select choose shipping method options in shipping details tab during the checkout process.
-#     Open Website
-#     Accept Cookies
-#     Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
-#     #Click on Search icon
-#     Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
-#     #Serch Product
-#     Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
-#     #Click on Enter
-#     Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
-#     Sleep    2s
-#     #Click on product list
-#     Click Element    ${PLP_PRODUCT_1}
-#     #Click on ADD TO BAG button
-#     Sleep    2s
-#     Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
-#     Sleep    4s
-#     Click Element    ${PDP_ADD_TO_CART_BUTTON}
-#     #Check success message
-#     Sleep    2s
-#     Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
-#     #Click on OK button
-#     Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
-#     #Get minicart count
-#     ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
-#     Log To Console    Get count on minicart icon = ${MINICART_COUNT}
-#     #Click minicart icon
-#     Sleep    1s
-#     Click Element    ${MINI_CART_ICON}
-#     #Verify the Checkout button on Mini cart
-#     Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
-#     #Click on Checkout button on Mini Cart
-#     Click Element    ${MINI_CART_CHECKOUT_BUTTON}
-#     Sleep    8s
-#     ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
-#     Execute Javascript    window.scrollTo(0, 0)
-#     Sleep    3s
-#     IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
-#         Sleep    3s
-#         Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
-#     ELSE
-#     Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
+Checkout_TC_7: To verify registered customer able to select choose shipping method options in shipping details tab during the checkout process.
+    Open Website
+    Accept Cookies
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
+    Sleep    4s
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
+    #Check success message
+    Sleep    2s
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
+    #Click on OK button
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
+    Log To Console    Get count on minicart icon = ${MINICART_COUNT}
+    #Click minicart icon
+    Sleep    1s
+    Click Element    ${MINI_CART_ICON}
+    #Verify the Checkout button on Mini cart
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
+    #Click on Checkout button on Mini Cart
+    Click Element    ${MINI_CART_CHECKOUT_BUTTON}
+    Sleep    8s
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Execute Javascript    window.scrollTo(0, 0)
+    Sleep    3s
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
+        Sleep    3s
+        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    ELSE
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
         
-#     END
-#     #--------------------------------------------- Shipping Page ---------------------------------------------------
-#     #Get Default shipping address
-#     Sleep    2s
-#     Execute Javascript    window.scrollTo(0, 0)
-#     ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
-#     Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
-#     #Verify the Order Information title on Checkout page
-#     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
-#     #Verify the number of item Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
-#     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
-#     #the Subtotal on Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
-#     Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
-#     #Verify the Shipping Fee on Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
-#     Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
-#     #Verify the Total Price on Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
-#     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
-#     #Verify the item list title on Checkout page
-#     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
-#     #Verify Choose Shipping Method
-#     Wait Until Page Contains    ${SHIPPING_SHIPPING_METHOD}
-#     Click Element    ${SHIPPING_SHIPPING_METHOD_NEXT_DAY} 
-#     #Verify the Order Information title on Checkout page
-#     Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
-#     #Verify the number of item Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
-#     Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
-#     #the Subtotal on Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
-#     Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
-#     #Verify the Shipping Fee on Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
-#     Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
-#     #Verify the Total Price on Checkout page
-#     ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
-#     Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
-#     #Click Proceed to payment
-#     Sleep    8s
-#     Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
-#     Sleep    2s
-#     #-------------------------- Payment Page ---------------------------------------------
-#     Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
-#     #Select payment method
-#     Sleep    2s
-#     Click Element    ${PAYMENT_METHOD_COD}
-#     Sleep    2s
-#     #Click Proceed to Review Order button
-#     Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
-#     #-------------------------- Review Order Page ---------------------------------------------
-#     Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
-#     Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
-#     Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
-#     Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
-#     #Click Place Order button
-#     Click Element    ${REVIEW_ORDER_PLACE_ORDER}
-#     Sleep    5s
-#     #-------------------------- Thank you Page -------------------------------------------------
-#     Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
-#     Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
-#     Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
-#     ${REGISTER_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
-#     Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
-#     Sleep    3s
-#     Logout
-#     Delete All Cookies
-#     Close Browser
+    END
+    Execute Javascript    window.scrollTo(0, 0)
+    #--------------------------------------------- Shipping Page ---------------------------------------------------
+    #Get Default shipping address
+    Sleep    2s
+    Execute Javascript    window.scrollTo(0, 0)
+    ${REGISTER_SHIPPING_DEFAULT}=    Get Text    ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}
+    Log To Console    Shipping information/Name-Lastname: ${REGISTER_SHIPPING_DEFAULT}
+    #Verify the Order Information title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
+    #Verify the number of item Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
+    Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
+    #the Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Verify the Shipping Fee on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
+    #Verify the Total Price on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
+    #Verify the item list title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_ITEM_LIST_SECCTION_TEXT}
+    #Verify Choose Shipping Method
+    Wait Until Page Contains    ${SHIPPING_SHIPPING_METHOD}
+    Click Element    ${SHIPPING_SHIPPING_METHOD_NEXT_DAY} 
+    #Verify the Order Information title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
+    #Verify the number of item Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_X_ITEM}
+    Log To Console    ${SHIPPING_ORDER_INFORMATION_SECTION_COUNT_ITEM}
+    #the Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}=    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Verify the Shipping Fee on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE} 
+    #Verify the Total Price on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
+    #Click Proceed to payment
+    Sleep    8s
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
+    Sleep    2s
+    #-------------------------- Payment Page ---------------------------------------------
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
+    #Select payment method
+    Sleep    2s
+    Click Element    ${PAYMENT_METHOD_COD}
+    Sleep    2s
+    #Click Proceed to Review Order button
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
+    #-------------------------- Review Order Page ---------------------------------------------
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
+    #Click Place Order button
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
+    Sleep    5s
+    #-------------------------- Thank you Page -------------------------------------------------
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    ${REGISTER_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
+    Log To Console    Order Number is ${REGISTER_ORDER_NUMBER}   
+    Sleep    3s
+    Logout
+    Delete All Cookies
+    Close Browser
 
 
 

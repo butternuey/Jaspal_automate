@@ -167,6 +167,7 @@ ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}    xpath=//tr[@class="grand to
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_ITEM_NAME}    xpath=//ol[@class="minicart-items"]//li[@class="product-item"]//div[@class="product"]//strong[@class="product-item-name"]
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_ORIGINAL_PRICE}    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="original-price"]
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_NEW_PRICE}    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="price have-original-price"]
+${SHIPPING_ORDER_INFORMATION_SECTION_PRICE}    xpath=//div[@class="subtotal"]//span[@class="cart-price"]//span[@class="price"]            
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_COLOR}    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[1]//span[@class="values"]
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_SIZE}    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[2]//span[@class="values"]
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_QTY}    xpath=//div[@class="details-qty summary-details-qty"]//span[@class="value"]

@@ -70,3 +70,18 @@ Delete Item And Verify Empty Bag
     Click Element    ${VIEW_MY_BAG_PRODUCT_ITEM_DETAIL_REMOVE_ITEM}
     #Verify my bag page is empty
     Wait Until Page Contains    ${VIEW_MY_BAG_PAGE_EMPTY_TEXT}    10s
+
+Change Password
+     Click Button    ${CHANGE_PASSWORD_BTN_2}
+     Wait Until Page Contains    ${EDIT_PROFILE_2}
+     Execute Javascript    window.scrollTo(0,900)
+     Wait Until Page Contains Element    ${CURRENT_PASSWORD_TXT_2}                        
+     Input Text    ${CURRENT_PASSWORD_TXT_2}    ${CURRENT_PASSWORD_2}  
+     Click Element    ${NEW_PASSWORD_TXT_2}
+     Input Password    ${NEW_PASSWORD_TXT_2}     ${NEW_PASSWORD_2}
+     Click Element    ${CONFIRM_PASSWORD_TXT_2}    
+     Input Password    ${CONFIRM_PASSWORD_TXT_2}     ${CONFIRM_PASSWORD_2}
+     Sleep    5s
+     Click Element    ${UPDATE_PASSWORD_BTN_2}
+     Close All Browsers
+        
