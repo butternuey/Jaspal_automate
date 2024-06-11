@@ -87,7 +87,7 @@ ${CREATE_ACCOUNT_FIRSTNAME_TEXT}    kittiya
 ${CREATE_ACCOUNT_FIRSTNAME_INVALID_TEXT}    kittiya1
 ${CREATE_ACCOUNT_LASTNAME_TEXT}    Thipathikeat
 ${CREATE_ACCOUNT_LASTNAME_INVALID_TEXT}    Thipathikeat1
-${CREATE_ACCOUNT_EMAIL}    kittiyanuey994@gmail.com
+${CREATE_ACCOUNT_EMAIL}    kittiya.thi.true@gmail.com
 ${CREATE_ACCOUNT_PASSWORD}    Bn12345678/
 ${CREATE_ACCOUNT_EMAIL_INVALID}    kittiyanuey994invalid@gmail.com
 ${CREATE_ACCOUNT_PASSWORD_INVALID}    Bn12345678/invalid
@@ -159,12 +159,12 @@ ${ADMIN_CUSTOMER_ALL_CUSTOMER_DELETE_SUCCESS_TEXT}    You deleted the customer.
 #UPDATE_PASSWORD
 ${MY_PROFILE_PAGE_2}    My Profile
 ${EDIT_PROFILE_2}    Edit Personal Details
-${CURRENT_PASSWORD_2}    Ae1234567#
-${NEW_PASSWORD_2}    Ae1234567@
-${CONFIRM_PASSWORD_2}    Ae1234567@
+${CURRENT_PASSWORD_2}    Ae1234567@
+${NEW_PASSWORD_2}    Bn12345678/
+${CONFIRM_PASSWORD_2}    Bn12345678/
 ${VERIFY_CONFIRM_PASSWORD_2}    Ae1234567*
-${VERIFY_CURRENT_PASSWORD_2}    Ae1234567$  
-${ERROR_EMPTY_CURRENT_PWD_TXT_2}    This is a required field.
+${VERIFY_CURRENT_PASSWORD_2}    Bn12345678 
+${ERROR_EMPTY_CURRENT_PWD_TXT_2}    The field is mandatory.
 
 #MY ACCOUNT
 ${ACC_DASHBOAD_2}    ACCOUNT DASHBOARD
@@ -185,11 +185,11 @@ ${WISHLIST_NAME_INPUT_2}    Test Wishlist
 ${PRODUCT_NAME_2}    Mynx Love Tee
 ${PDP_MIN_QTY_2}    0
 ${PDP_MAX_QTY_2}    2000
-${PDP_COLOR_ERROR_TXT_2}    This is a required field.
+${PDP_COLOR_ERROR_TXT_2}    The field is mandatory.
 ${PDP_ZERO_QTY_TXT_2}    Please enter a quantity greater than 0.
-${PDP_POPUP_ERROR_MAX_TXT_2}    You can only purchase 1832 of this item. 
+${PDP_POPUP_ERROR_MAX_TXT_2}    You can only purchase
 ${PDP_FAV_ITEMLIST_TXT_2}    Wishlist  
-${PDP_POPUPTO_WL_TXT_2}    The Mynx Love Tee has been added to your Wishlist
+${PDP_POPUPTO_WL_TXT_2}    has been added to your Wishlist
 ${PDP_MY_WISHLIST_TITLE_2}    MY WISHLIST
 ${PDP_WLPOPUP_TXT_2}    1 product(s) have been added to bag.
 

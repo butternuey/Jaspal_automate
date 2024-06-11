@@ -254,8 +254,8 @@ ${LOGIN_FACEBOOK}    css=#customer-popup-login-form > fieldset > div.social-link
 ${LOGIN_GOOGLE}    css=#customer-popup-login-form > fieldset > div.social-links > a:nth-child(2)
 ${LOGIN_EMAIL_ERROR}    xpath=//div[@class="control"]//div[@id="email-login-error"]
 ${LOGIN_PASSWORD_ERROR}    xpath=//div[@class="field password form-group required margin-bottom-5"]//div[@id="pass-login-error"]    
-${LOGIN_EMAIL}    tanaporn.t@jaspal.co.th
-${LOGIN_PASSWORD}    Ae1234567#
+${LOGIN_EMAIL}    kittiya.thi.true@gmail.com
+${LOGIN_PASSWORD}    Bn12345678/    
 ${LOGIN_HI}    xpath=//div[@class="header-links-menu panel header arrow_box"]//ul//li//span[contains(text(),"Hi,")]
 
 #LOGIN_ERROR
@@ -322,41 +322,41 @@ ${ADMIN_CUSTOMER_ALL_CUSTOMER_DELETE_CUSTOMER_POPUP_OK_BUTTON}    xpath=//div[co
 ${ADMIN_CUSTOMER_ALL_CUSTOMER_DELETE_CUSTOMER_POPUP_CANCEL_BUTTON}    css=#html-body > div.modals-wrapper > aside.modal-popup.confirm._show > div.modal-inner-wrap > footer > button.action-secondary.action-dismiss
 
 #UPDATE_PASSWORD
-${MY_PROFILE_BTN_2}    xpath://*[@id="html-body"]/div[5]/header/div[2]/div/div[3]/div[2]/div[1]/ul/li[2]/div/ul/li[3]/a  
+${MY_PROFILE_BTN_2}    xpath=(//a[contains(text(),'My Profile')])[2]  
 ${CHANGE_PASSWORD_BTN_2}    xpath://*[@id="editprofilepasswd"]
 ${CURRENT_PASSWORD_TXT_2}   xpath=//fieldset[@class="fieldset password"]//div[@class="field password current required"]//div[@class="control"]//input[@name="current_password"]
 ${NEW_PASSWORD_TXT_2}    xpath://*[@id="password"]
 ${CONFIRM_PASSWORD_TXT_2}    xpath://*[@id="password-confirmation"]
 ${UPDATE_PASSWORD_BTN_2}    xpath=//form[@class="form form-edit-account"]//button[@class="action save primary btn-active btn btn--primary"]//span[text()='Update Password']    
 ${ERROR_CONFIRM_PASSWORD_2}    xpath://div[@id="password-confirmation-error"]     
-${ERROR_CURRENT_PASSWORD_2}    xpath://*[@id="html-body"]/div[6]/aside[4]/div[2]/header            
+${ERROR_CURRENT_PASSWORD_2}    xpath=//aside[4]/div[2]//header//h1[contains(text(),'error')]            
 ${ERROR_CURRENT_BTN_2}    xpath://button[@class="action-primary action-accept"]    
 ${ERROR_EMPTY_CURRENT_PWD_2}    xpath://div[@id="current-password-error"]    
 ${ERROR_EMPTY_NEW_PWD_2}    xpath://div[@id="password-error"]
 ${ERROR_EMPTY_CONFIRM_PWD_2}    xpath://div[@id="password-confirmation-error"]  
 
 #PDP
-${SEARCH_BTN_2}    xpath://div[@class="desktop-search-btn"]
-${SEARCH_TXT_2}    xpath://input[@id="search"]  
-${SEARCH_RESULT_2}    xpath://*[@id="search_mini_form"]/div[2]/button
-${RESULT_PRODUCT_2}    xpath://*[@id="maincontent"]/div[4]/div/div[3]
-${PDP_ADDTOBAG_BTN_2}    xpath://div[@class='addtocart-wrapper']/descendant::button
-${PDP_COLOR_ERROR_MSG_2}    xpath:(//div[contains(@class,'mage-error')])[1]
-${PDP_SIZE_ERROR_MSG_2}    xpath:(//div[contains(@class,'mage-error')])[2]
+${SEARCH_BTN_2}    xpath=//div[@class="desktop-search-btn"]
+${SEARCH_TXT_2}    xpath=//input[@id="search"]  
+${SEARCH_RESULT_2}    xpath=//*[@id="search_mini_form"]/div[2]/button
+${RESULT_PRODUCT_2}    xpath=//*[@id="maincontent"]/div[4]/div/div[3]
+${PDP_ADDTOBAG_BTN_2}    xpath=//div[@class='addtocart-wrapper']/descendant::button
+${PDP_COLOR_ERROR_MSG_2}    xpath=(//div[contains(@class,'mage-error')])[1]
+${PDP_SIZE_ERROR_MSG_2}    xpath=(//div[contains(@class,'mage-error')])[2]
 ${PROFILE_BTN_2}    xpath://*[@class="header-links-wrapper cps-login text-center"]/span/em
 ${LOGOUT_2}    css=#html-body > div.page-wrapper > header > div.container > div > div.page-header__right > div.header-links-wrapper.cps-login.text-center.active > div.header-links-menu.panel.header.arrow_box > ul > li.authorization-link
-${MYNX_LOVE_TEE_2}    xpath://*[@id="maincontent"]/div[4]/div/div[4]/div[2]/ol/li/div/a/span/span
-${PDP_RESULT_MYNX_LOVE_TEE_2}    xpath://*[@id="html-body"]/div[5]/div[2]/div/ul/li[2]/strong
+${MYNX_LOVE_TEE_2}    xpath=//*[@id="maincontent"]/div[4]/div/div[4]/div[2]/ol/li/div/a/span/span
+${PDP_RESULT_MYNX_LOVE_TEE_2}    xpath=//ul/li[2]/strong
 ${PDP_INCREASE_QTY_2}    xpath://span[@class="increaseQty"]   
 ${PDP_DECREASE_QTY_2}    xpath://span[@class="decreaseQty"]
-${PDP_PRODUCT_COUNT_2}    xpath://div[contains(@class,'field qty')]/descendant::input
+${PDP_PRODUCT_COUNT_2}    xpath=//div[contains(@class,'field qty')]/descendant::input
 ${PDP_OK_BTN_2}    xpath://*[@class="action-primary action-accept"]
-${PDP_ZERO_QTY_MSG_2}    xpath://div[contains(text(),'greater')]   
-${PDP_POPUP_ERROR_MAX_2}    xpath://div[contains(text(),'only purchase')]
-${PDP_REG_BACKTOTOP_2}    xpath://div[@class='arrow']
-${PDP_REG_USER_FAV_2}    css=#product_addtocart_form > div.product-options-bottom > div > div > div.actions.addtocart-container > div.product-social-links > div.product-addto-links > div > button
-${PDP_GUEST_USER_FAV_2}    xpath:(//a[@data-action='add-to-wishlist'])[1]
-${PDP_FAV_ITEMLIST_2}    xpath://*[@id="product_addtocart_form"]/div[2]/div/div/div[2]/div[3]/div[1]/div/ul/li[1]/span
+${PDP_ZERO_QTY_MSG_2}    xpath=//div[contains(text(),'greater')]   
+${PDP_POPUP_ERROR_MAX_2}    xpath=//div[contains(text(),'only purchase')]
+${PDP_REG_BACKTOTOP_2}    xpath=//div[@class="scroll-top"]
+${PDP_REG_USER_FAV_2}    xpath=//div[@class="product-addto-links"]//div[@class="split button wishlist"]//button[@data-action="add-to-wishlist"]
+${PDP_GUEST_USER_FAV_2}    xpath=(//a[@data-action='add-to-wishlist'])[1]
+${PDP_FAV_ITEMLIST_2}    xpath=//div[@class="modals-wrapper"]//aside[6]//div[@class="modal-inner-wrap"]
 ${PDP_WLPOPUP_2}    xpath://p[@class="message success "]/span
 ${SCROLL_TOP_2}    xpath://div[@class='scroll-top']
 
@@ -414,8 +414,8 @@ ${MYPROFILE_EDIT_2}    xpath://a[@id='editprofile']
 ${MYPROFILE_CHANGE_EMAIL_CHECKBOX_2}    xpath://div[@class='choice custom-checkbox control']/descendant::input[@id='change-email']
 ${MYPROFILE_EMAIL_EDIT_2}    xpath://div[@class='control']/descendant::input[@id='edit-email']
 ${MYPROFILE_PWD_2}    xpath:(//div[@class='control']/descendant::input[@name='current_password'])[1]
-${MYPROFILE_SUCCESS_POPUP_2}    xpath://*[@id="html-body"]/div[6]/aside[4]/div[2]
-${MYPROFILE_OK_BTN_2}    xpath://*[@id="html-body"]/div[6]/aside[4]/div[2]/footer/button
+${MYPROFILE_SUCCESS_POPUP_2}    xpath://aside[4]//div[@class="modal-inner-wrap"]
+${MYPROFILE_OK_BTN_2}    xpath://aside[4]//footer[@class="modal-footer"]//button
 ${SOCIAL_LINK_FACEBOOK_2}    xpath://span[contains(text(),'Facebook')]
 ${SOCIAL_LINK_GOOGLE_2}    xpath://span[contains(text(),'Google')]
 ${MYWISHLIST_MENU_2}    xpath://div[contains(@class,'sidebar')]/descendant::a[contains(text(),'My Wishlist')]

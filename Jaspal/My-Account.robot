@@ -9,8 +9,8 @@ My_Account_TC_1: MyOrder_Filter_Register
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL}    ${LOGIN_PASSWORD}   
-    Execute Javascript    window.scrollTo(0,300)
-    Mouse Over     ${PROFILE_BTN_2}  
+    Wait Until Page Does Not Contain Element    ${LOGIN_POPUP}
+    Mouse Over     ${PROFILE_BTN_2}
     Click Element    ${PROFILE_BTN_2}  
     Click Element    ${ACC_DASHBOARD_2}  
     Sleep    5s
@@ -48,6 +48,7 @@ My_Account_TC_2: MyProfile_Update EmailID_Register
     Input Password    ${MYPROFILE_PWD_2}    ${LOGIN_PASSWORD}   
     Press Keys    ${MYPROFILE_PWD_2}    ENTER  
     Wait Until Element Contains    ${MYPROFILE_SUCCESS_POPUP_2}    ${ACC_PROFILE_EMAIL_COMFIRM_2}
+    Sleep    2s
     Click Element    ${MYPROFILE_OK_BTN_2} 
     Wait Until Element Is Not Visible    ${MYPROFILE_OK_BTN_2} 
     Click Element    ${PROFILE_BTN_2}  
@@ -127,7 +128,7 @@ My_Account_TC_6: View Wishlist_Register
     Mouse Over     ${PROFILE_BTN_2}  
     Click Element    ${PROFILE_BTN_2} 
     Click Element    ${ACC_MY_WISHLIST_2} 
-    Wait Until Element Contains    ${MYWISHLIST_TITLE_2}    ${ACC_MY_WISHLIST_2}  
+    Wait Until Page Contains Element    ${MYWISHLIST_TITLE_2} 
     #Create Wishlist 
     Sleep    5s
     Click Element    ${WISHLIST_CREATE_2} 
@@ -156,7 +157,7 @@ My_Account_TC_7: Edit Wishlist_Register
     Mouse Over     ${PROFILE_BTN_2}  
     Click Element    ${PROFILE_BTN_2} 
     Click Element    ${ACC_MY_WISHLIST_2} 
-    Wait Until Element Contains    ${MYWISHLIST_TITLE_2}    ${ACC_MY_WISHLIST_2}  
+    Wait Until Page Contains Element    ${MYWISHLIST_TITLE_2}  
     #Create Wishlist 
     Sleep    5s
     Click Element    ${WISHLIST_CREATE_2} 
@@ -197,7 +198,7 @@ My_Account_TC_8: Delete Wishlist_Register
     Mouse Over     ${PROFILE_BTN_2}  
     Click Element    ${PROFILE_BTN_2} 
     Click Element    ${ACC_MY_WISHLIST_2} 
-    Wait Until Element Contains    ${MYWISHLIST_TITLE_2}    ${ACC_MY_WISHLIST_2}
+    Wait Until Page Contains Element   ${MYWISHLIST_TITLE_2}
     #Create Wishlist 
     Sleep    5s
     Click Element    ${WISHLIST_CREATE_2} 

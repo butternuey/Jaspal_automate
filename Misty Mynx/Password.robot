@@ -6,12 +6,12 @@ Resource    variables_locator.robot
 
 
 *** Test Cases ***  
-
 Password_TC_1: Verify New And Confirm Password Should Match
     Open Website
     Accept Cookies
     Login    ${LOGIN_EMAIL}    ${LOGIN_PASSWORD}
     Click Element    ${LOGIN_ICON}
+    Sleep    4s
     Click Element    ${MY_PROFILE_BTN_2} 
     Wait Until Page Contains    ${MY_PROFILE_PAGE_2} 
     #Change password section
