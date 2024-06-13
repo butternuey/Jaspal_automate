@@ -76,9 +76,9 @@ Header-General_TC_6: Verify Mega Menu / Bread Crumbs_Guest.
     #Click Active collection
     Click Element    ${HEADER_COLLECTION_MEN}
     Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_MEN} 
-    # #Click QA Product collection
-    # Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
-    # Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
+    #Click QA Product collection
+    Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
     Delete All Cookies
     Close Browser
 
@@ -96,9 +96,9 @@ Header-General_TC_7: Verify Mega Menu / Bread Crumbs_Register.
     #Click Active collection
     Click Element    ${HEADER_COLLECTION_MEN}
     Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_MEN} 
-    # #Click QA Product collection
-    # Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
-    # Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
+    #Click QA Product collection
+    Click Element    ${HEADER_COLLECTION_QA_PRODUCT} 
+    Wait Until Element Contains    ${HEADER_BREADCRUMBS}    ${COLLECTION_QA_PRODUCT}
     Logout
     Delete All Cookies
     Close Browser

@@ -219,7 +219,7 @@ ${CONTACTUS_TELEPHONE_INPUT_2}    890000001
 ${CONTACTUS_ISD_SELECT_2}    66
 ${CONTACTUS_COMMENT_INPUT_2}    Test Comment
 ${CONTACTUS_POPUP_TXT_2}    Thanks for contacting us! We will get back to you shortly. 
-${URL_404ERROR_TXT_2}    Our Apologiess...
+${URL_404ERROR_TXT_2}    Our Apologies
 
 #PAYMENT AND ORDER CF
 ${PO_PRODUCT_NAME_2}    Mynx Love Tee

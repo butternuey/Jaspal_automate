@@ -84,4 +84,8 @@ Change Password
      Sleep    5s
      Click Element    ${UPDATE_PASSWORD_BTN_2}
      Close All Browsers
+
+Open Worn Website
+    Open Browser    ${WORN_URL}    gc  
+    Maximize Browser Window
         

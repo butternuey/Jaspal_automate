@@ -1,6 +1,7 @@
 *** Variables ***
 #URL_WEBSITE
 ${URL}    https://mcstaging-2-4.jaspal.com/
+${WORN_URL}    https://mcstaging-2-4.jaspal.com/555
 
 #WEB_LOGO
 ${WEB_LOGO}    css=#html-body > div.page-wrapper > header > div.container > div > a > img
@@ -441,20 +442,20 @@ ${WISHLIST_PRIVATE_TXT_2}    xpath:(//div[contains(text(),'Private Wishlist')])[
 ${WISHLIST_SAVE_BTN_2}    xpath:(//footer[@class='modal-footer']/descendant::button[@class='action primary btn btn--primary'])[1]
 
 #UTILITY PAGES
-${FOOTER_CONTACTUS_2}    xpath://span[contains(text(),'Contact Us')]
-${CONTACTUS_PAGE_2}    xpath://strong[contains(text(),'Contact Us')]
-${CONTACTUS_FNAME_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='firstname']
-${CONTACTUS_LNAME_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='lastname']
-${CONTACTUS_EMAIL_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='email']
-${CONTACTUS_ISD_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='isd_code']
-${CONTACTUS_TELEPHONE_2}    xpath://fieldset[@class='fieldset contact-bottom']/descendant::input[@id='telephone']
-${CONTACTUS_REASON_LIST_2}    xpath://div[@class='control custom-select']/descendant::select
-${CONTACTUS_REASON_2}    xpath:(//select[@id='reason']/descendant::option)[2]
-${CONTACTUS_COMMENT_2}    xpath://textarea[@id='comment']
-${CONTACTUS_SUBMIT_2}    xpath://form[@class='form-contact-edit']/descendant::button[@class='action submit btn btn--primary']
-${CONTACTUS_POPUP_2}    xpath://span[contains(text(),'Thanks for contacting us! We will get back to you shortly.')]
-${CONTACTUS_OK_2}    xpath://span[contains(text(),'OK')]
-${URL_404ERROR_2}    xpath://*[@id="maincontent"]/div[2]/h1/span
+${FOOTER_CONTACTUS_2}    xpath=//span[contains(text(),'Contact Us')]
+${CONTACTUS_PAGE_2}    xpath=//strong[contains(text(),'Contact Us')]
+${CONTACTUS_FNAME_2}    xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='firstname']
+${CONTACTUS_LNAME_2}    xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='lastname']
+${CONTACTUS_EMAIL_2}    xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='email']
+${CONTACTUS_ISD_2}    xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='isd_code']
+${CONTACTUS_TELEPHONE_2}    xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='telephone']
+${CONTACTUS_REASON_LIST_2}    xpath=//div[@class='control custom-select']/descendant::select
+${CONTACTUS_REASON_2}    xpath=(//select[@id='reason']/descendant::option)[2]
+${CONTACTUS_COMMENT_2}    xpath=//textarea[@id='comment']
+${CONTACTUS_SUBMIT_2}    xpath=//div[@class="row"]//button[@class="action submit btn btn--primary"]
+${CONTACTUS_POPUP_2}    xpath=//span[contains(text(),'Thanks for contacting us! We will get back to you shortly.')]
+${CONTACTUS_OK_2}    xpath=//span[contains(text(),'OK')]
+${URL_404ERROR_2}    xpath=//*[@id="maincontent"]/div[2]/h1/span
 
 #PAYMENT AND ORDER CF
 #Shpping

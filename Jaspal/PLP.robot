@@ -5,7 +5,6 @@ Resource    variables_locator.robot
 Resource    variables_text.robot
 
 *** Test Cases ***  
-
 PLP_TC_1: Apply_Filter_Register
     Open Website
     Accept Cookies

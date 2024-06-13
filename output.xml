@@ -1,40 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.12.2 on win32)" generated="20240607 14:00:00.639" rpa="false" schemaversion="2">
-<suite id="s1" name="PLP" source="c:\Users\kittiya\Desktop\Nuey_robot_ecom\Jaspal\PLP.robot">
-<test id="s1-t1" name="PLP_TC_2: Sort_Products_Register">
+<robot generator="Robot 4.1.3 (Python 3.12.2 on win32)" generated="20240613 16:29:21.291" rpa="false" schemaversion="2">
+<suite id="s1" name="Utility Pages" source="c:\Users\kittiya\Desktop\Nuey_robot_ecom\Jaspal\Utility Pages.robot">
+<test id="s1-t1" name="Utility_Pages_TC_4: Submit_ContactUS_Register">
 <kw name="Open Website" library="keywords">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL}</arg>
 <arg>gc</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240607 14:00:00.879" level="INFO">Opening browser 'gc' to base url 'https://mcstaging-2-4.jaspal.com/'.</msg>
-<status status="PASS" starttime="20240607 14:00:00.879" endtime="20240607 14:00:26.378"/>
+<msg timestamp="20240613 16:29:21.599" level="INFO">Opening browser 'gc' to base url 'https://mcstaging-2-4.jaspal.com/'.</msg>
+<status status="PASS" starttime="20240613 16:29:21.599" endtime="20240613 16:29:26.452"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240607 14:00:26.379" endtime="20240607 14:00:26.653"/>
+<status status="PASS" starttime="20240613 16:29:26.453" endtime="20240613 16:29:26.725"/>
 </kw>
-<status status="PASS" starttime="20240607 14:00:00.878" endtime="20240607 14:00:26.653"/>
+<status status="PASS" starttime="20240613 16:29:21.598" endtime="20240613 16:29:26.726"/>
 </kw>
 <kw name="Accept Cookies" library="keywords">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>xpath=//div[@role="document"]//p[text()='The JASPAL site uses cookies.']</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20240607 14:00:26.655" endtime="20240607 14:00:26.850"/>
+<status status="PASS" starttime="20240613 16:29:26.735" endtime="20240613 16:29:26.967"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath=//button[@class="action allow primary btn btn--primary"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:26.850" level="INFO">Clicking element 'xpath=//button[@class="action allow primary btn btn--primary"]'.</msg>
-<status status="PASS" starttime="20240607 14:00:26.850" endtime="20240607 14:00:42.732"/>
+<msg timestamp="20240613 16:29:26.968" level="INFO">Clicking element 'xpath=//button[@class="action allow primary btn btn--primary"]'.</msg>
+<status status="PASS" starttime="20240613 16:29:26.968" endtime="20240613 16:29:27.419"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240607 14:00:44.732" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20240607 14:00:42.732" endtime="20240607 14:00:44.733"/>
+<msg timestamp="20240613 16:29:29.419" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240613 16:29:27.419" endtime="20240613 16:29:29.419"/>
 </kw>
-<status status="PASS" starttime="20240607 14:00:26.655" endtime="20240607 14:00:44.733"/>
+<status status="PASS" starttime="20240613 16:29:26.729" endtime="20240613 16:29:29.420"/>
 </kw>
 <kw name="Login" library="keywords">
 <arg>${LOGIN_EMAIL}</arg>
@@ -42,219 +42,207 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${LOGIN_ICON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:44.736" level="INFO">Clicking element 'css=#html-body &gt; div.page-wrapper &gt; header &gt; div.container &gt; div &gt; div.page-header__right &gt; div.header-links-wrapper.cps-login.text-center'.</msg>
-<status status="PASS" starttime="20240607 14:00:44.735" endtime="20240607 14:00:45.834"/>
+<msg timestamp="20240613 16:29:29.425" level="INFO">Clicking element 'css=#html-body &gt; div.page-wrapper &gt; header &gt; div.container &gt; div &gt; div.page-header__right &gt; div.header-links-wrapper.cps-login.text-center'.</msg>
+<status status="PASS" starttime="20240613 16:29:29.423" endtime="20240613 16:29:30.494"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${LOGIN_MENU}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:45.835" level="INFO">Clicking element 'css=#html-body &gt; div.page-wrapper &gt; header &gt; div.container &gt; div &gt; div.page-header__right &gt; div.header-links-wrapper.cps-login.text-center.active &gt; div.header-links-menu.panel.header.arrow_box &gt; ul &gt; li.authorization-link'.</msg>
-<status status="PASS" starttime="20240607 14:00:45.835" endtime="20240607 14:00:45.946"/>
+<msg timestamp="20240613 16:29:30.495" level="INFO">Clicking element 'css=#html-body &gt; div.page-wrapper &gt; header &gt; div.container &gt; div &gt; div.page-header__right &gt; div.header-links-wrapper.cps-login.text-center.active &gt; div.header-links-menu.panel.header.arrow_box &gt; ul &gt; li.authorization-link'.</msg>
+<status status="PASS" starttime="20240613 16:29:30.495" endtime="20240613 16:29:30.887"/>
 </kw>
 <kw name="Wait Until Element Contains" library="SeleniumLibrary">
 <arg>${LOGIN_POPUP}</arg>
 <arg>${LOGIN_POPUP_TEXT}</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20240607 14:00:45.947" endtime="20240607 14:00:46.028"/>
+<status status="PASS" starttime="20240613 16:29:30.888" endtime="20240613 16:29:31.007"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${LOGIN_EMAIL_TEXTBOX}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:46.029" level="INFO">Clicking element 'css=#email-login'.</msg>
-<status status="PASS" starttime="20240607 14:00:46.028" endtime="20240607 14:00:46.203"/>
+<msg timestamp="20240613 16:29:31.008" level="INFO">Clicking element 'css=#email-login'.</msg>
+<status status="PASS" starttime="20240613 16:29:31.008" endtime="20240613 16:29:31.228"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN_EMAIL_TEXTBOX}</arg>
 <arg>${LOGIN_EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:46.204" level="INFO">Typing text 'kittiya.thi.true@gmail.com' into text field 'css=#email-login'.</msg>
-<status status="PASS" starttime="20240607 14:00:46.203" endtime="20240607 14:00:46.546"/>
+<msg timestamp="20240613 16:29:31.231" level="INFO">Typing text 'kittiya.thi.true@gmail.com' into text field 'css=#email-login'.</msg>
+<status status="PASS" starttime="20240613 16:29:31.228" endtime="20240613 16:29:31.354"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${LOGIN_PASSWORD_TEXTBOX}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:46.547" level="INFO">Clicking element 'css=#pass-login'.</msg>
-<status status="PASS" starttime="20240607 14:00:46.546" endtime="20240607 14:00:46.603"/>
+<msg timestamp="20240613 16:29:31.355" level="INFO">Clicking element 'css=#pass-login'.</msg>
+<status status="PASS" starttime="20240613 16:29:31.354" endtime="20240613 16:29:31.436"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${LOGIN_PASSWORD_TEXTBOX}</arg>
 <arg>${LOGIN_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:46.603" level="INFO">Typing text 'Bn12345678/' into text field 'css=#pass-login'.</msg>
-<status status="PASS" starttime="20240607 14:00:46.603" endtime="20240607 14:00:46.667"/>
+<msg timestamp="20240613 16:29:31.437" level="INFO">Typing text 'Bn12345678/' into text field 'css=#pass-login'.</msg>
+<status status="PASS" starttime="20240613 16:29:31.436" endtime="20240613 16:29:31.506"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${LOGIN_BUTTON}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:46.667" level="INFO">Clicking element 'css=#send2-login'.</msg>
-<status status="PASS" starttime="20240607 14:00:46.667" endtime="20240607 14:00:46.747"/>
+<msg timestamp="20240613 16:29:31.506" level="INFO">Clicking element 'css=#send2-login'.</msg>
+<status status="PASS" starttime="20240613 16:29:31.506" endtime="20240613 16:29:31.598"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240607 14:00:49.751" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20240607 14:00:46.749" endtime="20240607 14:00:49.751"/>
+<msg timestamp="20240613 16:29:34.600" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240613 16:29:31.599" endtime="20240613 16:29:34.601"/>
 </kw>
-<status status="PASS" starttime="20240607 14:00:44.734" endtime="20240607 14:00:49.752"/>
+<status status="PASS" starttime="20240613 16:29:29.421" endtime="20240613 16:29:34.602"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240613 16:29:34.605" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240613 16:29:34.603" endtime="20240613 16:29:34.690"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${FOOTER_CONTACTUS_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:34.693" level="INFO">Clicking element 'xpath=//span[contains(text(),'Contact Us')]'.</msg>
+<status status="PASS" starttime="20240613 16:29:34.692" endtime="20240613 16:29:36.361"/>
+</kw>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>${CONTACTUS_PAGE_2}</arg>
+<arg>${CONTACTUS_PAGE_TXT_2}</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20240613 16:29:36.366" endtime="20240613 16:29:36.503"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONTACTUS_FNAME_2}</arg>
+<arg>${CONTACTUS_FNAME__INPUT_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:36.504" level="INFO">Typing text 'Tanaporn' into text field 'xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='firstname']'.</msg>
+<status status="PASS" starttime="20240613 16:29:36.504" endtime="20240613 16:29:36.968"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <arg>window.scrollTo(0,300)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<msg timestamp="20240607 14:00:49.754" level="INFO">Executing JavaScript:
+<msg timestamp="20240613 16:29:36.971" level="INFO">Executing JavaScript:
 window.scrollTo(0,300)
 Without any arguments.</msg>
-<status status="PASS" starttime="20240607 14:00:49.753" endtime="20240607 14:00:49.798"/>
+<status status="PASS" starttime="20240613 16:29:36.970" endtime="20240613 16:29:37.033"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONTACTUS_LNAME_2}</arg>
+<arg>${CONTACTUS_LNAME_INPUT_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:37.042" level="INFO">Typing text 'Tanukit' into text field 'xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='lastname']'.</msg>
+<status status="PASS" starttime="20240613 16:29:37.041" endtime="20240613 16:29:37.658"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONTACTUS_EMAIL_2}</arg>
+<arg>${CONTACTUS_EMAIL_INPUT_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:37.660" level="INFO">Typing text 'tanaporn.t@jaspal.co.th' into text field 'xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='email']'.</msg>
+<status status="PASS" starttime="20240613 16:29:37.659" endtime="20240613 16:29:37.835"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${CONTACTUS_ISD_2}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20240613 16:29:37.836" endtime="20240613 16:29:37.904"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONTACTUS_ISD_2}</arg>
+<arg>${CONTACTUS_ISD_SELECT_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:37.905" level="INFO">Typing text '66' into text field 'xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='isd_code']'.</msg>
+<status status="PASS" starttime="20240613 16:29:37.904" endtime="20240613 16:29:38.026"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONTACTUS_TELEPHONE_2}</arg>
+<arg>${CONTACTUS_TELEPHONE_INPUT_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:38.029" level="INFO">Typing text '890000001' into text field 'xpath=//fieldset[@class='fieldset contact-bottom']/descendant::input[@id='telephone']'.</msg>
+<status status="PASS" starttime="20240613 16:29:38.028" endtime="20240613 16:29:38.160"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_DAILY_WEAR_2}</arg>
+<arg>${CONTACTUS_REASON_LIST_2}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240607 14:00:49.801" level="INFO">Clicking element 'xpath://*[@id="maincontent"]/div[4]/div/div[3]/div/div/div[7]/div/div/div/div/div/div[3]/div[2]/div/a'.</msg>
-<msg timestamp="20240607 14:00:50.003" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-123.png"&gt;&lt;img src="selenium-screenshot-123.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240607 14:00:50.006" level="FAIL">Element with locator 'xpath://*[@id="maincontent"]/div[4]/div/div[3]/div/div/div[7]/div/div/div/div/div/div[3]/div[2]/div/a' not found.</msg>
-<status status="FAIL" starttime="20240607 14:00:49.801" endtime="20240607 14:00:50.007"/>
+<msg timestamp="20240613 16:29:38.161" level="INFO">Clicking element 'xpath=//div[@class='control custom-select']/descendant::select'.</msg>
+<status status="PASS" starttime="20240613 16:29:38.161" endtime="20240613 16:29:38.253"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CONTACTUS_REASON_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:38.257" level="INFO">Clicking element 'xpath=(//select[@id='reason']/descendant::option)[2]'.</msg>
+<status status="PASS" starttime="20240613 16:29:38.255" endtime="20240613 16:29:38.363"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${CONTACTUS_COMMENT_2}</arg>
+<arg>${CONTACTUS_COMMENT_INPUT_2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:38.364" level="INFO">Typing text 'Test Comment' into text field 'xpath=//textarea[@id='comment']'.</msg>
+<status status="PASS" starttime="20240613 16:29:38.363" endtime="20240613 16:29:38.544"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CONTACTUS_SUBMIT_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240613 16:29:38.546" level="INFO">Clicking element 'xpath=//div[@class="row"]//button[@class="action submit btn btn--primary"]'.</msg>
+<status status="PASS" starttime="20240613 16:29:38.545" endtime="20240613 16:29:38.672"/>
 </kw>
 <kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>${PLP_HEADER_TXT_2}</arg>
-<arg>${PLP_HEADER_TXT_2}</arg>
+<arg>${CONTACTUS_POPUP_2}</arg>
+<arg>${CONTACTUS_POPUP_TXT_2}</arg>
 <doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.008" endtime="20240607 14:00:50.008"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${PLP_FILTER_PRODUCT_2}</var>
-<arg>xpath://*[@id="toolbar-amount"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.009" endtime="20240607 14:00:50.009"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Show Filter ${PLP_FILTER_PRODUCT_2}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.009" endtime="20240607 14:00:50.010"/>
+<status status="PASS" starttime="20240613 16:29:38.673" endtime="20240613 16:29:41.386"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
+<arg>${CONTACTUS_OK_2}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.010" endtime="20240607 14:00:50.010"/>
+<msg timestamp="20240613 16:29:41.388" level="INFO">Clicking element 'xpath=//span[contains(text(),'OK')]'.</msg>
+<status status="PASS" starttime="20240613 16:29:41.387" endtime="20240613 16:29:41.523"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${CONTACTUS_POPUP_2}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20240613 16:29:41.524" endtime="20240613 16:29:41.639"/>
 </kw>
 <kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0,200)</arg>
+<arg>window.scrollTo(0, document.body.scrollTop)</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.011" endtime="20240607 14:00:50.011"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_MOST_STOCKED_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.011" endtime="20240607 14:00:50.012"/>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
-<arg>${PLP_SORT_MOST_STOCKED_2}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.012" endtime="20240607 14:00:50.012"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.013" endtime="20240607 14:00:50.013"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.014" endtime="20240607 14:00:50.014"/>
-</kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0,200)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.015" endtime="20240607 14:00:50.015"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_NEWEST_TO_OLDEST_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.016" endtime="20240607 14:00:50.016"/>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
-<arg>${PLP_SORT_NEWEST_TO_OLDEST_2}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.016" endtime="20240607 14:00:50.016"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.017" endtime="20240607 14:00:50.017"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.017" endtime="20240607 14:00:50.017"/>
-</kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0,200)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.018" endtime="20240607 14:00:50.018"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_LOW2HIGH_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.018" endtime="20240607 14:00:50.019"/>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
-<arg>${PLP_SORT_LOW_TO_HIGH_2}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.019" endtime="20240607 14:00:50.019"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.019" endtime="20240607 14:00:50.020"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.020" endtime="20240607 14:00:50.020"/>
-</kw>
-<kw name="Execute Javascript" library="SeleniumLibrary">
-<arg>window.scrollTo(0,200)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.020" endtime="20240607 14:00:50.020"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${PLP_SORT_HIGH2LOW_2}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.021" endtime="20240607 14:00:50.021"/>
-</kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>${PLP_SORT_2}</arg>
-<arg>${PLP_SORT_HIGH _TO_LOW_2}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.021" endtime="20240607 14:00:50.021"/>
+<msg timestamp="20240613 16:29:41.641" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollTop)
+Without any arguments.</msg>
+<status status="PASS" starttime="20240613 16:29:41.640" endtime="20240613 16:29:41.694"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${PROFILE_BTN_2}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.022" endtime="20240607 14:00:50.022"/>
+<msg timestamp="20240613 16:29:41.695" level="INFO">Clicking element 'xpath://*[@class="header-links-wrapper cps-login text-center"]/span/em'.</msg>
+<status status="PASS" starttime="20240613 16:29:41.695" endtime="20240613 16:29:42.123"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${LOGOUT_2}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.022" endtime="20240607 14:00:50.023"/>
+<msg timestamp="20240613 16:29:42.124" level="INFO">Clicking element 'css=#html-body &gt; div.page-wrapper &gt; header &gt; div.container &gt; div &gt; div.page-header__right &gt; div.header-links-wrapper.cps-login.text-center.active &gt; div.header-links-menu.panel.header.arrow_box &gt; ul &gt; li.authorization-link'.</msg>
+<status status="PASS" starttime="20240613 16:29:42.124" endtime="20240613 16:29:42.962"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" starttime="20240607 14:00:50.023" endtime="20240607 14:00:50.023"/>
+<status status="PASS" starttime="20240613 16:29:42.963" endtime="20240613 16:29:45.503"/>
 </kw>
-<status status="FAIL" starttime="20240607 14:00:00.877" endtime="20240607 14:00:50.023">Element with locator 'xpath://*[@id="maincontent"]/div[4]/div/div[3]/div/div/div[7]/div/div/div/div/div/div[3]/div[2]/div/a' not found.</status>
+<status status="PASS" starttime="20240613 16:29:21.596" endtime="20240613 16:29:45.504"/>
 </test>
-<status status="FAIL" starttime="20240607 14:00:00.646" endtime="20240607 14:00:50.025"/>
+<status status="PASS" starttime="20240613 16:29:21.299" endtime="20240613 16:29:45.508"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="PLP">PLP</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Utility Pages">Utility Pages</stat>
 </suite>
 </statistics>
 <errors>
