@@ -175,6 +175,14 @@ ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}    xpath=//div[@class='shipping-addres
 
 #PAYMENT PAGE
 ${PAYMENT_METHOD_COD}    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]
+${PAYMENT_METHOD_CC}    xpath=//div[@class="payment-method-title field choice"]//label[@for="omise_cc"]
+${PAYMENT_METHOD_PP}    xpath=//label[@for="omise_offline_promptpay"]
+${CARDHOLDER_NAME_FIELD}    xpath=//input[@id="omise_ccCardHolderName"]
+${CARD_NUMBER_FIELD}    xpath=//input[@id="omise_ccCardNumber"]
+${EXPIRATION_MONTH_FIELD}    xpath=//select[@class="select select-month"] 
+${EXPIRATION_YEAR_FIELD}    xpath=//select[@class="select select-year"]
+${CVV_FIELD}    xpath=//input[@id="omise_ccCardSecurityCode"]
+${CARD_NUMBER_ERROR}    xpath=//div[@id="omise_ccCardNumber-error"]
 ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}    xpath=//button[@class="button action primary"]
 
 #REVIEW ORDER PAGE
@@ -190,6 +198,13 @@ ${THANKYOU_PAYMENT_SECTION}    xpath=//div[@class="container order-details"]//di
 ${THANKYOU_ITEM_LIST_SECTION}    xpath=//div[@class="order-details-in shipping-details"]//following::div[@class="item-details"]
 ${THANKYOU_GET_GUEST_ORDER_NUMBER}    xpath=//ul//li//div[@class="value"]
 ${THANKYOU_GET_REGISTER_ORDER_NUMBER}    xpath=//ul//li//div[@class="value"]
+${THANKYOU_SUB_TOTAL_TEXT}    xpath=//div[2]/div[2]/div[1]/ul/li[2]/div[@class="value"]
+${THANKYOU_SHIPPING_FEE_TEXT}    xpath=//div[2]/div[2]/div[1]/ul/li[3]/div[@class="value"]
+${THANKYOU_COD_CHARGES_TEXT}    xpath=//div[2]/div[2]/div[1]/ul/li[4]/div[@class="value"]
+${THANKYOU_TOTAL_TEXT}    xpath=//div[2]/div[2]/div[1]/ul/li[5]/div[@class="value"]    
+
+
+
 
 #FOOTER
 ${FOOTER_MY_ACCOUNT_MY_ORDERS}    xpath=//div[@class="footer-menus"]/div[@class="order-link"]/a/span[text()='My Orders']    
@@ -482,3 +497,12 @@ ${PO_PROCEED_To_VIEWORDER_2}    xpath://button[@class="button action primary"]
 ${PO_REVIEW_ORDER_2}    xpath://h2[text()='Review Order']
 ${PO_PLACE_ORDER_2}    xpath://button[@class="button action primary"]
 ${PO_THANK_MSG_2}    xpath://div[@class="order-body"]
+
+#PromptPay page
+${PROMPTPAY_SAVE_QR_BUTTON}    xpath=//button[@title="Save QR Code"]
+${PROMPTPAY_EDIT_PAYMENT_BUTTON}    xpath=//button[@title="Edit Payment"]
+${PROMPTPAY_ORDER_NUMBER_TEXT}    xpath=//div[@class="promptpay-order-number"]//p[2]
+${PROMPTPAY_QR_CODE_IMG}     xpath=//div[@class="promptpay-img"]//img
+${PROMPTPAY_MER_NAME}    xpath=//div[@class="promptpay-merchant"]//p
+${PROMPTPAY_PRICE_TEXT}    xpath=//div[@class="promptpay-amount"]//p
+${PROMPTPAY_HOW_TO_PAY}    xpath=//div[@data-content-type="html"]//b

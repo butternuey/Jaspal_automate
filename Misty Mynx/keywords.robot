@@ -76,4 +76,16 @@ Change Password
      Sleep    5s
      Click Element    ${UPDATE_PASSWORD_BTN_2}
      Close All Browsers
-        
+
+Delete item from mini cart
+    Click Element    ${MINI_CART_ICON}
+    Wait Until Page Contains Element    ${MINI_CART_POPUP}
+    #Click on delete icon
+    Click Element    ${MINI_CART_DELETE_ICON}
+    #Verify delete popup
+    Wait Until Page Contains Element    ${MINI_CART_DELETE_POPUP}
+    #Click ok button to delete
+    Click Element    ${MINI_CART_DELETE_POPUP_OK_BUTTON}
+    Wait Until Element Is Not Visible    ${MINI_CART_DELETE_POPUP}
+    #Verify Mini cart is empty
+    Click Element    ${MINI_CART_ICON}
