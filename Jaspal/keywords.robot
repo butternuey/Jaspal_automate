@@ -88,4 +88,17 @@ Change Password
 Open Worn Website
     Open Browser    ${WORN_URL}    gc  
     Maximize Browser Window
+
+Delete item from mini cart
+    Click Element    ${MINI_CART_ICON}
+    Wait Until Page Contains Element    ${MINI_CART_POPUP}
+    #Click on delete icon
+    Click Element    ${MINI_CART_DELETE_ICON}
+    #Verify delete popup
+    Wait Until Page Contains Element    ${MINI_CART_DELETE_POPUP}
+    #Click ok button to delete
+    Click Element    ${MINI_CART_DELETE_POPUP_OK_BUTTON}
+    Wait Until Element Is Not Visible    ${MINI_CART_DELETE_POPUP}
+    #Verify Mini cart is empty
+    Click Element    ${MINI_CART_ICON}
         

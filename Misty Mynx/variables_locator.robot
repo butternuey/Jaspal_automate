@@ -172,6 +172,27 @@ ${SHIPPING_ORDER_INFORMATION_SECTION_GET_COLOR}    xpath=//div[@class="product o
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_SIZE}    xpath=//div[@class="product options variant"]//ul[@class="item-options"]//li[2]//span[@class="values"]
 ${SHIPPING_ORDER_INFORMATION_SECTION_GET_QTY}    xpath=//div[@class="details-qty summary-details-qty"]//span[@class="value"]
 ${SHIPPING_GET_REGISTER_SHIPPING_DEFAULT}    xpath=//div[@class='shipping-address-item']
+${SHIPPING_ONLINE_CREDIT_SECTION}    xpath=//div[@class="payment-option-title coupon-title"]
+${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE}    xpath=//span[@class="check-expire"]
+${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT}    xpath=//div[@class="field store-point-lable"]//label[@for="coupon_code"]//span[text()='Available Credit']
+${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_VALUE}    xpath=//div[@class="field store-point-lable"][1]//span[@class="points"]
+${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT}    xpath=//div[@class="field store-point-lable"]//label[@for="coupon_code"]//span[text()='Applicable Credit']
+${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT_VALUE}    xpath=//div[@class="field store-point-lable"][2]//span[@class="points"]
+${SHIPPING_ONLINE_CREDIT_USE_ONLINE_CREDIT_BUTTON}    xpath=//div[@class="primary"]//button[@id="use-customer-balance"]
+${SHIPPING_ONLINE_CREDIT_SUCCESS_POPUP}    xpath=//div[@class="modal-content"]//p[@class="message success"]//span[text()='Your online credit was successfully applied']
+${SHIPPING_ONLINE_CREDIT_OK_BUTTON}    xpath=//footer[@class="modal-footer"]//button[@class="action-primary action-accept"]
+${SHIPPING_ONLINE_CREDIT_CC_USE_ONLINE_CREDIT_BUTTON}    xpath=//div[@class="primary"]//button[@id="cancel-customer-balance"]//span//span[contains(text(),"Cancel to Use Online Credit")]
+${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}    xpath=//tr[@class="totals total_discount excl actual_cal"]//td[@class="amount"]//span
+${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS_VALUE}    xpath=//tr[@class="totals balance"]//td[@class="amount"]//span[@class="price"]
+${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP}    xpath=//div[@class="modal-inner-wrap"]//header[@class="modal-header"]//h1[contains(text(),"Online Credit")]
+${SHIPPING_ONLINE_CREDIT_EXPIRE_DATE_TEXT}    xpath=//table[@class="storecredit"]//span[text()="Expire Date"]       
+${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP_CLOSE_BUTTON}    xpath=//header[@class="modal-header"]//h1[contains(text(),"Online Credit")]//parent::header//button
+${SHIPPING_PROMOTION_CODE_SECTION}    xpath=//div[contains(@class,"payment-option block discount")]//div[contains(@class,"payment-option-title coupon-title field choice")]
+${SHIPPING_PROMOTION_CODE_FIELD}    xpath=//input[@id="discount-code"]
+${SHIPPING_PROMOTION_APPLY_BUTTON}    xpath=//div[@class="primary"]//button[@class="action action-apply"]
+${SHIPPING_PROMOTION_SUCCESS_POPUP}    xpath=//div[@class="modal-content"]//span[text()="Your promo was successfully applied."]
+${SHIPPING_PROMOTION_SUCCESS_POPUP_OK_BUTTON}    xpath=//button[@class="action-primary action-accept"]
+${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}    xpath=//tr[@class="totals total_point"]//td[@class="amount"]//span
 
 #PAYMENT PAGE
 ${PAYMENT_METHOD_COD}    xpath=//div[@id="checkout-payment-method-load"]//div[@class="items payment-methods"]//div[@class="payment-group"]//div[@class="payment-method-title field choice"]//label[@for="cashondelivery"]

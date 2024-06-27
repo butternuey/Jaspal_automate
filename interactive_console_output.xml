@@ -1,247 +1,426 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.12.2 on win32)" generated="20240618 16:32:31.205" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.3 (Python 3.12.2 on win32)" generated="20240627 15:28:22.346" rpa="false" schemaversion="2">
 <suite id="s1" name="Robot Interactive Console" source="c:\Users\kittiya\.vscode\extensions\robocorp.robotframework-lsp-1.12.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
 <test id="s1-t1" name="Default Task/Test">
 <kw name="Interpreter Main Loop" library="MainLoop">
 <kw name="Open Website">
-<msg timestamp="20240618 16:32:35.235" level="FAIL">No keyword with name 'Open Website' found.</msg>
-<status status="FAIL" starttime="20240618 16:32:35.235" endtime="20240618 16:32:35.235"/>
+<msg timestamp="20240627 15:28:24.520" level="FAIL">No keyword with name 'Open Website' found.</msg>
+<status status="FAIL" starttime="20240627 15:28:24.520" endtime="20240627 15:28:24.520"/>
 </kw>
 <kw name="Accept Cookies">
-<status status="NOT RUN" starttime="20240618 16:32:35.236" endtime="20240618 16:32:35.236"/>
+<status status="NOT RUN" starttime="20240627 15:28:24.521" endtime="20240627 15:28:24.521"/>
 </kw>
 <kw name="Login">
-<arg>${LOGIN_EMAIL}</arg>
-<arg>${LOGIN_PASSWORD}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.237" endtime="20240618 16:32:35.237"/>
-</kw>
-<kw name="Click Element">
-<arg>${SEARCH_BTN_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.237" endtime="20240618 16:32:35.237"/>
-</kw>
-<kw name="Input Text">
-<arg>${SEARCH_TXT_2}</arg>
-<arg>${PRODUCT_NAME_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.238" endtime="20240618 16:32:35.238"/>
-</kw>
-<kw name="Click Element">
-<arg>${SEARCH_RESULT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.239" endtime="20240618 16:32:35.239"/>
-</kw>
-<kw name="Wait Until Page Contains Element">
-<arg>${RESULT_PRODUCT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.239" endtime="20240618 16:32:35.239"/>
-</kw>
-<kw name="Execute Javascript">
-<arg>window.scrollTo(0,300)</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.240" endtime="20240618 16:32:35.240"/>
-</kw>
-<kw name="Click Element">
-<arg>${MYNX_LOVE_TEE_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.241" endtime="20240618 16:32:35.241"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PDP_RESULT_MYNX_LOVE_TEE_2}</arg>
-<arg>${PO_PRODUCT_NAME_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.241" endtime="20240618 16:32:35.241"/>
-</kw>
-<kw name="Execute Javascript">
-<arg>window.scrollTo(0,3000)</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.242" endtime="20240618 16:32:35.242"/>
-</kw>
-<kw name="Wait Until Element Is Visible">
-<arg>${PDP_ADDTOBAG_BTN_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.243" endtime="20240618 16:32:35.243"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240618 16:32:35.244" endtime="20240618 16:32:35.244"/>
-</kw>
-<kw name="Click Element">
-<arg>${PDP_ADDTOBAG_BTN_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.244" endtime="20240618 16:32:35.244"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PDP_WLPOPUP_2}</arg>
-<arg>${PO_WLPOPUP_TXT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.245" endtime="20240618 16:32:35.245"/>
-</kw>
-<kw name="Click Element">
-<arg>${PDP_OK_BTN_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.245" endtime="20240618 16:32:35.245"/>
+<arg>${LOGIN_EMAIL_EXISTING_CUSTOMER}</arg>
+<arg>${LOGIN_PASSWORD_EXISTING_CUSTOMER}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.522" endtime="20240627 15:28:24.522"/>
 </kw>
 <kw name="Wait Until Element Is Not Visible">
-<arg>${PDP_WLPOPUP_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.246" endtime="20240618 16:32:35.246"/>
-</kw>
-<kw name="Get Text">
-<var>${PO_MYBAG_COUNT_2}</var>
-<arg>${PO_MYBAG_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.247" endtime="20240618 16:32:35.247"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>My Bag ${PO_MYBAG_COUNT_2}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240618 16:32:35.247" endtime="20240618 16:32:35.247"/>
+<arg>${LOGIN_POPUP}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.522" endtime="20240627 15:28:24.522"/>
 </kw>
 <kw name="Click Element">
-<arg>${PO_MYBAG_ICON_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.248" endtime="20240618 16:32:35.248"/>
-</kw>
-<kw name="Wait Until Element Is Visible">
-<arg>${PO_MINICART_CHECKOUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.248" endtime="20240618 16:32:35.248"/>
-</kw>
-<kw name="Click Button">
-<arg>${PO_MINICART_CHECKOUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.249" endtime="20240618 16:32:35.249"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PO_SHPPING_TITLE_2}</arg>
-<arg>${PO_SHPPING_TXT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.249" endtime="20240618 16:32:35.249"/>
-</kw>
-<kw name="Click Element">
-<arg>${PO_SELECT_PROVINCE_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.250" endtime="20240618 16:32:35.250"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PO_PROVINCE_2}</arg>
-<arg>${PO_PROVINCE_SELECT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.251" endtime="20240618 16:32:35.251"/>
-</kw>
-<kw name="Click Element">
-<arg>${PO_PROVINCE_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.252" endtime="20240618 16:32:35.252"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PO_DISTRICT_2}</arg>
-<arg>${PO_DISTRICT_SELECT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.252" endtime="20240618 16:32:35.252"/>
-</kw>
-<kw name="Click Element">
-<arg>${PO_DISTRICT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.253" endtime="20240618 16:32:35.253"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PO_SUBDISTRICT_2}</arg>
-<arg>${PO_SUBDISTRICT_SELECT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.253" endtime="20240618 16:32:35.253"/>
-</kw>
-<kw name="Click Element">
-<arg>${PO_SUBDISTRICT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.254" endtime="20240618 16:32:35.254"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PO_POSTCODE_2}</arg>
-<arg>${PO_POSTCODE_SELECT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.255" endtime="20240618 16:32:35.255"/>
+<arg>${HOMEPAGE_SEARCH_PRODUCT_ICON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.523" endtime="20240627 15:28:24.523"/>
 </kw>
 <kw name="Input Text">
-<arg>${PO_HOUSE_NUMBER_2}</arg>
-<arg>${PO_HOUSE_NUMBER_INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.255" endtime="20240618 16:32:35.255"/>
+<arg>${HOMEPAGE_SEARCH_PRODUCT_FIELD}</arg>
+<arg>${PRODUCT_1}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.524" endtime="20240627 15:28:24.524"/>
 </kw>
-<kw name="Input Text">
-<arg>${PO_ROAD_2}</arg>
-<arg>${PO_ROAD_INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.256" endtime="20240618 16:32:35.256"/>
+<kw name="Press Keys">
+<arg>${HOMEPAGE_SEARCH_PRODUCT_FIELD}</arg>
+<arg>${KEYBOARD_BUTTON_ENTER}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.524" endtime="20240627 15:28:24.524"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.524" endtime="20240627 15:28:24.524"/>
+</kw>
+<kw name="Click Element">
+<arg>${PLP_PRODUCT_1}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.525" endtime="20240627 15:28:24.525"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.525" endtime="20240627 15:28:24.525"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${PDP_BREADCRUMBS_ITEMLIST}</arg>
+<arg>${PRODUCT_1}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.526" endtime="20240627 15:28:24.526"/>
 </kw>
 <kw name="Execute Javascript">
 <arg>window.scrollTo(0,3200)</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.256" endtime="20240618 16:32:35.256"/>
+<status status="NOT RUN" starttime="20240627 15:28:24.527" endtime="20240627 15:28:24.527"/>
 </kw>
-<kw name="Input Text">
-<arg>${PO_PHONE_NUMBER_2}</arg>
-<arg>${PO_PHONE_NUMBER_INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.257" endtime="20240618 16:32:35.257"/>
-</kw>
-<kw name="Click Element">
-<arg>${PO_SHIPPING_METHOD_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.257" endtime="20240618 16:32:35.258"/>
-</kw>
-<kw name="Get Value">
-<var>${PO_SUBTOTAL_TXT_2}=</var>
-<arg>${PO_SUBTOTAL_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.258" endtime="20240618 16:32:35.258"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${PO_SUBTOTAL_TXT_2}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240618 16:32:35.258" endtime="20240618 16:32:35.258"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>4s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.527" endtime="20240627 15:28:24.527"/>
 </kw>
 <kw name="Click Element">
-<arg>${PO_PROCEED_TO_PAYMENT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.259" endtime="20240618 16:32:35.259"/>
+<arg>${PDP_ADD_TO_CART_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.528" endtime="20240627 15:28:24.528"/>
 </kw>
 <kw name="Wait Until Element Contains">
-<arg>${PO_PAYMENT_TITLE_2}</arg>
-<arg>${PO_PAYMENT_TXT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.260" endtime="20240618 16:32:35.260"/>
+<arg>${PDP_ADD_TO_CART_SUCCESS_POPUP}</arg>
+<arg>${SUCCESS_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.528" endtime="20240627 15:28:24.528"/>
 </kw>
 <kw name="Click Element">
-<arg>${PO_CREDITCARD_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.261" endtime="20240618 16:32:35.261"/>
+<arg>${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.529" endtime="20240627 15:28:24.529"/>
 </kw>
-<kw name="Input Text">
-<arg>${PO_CARD_NAME_2}</arg>
-<arg>${PO_CARD_NAME_INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.263" endtime="20240618 16:32:35.263"/>
-</kw>
-<kw name="Input Text">
-<arg>${PO_CARD_NUMBER_2}</arg>
-<arg>${PO_CARD_NUMBER_INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.264" endtime="20240618 16:32:35.264"/>
-</kw>
-<kw name="Select From List By Value">
-<arg>${PO_CARD_MONTH_2}</arg>
-<arg>${PO_CARD_MONTH__INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.265" endtime="20240618 16:32:35.265"/>
-</kw>
-<kw name="Select From List By Value">
-<arg>${PO_CARD_YEAR_2}</arg>
-<arg>${PO_CARD_YEAR_INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.265" endtime="20240618 16:32:35.266"/>
-</kw>
-<kw name="Input Text">
-<arg>${PO_CARD_CVV_2}</arg>
-<arg>${PO_CARD_CVV_INPUT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.266" endtime="20240618 16:32:35.266"/>
-</kw>
-<kw name="Click Element">
-<arg>${PO_PROCEED_To_VIEWORDER_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.267" endtime="20240618 16:32:35.267"/>
-</kw>
-<kw name="Wait Until Element Contains">
-<arg>${PO_REVIEW_ORDER_2}</arg>
-<arg>${PO_REVIEW_ORDER_TXT_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.267" endtime="20240618 16:32:35.267"/>
-</kw>
-<kw name="Click Element">
-<arg>${PO_PLACE_ORDER_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.268" endtime="20240618 16:32:35.268"/>
-</kw>
-<kw name="Get Value">
-<var>${PO_THANKYOU_TXT_2}=</var>
-<arg>${PO_THANK_MSG_2}</arg>
-<status status="NOT RUN" starttime="20240618 16:32:35.269" endtime="20240618 16:32:35.269"/>
+<kw name="Get Text">
+<var>${MINICART_COUNT}=</var>
+<arg>${MINI_CART_COUNTER_LABEL}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.530" endtime="20240627 15:28:24.530"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${PO_THANKYOU_TXT_2}</arg>
+<arg>Get count on minicart icon = ${MINICART_COUNT}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20240618 16:32:35.269" endtime="20240618 16:32:35.269"/>
+<status status="NOT RUN" starttime="20240627 15:28:24.530" endtime="20240627 15:28:24.530"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.530" endtime="20240627 15:28:24.530"/>
+</kw>
+<kw name="Click Element">
+<arg>${MINI_CART_ICON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.531" endtime="20240627 15:28:24.531"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${MINI_CART_CHECKOUT_BUTTON}</arg>
+<arg>${MINI_CART_CHECKOUT_BUTTON_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.531" endtime="20240627 15:28:24.531"/>
+</kw>
+<kw name="Click Element">
+<arg>${MINI_CART_CHECKOUT_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.532" endtime="20240627 15:28:24.532"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>8s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.532" endtime="20240627 15:28:24.532"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${LANDING_PAGE}</var>
+<arg>Page Should Contain</arg>
+<arg>${REVIEW_ORDER_TEXT}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.532" endtime="20240627 15:28:24.532"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.532" endtime="20240627 15:28:24.532"/>
+</kw>
+<if>
+<branch type="IF" condition="'${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}'">
+<kw name="Click Element">
+<arg>${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.533" endtime="20240627 15:28:24.533"/>
+</kw>
+<status status="NOT RUN" starttime="20240627 15:28:24.532" endtime="20240627 15:28:24.533"/>
+</branch>
+<branch type="ELSE">
+<kw name="Wait Until Page Contains">
+<arg>${SHIPPING_INFORMATION_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.534" endtime="20240627 15:28:24.534"/>
+</kw>
+<status status="NOT RUN" starttime="20240627 15:28:24.533" endtime="20240627 15:28:24.534"/>
+</branch>
+<status status="NOT RUN" starttime="20240627 15:28:24.532" endtime="20240627 15:28:24.534"/>
+</if>
+<kw name="Execute Javascript">
+<arg>window.scrollTo(0,0)</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.534" endtime="20240627 15:28:24.534"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${SHIPPING_ORDER_INFORMATION_SECTION}</arg>
+<arg>${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.535" endtime="20240627 15:28:24.535"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${SHIPPING_ONLINE_CREDIT_SECTION}</arg>
+<arg>${SHIPPING_ONLINE_CREDIT_SECTION_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.536" endtime="20240627 15:28:24.536"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${SHIPPING_ONLINE_CREDIT_SECTION}</arg>
+<arg>${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.537" endtime="20240627 15:28:24.537"/>
+</kw>
+<kw name="Click Element">
+<arg>${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.537" endtime="20240627 15:28:24.537"/>
+</kw>
+<kw name="Execute Javascript">
+<arg>window.scrollTo(0,900)</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.538" endtime="20240627 15:28:24.538"/>
+</kw>
+<kw name="Wait Until Page Contains Element">
+<arg>${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP}</arg>
+<arg>5s</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.539" endtime="20240627 15:28:24.539"/>
+</kw>
+<kw name="Wait Until Page Contains Element">
+<arg>${SHIPPING_ONLINE_CREDIT_EXPIRE_DATE_TEXT}</arg>
+<arg>3s</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.539" endtime="20240627 15:28:24.539"/>
+</kw>
+<kw name="Click Element">
+<arg>${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP_CLOSE_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.541" endtime="20240627 15:28:24.541"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT}</arg>
+<arg>${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.542" endtime="20240627 15:28:24.542"/>
+</kw>
+<kw name="Get Text">
+<var>${AVAILABLE CREDIT}</var>
+<arg>${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_VALUE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.542" endtime="20240627 15:28:24.542"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Available Credit is ${AVAILABLE CREDIT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.543" endtime="20240627 15:28:24.543"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240618 16:32:35.269" endtime="20240618 16:32:35.269"/>
+<status status="NOT RUN" starttime="20240627 15:28:24.543" endtime="20240627 15:28:24.543"/>
 </kw>
-<status status="PASS" starttime="20240618 16:32:31.230" endtime="20240618 16:32:52.108"/>
+<kw name="Wait Until Page Contains Element">
+<arg>${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.543" endtime="20240627 15:28:24.543"/>
 </kw>
-<status status="PASS" starttime="20240618 16:32:31.229" endtime="20240618 16:32:52.108"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.543" endtime="20240627 15:28:24.543"/>
+</kw>
+<kw name="Get Text">
+<var>${APPLIED CREDIT}</var>
+<arg>${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT_VALUE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.544" endtime="20240627 15:28:24.544"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Applicable Credit is ${APPLIED CREDIT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.544" endtime="20240627 15:28:24.544"/>
+</kw>
+<kw name="Click Button">
+<arg>${SHIPPING_ONLINE_CREDIT_USE_ONLINE_CREDIT_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.545" endtime="20240627 15:28:24.545"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.545" endtime="20240627 15:28:24.545"/>
+</kw>
+<kw name="Wait Until Page Contains Element">
+<arg>${SHIPPING_ONLINE_CREDIT_SUCCESS_POPUP}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.545" endtime="20240627 15:28:24.545"/>
+</kw>
+<kw name="Click Button">
+<arg>${SHIPPING_ONLINE_CREDIT_OK_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.546" endtime="20240627 15:28:24.546"/>
+</kw>
+<kw name="Wait Until Page Contains Element">
+<arg>${SHIPPING_ONLINE_CREDIT_CC_USE_ONLINE_CREDIT_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.547" endtime="20240627 15:28:24.547"/>
+</kw>
+<kw name="Get Text">
+<var>${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}</var>
+<arg>${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.547" endtime="20240627 15:28:24.547"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.547" endtime="20240627 15:28:24.547"/>
+</kw>
+<kw name="Get Text">
+<var>${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}</var>
+<arg>${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.548" endtime="20240627 15:28:24.548"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.548" endtime="20240627 15:28:24.548"/>
+</kw>
+<kw name="Get Text">
+<var>${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}</var>
+<arg>${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.549" endtime="20240627 15:28:24.549"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.549" endtime="20240627 15:28:24.549"/>
+</kw>
+<kw name="Get Text">
+<var>${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}</var>
+<arg>${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS_VALUE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.549" endtime="20240627 15:28:24.549"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.550" endtime="20240627 15:28:24.550"/>
+</kw>
+<kw name="Get Text">
+<var>${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}</var>
+<arg>${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.551" endtime="20240627 15:28:24.551"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.551" endtime="20240627 15:28:24.551"/>
+</kw>
+<kw name="Click Element">
+<arg>${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.551" endtime="20240627 15:28:24.551"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.551" endtime="20240627 15:28:24.551"/>
+</kw>
+<kw name="Wait Until Page Contains">
+<arg>${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.552" endtime="20240627 15:28:24.552"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.552" endtime="20240627 15:28:24.552"/>
+</kw>
+<kw name="Click Element">
+<arg>${PAYMENT_METHOD_COD}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.553" endtime="20240627 15:28:24.553"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.553" endtime="20240627 15:28:24.553"/>
+</kw>
+<kw name="Click Element">
+<arg>${PAYMENT_PROCEED_TO_REVIEW_BUTTON}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.554" endtime="20240627 15:28:24.554"/>
+</kw>
+<kw name="Wait Until Page Contains">
+<arg>${REVIEW_ORDER_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.555" endtime="20240627 15:28:24.555"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${REVIEW_ORDER_SHIPPING_SECTION}</arg>
+<arg>${REVIEW_ORDER_SHIPPING_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.556" endtime="20240627 15:28:24.557"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${REVIEW_ORDER_PAYMENT_SECTION}</arg>
+<arg>${REVIEW_ORDER_PAYMENT_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.558" endtime="20240627 15:28:24.558"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${REVIEW_ORDER_ITEM_LIST_SECTION}</arg>
+<arg>${REVIEW_ORDER_ITEM_LIST_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.560" endtime="20240627 15:28:24.560"/>
+</kw>
+<kw name="Click Element">
+<arg>${REVIEW_ORDER_PLACE_ORDER}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.562" endtime="20240627 15:28:24.562"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.562" endtime="20240627 15:28:24.562"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${THANKYOU_SHIPPING_SECTION}</arg>
+<arg>${THANKYOU_SHIPPING_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.562" endtime="20240627 15:28:24.562"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${THANKYOU_PAYMENT_SECTION}</arg>
+<arg>${THANKYOU_PAYMENT_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.563" endtime="20240627 15:28:24.563"/>
+</kw>
+<kw name="Wait Until Element Contains">
+<arg>${THANKYOU_ITEM_LIST_SECTION}</arg>
+<arg>${THANKYOU_ITEM_LIST_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.564" endtime="20240627 15:28:24.564"/>
+</kw>
+<kw name="Get Text">
+<var>${GUEST_ORDER_NUMBER}=</var>
+<arg>${THANKYOU_GET_REGISTER_ORDER_NUMBER}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.565" endtime="20240627 15:28:24.565"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Order Number is ${GUEST_ORDER_NUMBER}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.565" endtime="20240627 15:28:24.565"/>
+</kw>
+<kw name="Get Text">
+<var>${THANKYOU_SUB_TOTAL}=</var>
+<arg>${THANKYOU_SUB_TOTAL_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.566" endtime="20240627 15:28:24.566"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Sub total is ${THANKYOU_SUB_TOTAL}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.567" endtime="20240627 15:28:24.567"/>
+</kw>
+<kw name="Get Text">
+<var>${THANKYOU_SHIPPING_FEE}=</var>
+<arg>${THANKYOU_SHIPPING_FEE_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.567" endtime="20240627 15:28:24.567"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Shipping Fee is ${THANKYOU_SHIPPING_FEE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.567" endtime="20240627 15:28:24.567"/>
+</kw>
+<kw name="Get Text">
+<var>${THANKYOU_COD_CHARGES}=</var>
+<arg>${THANKYOU_COD_CHARGES_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.569" endtime="20240627 15:28:24.569"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>COD Charges is ${THANKYOU_COD_CHARGES}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.569" endtime="20240627 15:28:24.569"/>
+</kw>
+<kw name="Get Text">
+<var>${THANKYOU_TOTAL}=</var>
+<arg>${THANKYOU_TOTAL_TEXT}</arg>
+<status status="NOT RUN" starttime="20240627 15:28:24.570" endtime="20240627 15:28:24.570"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Total is ${THANKYOU_COD_CHARGES}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.570" endtime="20240627 15:28:24.570"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240627 15:28:24.570" endtime="20240627 15:28:24.570"/>
+</kw>
+<status status="PASS" starttime="20240627 15:28:22.370" endtime="20240627 15:28:42.011"/>
+</kw>
+<status status="PASS" starttime="20240627 15:28:22.370" endtime="20240627 15:28:42.011"/>
 </test>
-<status status="PASS" starttime="20240618 16:32:31.207" endtime="20240618 16:32:52.110"/>
+<status status="PASS" starttime="20240627 15:28:22.349" endtime="20240627 15:28:42.013"/>
 </suite>
 <statistics>
 <total>

@@ -695,3 +695,543 @@ Payment and Order CF_TC_8: To verfiy registerd customer is able to see checkout 
     ${THANKYOU_TOTAL}=    Get Text    ${THANKYOU_TOTAL_TEXT}
     Log To Console    Total is ${THANKYOU_COD_CHARGES}
     Sleep    3s
+
+Payment and Order CF_TC_9: To verify Registered customer able to place an order with Online Credit balance during checkout process
+    Open Website
+    Accept Cookies
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
+    Sleep    4s
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
+    #Check success message
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
+    #Click on OK button
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
+    Log To Console    Get count on minicart icon = ${MINICART_COUNT}
+    #Click minicart icon
+    Sleep    1s
+    Click Element    ${MINI_CART_ICON}
+    #Verify the Checkout button on Mini cart
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
+    #Click on Checkout button on Mini Cart
+    Click Element    ${MINI_CART_CHECKOUT_BUTTON}
+    Sleep    8s
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
+        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    ELSE
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
+        
+    END
+    Execute Javascript    window.scrollTo(0,0)
+    #--------------------------------------------- Shipping Page ---------------------------------------------------
+    #Verify the Order Information title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
+    #Verify the Online Credit Section on Shipping page
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_SECTION}    ${SHIPPING_ONLINE_CREDIT_SECTION_TEXT}  
+    #Verify Check Expire Date
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_SECTION}    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_TEXT}
+    Click Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE}
+    #Verify Check Expire Date Popup
+    Execute Javascript    window.scrollTo(0,900)
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP}    5s
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_EXPIRE_DATE_TEXT}    3s
+    #Click Close popup
+    Click Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP_CLOSE_BUTTON}
+    #Get available credit Value
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT}    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_TEXT}
+    ${AVAILABLE CREDIT}    Get Text    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_VALUE}
+    Log To Console    Available Credit is ${AVAILABLE CREDIT}
+    Sleep    5s
+    #Verify the applicable Credit
+    Wait Until Page Contains Element   ${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT}
+    Sleep    2s
+    #Get applicable credit Value
+    ${APPLIED CREDIT}    Get Text    ${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT_VALUE}
+    Log To Console    Applicable Credit is ${APPLIED CREDIT}
+    #Click on Use Online Credit button
+    Click Button    ${SHIPPING_ONLINE_CREDIT_USE_ONLINE_CREDIT_BUTTON}
+    Sleep    3s
+    #Verify the Success Message of online Credit
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_SUCCESS_POPUP}
+    #Click OK Button
+    Click Button    ${SHIPPING_ONLINE_CREDIT_OK_BUTTON}
+    #Verify button after Use Online Credit
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_CC_USE_ONLINE_CREDIT_BUTTON}
+    #The Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Verify the Shipping Fee on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}
+    #Verify Total discount
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}
+    #verify Online Credits
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}
+    #Verify the Total Price on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
+    #Click Proceed to payment
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
+    Sleep    3s
+    #-------------------------- Payment Page ---------------------------------------------
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
+    #Select payment method
+    Sleep    2s
+    Click Element    ${PAYMENT_METHOD_COD}
+    Sleep    2s
+    #Click Proceed to Review Order button
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
+    #-------------------------- Review Order Page ---------------------------------------------
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
+    #Click Place Order button
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
+    #-------------------------- Thank you Page -------------------------------------------------
+    Sleep    2s
+    #Verify SHIPPING_SECTION
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    #Verify PAYMENT_SECTION
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    #Verify ITEM_LIST_SECTION
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    #Verify ORDER_NUMBER
+    ${GUEST_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
+    Log To Console    Order Number is ${GUEST_ORDER_NUMBER}
+    #Verify Sub total
+    ${THANKYOU_SUB_TOTAL}=    Get Text    ${THANKYOU_SUB_TOTAL_TEXT}
+    Log To Console    Sub total is ${THANKYOU_SUB_TOTAL}
+    #Verify Shipping Fee
+    ${THANKYOU_SHIPPING_FEE}=    Get Text    ${THANKYOU_SHIPPING_FEE_TEXT}
+    Log To Console    Shipping Fee is ${THANKYOU_SHIPPING_FEE}
+    #Verify COD Charges
+    ${THANKYOU_COD_CHARGES}=    Get Text    ${THANKYOU_COD_CHARGES_TEXT}
+    Log To Console    COD Charges is ${THANKYOU_COD_CHARGES}
+    #Verify Total
+    ${THANKYOU_TOTAL}=    Get Text    ${THANKYOU_TOTAL_TEXT}
+    Log To Console    Total is ${THANKYOU_COD_CHARGES}
+    Sleep    3s
+
+Payment and Order CF_TC_10: To verify Registered customer able to place an order with Online Credit balance and any one of the payment option
+    Open Website
+    Accept Cookies
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
+    Sleep    4s
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
+    #Check success message
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
+    #Click on OK button
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
+    Log To Console    Get count on minicart icon = ${MINICART_COUNT}
+    #Click minicart icon
+    Sleep    1s
+    Click Element    ${MINI_CART_ICON}
+    #Verify the Checkout button on Mini cart
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
+    #Click on Checkout button on Mini Cart
+    Click Element    ${MINI_CART_CHECKOUT_BUTTON}
+    Sleep    8s
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
+        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    ELSE
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
+        
+    END
+    Execute Javascript    window.scrollTo(0,0)
+    #--------------------------------------------- Shipping Page ---------------------------------------------------
+    #Verify the Order Information title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
+    #Verify the Online Credit Section on Shipping page
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_SECTION}    ${SHIPPING_ONLINE_CREDIT_SECTION_TEXT}  
+    #Verify Check Expire Date
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_SECTION}    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_TEXT}
+    Click Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE}
+    #Verify Check Expire Date Popup
+    Execute Javascript    window.scrollTo(0,900)
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP}    5s
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_EXPIRE_DATE_TEXT}    3s
+    #Click Close popup
+    Click Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP_CLOSE_BUTTON}
+    #Get available credit Value
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT}    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_TEXT}
+    ${AVAILABLE CREDIT}    Get Text    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_VALUE}
+    Log To Console    Available Credit is ${AVAILABLE CREDIT}
+    Sleep    5s
+    #Verify the applicable Credit
+    Wait Until Page Contains Element   ${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT}
+    Sleep    2s
+    #Get applicable credit Value
+    ${APPLIED CREDIT}    Get Text    ${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT_VALUE}
+    Log To Console    Applicable Credit is ${APPLIED CREDIT}
+    #Click on Use Online Credit button
+    Click Button    ${SHIPPING_ONLINE_CREDIT_USE_ONLINE_CREDIT_BUTTON}
+    Sleep    3s
+    #Verify the Success Message of online Credit
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_SUCCESS_POPUP}
+    #Click OK Button
+    Click Button    ${SHIPPING_ONLINE_CREDIT_OK_BUTTON}
+    #Verify button after Use Online Credit
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_CC_USE_ONLINE_CREDIT_BUTTON}
+    #The Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Verify the Shipping Fee on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}
+    #Verify Total discount
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}
+    #verify Online Credits
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}
+    #Verify the Total Price on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
+    #Click Proceed to payment
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
+    Sleep    3s
+    #-------------------------- Payment Page ---------------------------------------------
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
+    #Select payment method
+    Sleep    2s
+    Click Element    ${PAYMENT_METHOD_COD}
+    Sleep    2s
+    #Click Proceed to Review Order button
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
+    #-------------------------- Review Order Page ---------------------------------------------
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
+    #Click Place Order button
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
+    #-------------------------- Thank you Page -------------------------------------------------
+    Sleep    2s
+    #Verify SHIPPING_SECTION
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    #Verify PAYMENT_SECTION
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    #Verify ITEM_LIST_SECTION
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    #Verify ORDER_NUMBER
+    ${GUEST_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
+    Log To Console    Order Number is ${GUEST_ORDER_NUMBER}
+    #Verify Sub total
+    ${THANKYOU_SUB_TOTAL}=    Get Text    ${THANKYOU_SUB_TOTAL_TEXT}
+    Log To Console    Sub total is ${THANKYOU_SUB_TOTAL}
+    #Verify Shipping Fee
+    ${THANKYOU_SHIPPING_FEE}=    Get Text    ${THANKYOU_SHIPPING_FEE_TEXT}
+    Log To Console    Shipping Fee is ${THANKYOU_SHIPPING_FEE}
+    #Verify COD Charges
+    ${THANKYOU_COD_CHARGES}=    Get Text    ${THANKYOU_COD_CHARGES_TEXT}
+    Log To Console    COD Charges is ${THANKYOU_COD_CHARGES}
+    #Verify Total
+    ${THANKYOU_TOTAL}=    Get Text    ${THANKYOU_TOTAL_TEXT}
+    Log To Console    Total is ${THANKYOU_COD_CHARGES}
+    Sleep    3s
+
+Payment and Order CF_TC_11: To verify customer able to place an order with Online Credit balance, Promotion code and any one of the payment option
+    Open Website
+    Accept Cookies
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
+    Sleep    4s
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
+    #Check success message
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
+    #Click on OK button
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
+    Log To Console    Get count on minicart icon = ${MINICART_COUNT}
+    #Click minicart icon
+    Sleep    1s
+    Click Element    ${MINI_CART_ICON}
+    #Verify the Checkout button on Mini cart
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
+    #Click on Checkout button on Mini Cart
+    Click Element    ${MINI_CART_CHECKOUT_BUTTON}
+    Sleep    8s
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
+        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    ELSE
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
+        
+    END
+    Execute Javascript    window.scrollTo(0,0)
+    #--------------------------------------------- Shipping Page ---------------------------------------------------
+    Sleep    5s
+    #Verify the Order Information title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
+    #Verify the Online Credit Section on Shipping page
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_SECTION}    ${SHIPPING_ONLINE_CREDIT_SECTION_TEXT}  
+    #Verify Check Expire Date
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_SECTION}    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_TEXT}
+    Click Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE}
+    #Verify Check Expire Date Popup
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP}    5s
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_EXPIRE_DATE_TEXT}    3s
+    #Click Close popup
+    Click Element    ${SHIPPING_ONLINE_CREDIT_CHECK_EXPIRE_DATE_POPUP_CLOSE_BUTTON}
+    Sleep    3s
+    #Get available credit Value
+    Wait Until Element Contains    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT}    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_TEXT}
+    ${AVAILABLE CREDIT}    Get Text    ${SHIPPING_ONLINE_CREDIT_AVAILABLE_CREDIT_VALUE}
+    Log To Console    Available Credit is ${AVAILABLE CREDIT}
+    Sleep    5s
+    #Verify the applicable Credit
+    Wait Until Page Contains Element   ${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT}
+    Sleep    2s
+    #Get applicable credit Value
+    ${APPLIED CREDIT}    Get Text    ${SHIPPING_ONLINE_CREDIT_APPLIED_CREDIT_VALUE}
+    Log To Console    Applicable Credit is ${APPLIED CREDIT}
+    #Click on Use Online Credit button
+    Click Button    ${SHIPPING_ONLINE_CREDIT_USE_ONLINE_CREDIT_BUTTON}
+    Sleep    3s
+    #Verify the Success Message of online Credit
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_SUCCESS_POPUP}
+    #Click OK Button
+    Click Button    ${SHIPPING_ONLINE_CREDIT_OK_BUTTON}
+    #Verify button after Use Online Credit
+    Wait Until Page Contains Element    ${SHIPPING_ONLINE_CREDIT_CC_USE_ONLINE_CREDIT_BUTTON}
+    #Input Promotion code
+    Input Text    ${SHIPPING_PROMOTION_CODE_FIELD}    ${PROMOTION_CODE}
+    #Click Apply button
+    Click Element    ${SHIPPING_PROMOTION_APPLY_BUTTON}
+    Sleep    3s
+    #Verify the Success Message of online Credit
+    Wait Until Page Contains Element    ${SHIPPING_PROMOTION_SUCCESS_POPUP}
+    #Click OK Button
+    Sleep    3s
+    Click Element    ${SHIPPING_PROMOTION_SUCCESS_POPUP_OK_BUTTON}
+    Sleep    3s
+    #The Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Verify the Shipping Fee on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}
+    #Verify Total discount
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}
+    #verify Online Credits
+    ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_ONLINE_CREDITS}
+    #Verify the Total Price on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
+    #Verify the Promotion discount
+    ${SHIPPING_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}
+    Log To Console    Promotion discount is ${SHIPPING_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}
+    #Click Proceed to payment
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
+    Sleep    3s
+    #-------------------------- Payment Page ---------------------------------------------
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
+    #Select payment method
+    Sleep    2s
+    Click Element    ${PAYMENT_METHOD_COD}
+    Sleep    2s
+    #Click Proceed to Review Order button
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
+    #-------------------------- Review Order Page ---------------------------------------------
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
+    #Click Place Order button
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
+    #-------------------------- Thank you Page -------------------------------------------------
+    Sleep    2s
+    #Verify SHIPPING_SECTION
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    #Verify PAYMENT_SECTION
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    #Verify ITEM_LIST_SECTION
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    #Verify ORDER_NUMBER
+    ${GUEST_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
+    Log To Console    Order Number is ${GUEST_ORDER_NUMBER}
+    #Verify Sub total
+    ${THANKYOU_SUB_TOTAL}=    Get Text    ${THANKYOU_SUB_TOTAL_TEXT}
+    Log To Console    Sub total is ${THANKYOU_SUB_TOTAL}
+    #Verify Shipping Fee
+    ${THANKYOU_SHIPPING_FEE}=    Get Text    ${THANKYOU_SHIPPING_FEE_TEXT}
+    Log To Console    Shipping Fee is ${THANKYOU_SHIPPING_FEE}
+    #Verify COD Charges
+    ${THANKYOU_COD_CHARGES}=    Get Text    ${THANKYOU_COD_CHARGES_TEXT}
+    Log To Console    COD Charges is ${THANKYOU_COD_CHARGES}
+    #Verify Total
+    ${THANKYOU_TOTAL}=    Get Text    ${THANKYOU_TOTAL_TEXT}
+    Log To Console    Total is ${THANKYOU_COD_CHARGES}
+    Sleep    3s
+
+Payment and Order CF_TC_12: To verify customer able to place an order with Online Credit balance, Promotion code and any one of the payment option
+    Open Website
+    Accept Cookies
+    Login    ${LOGIN_EMAIL_EXISTING_CUSTOMER}      ${LOGIN_PASSWORD_EXISTING_CUSTOMER}
+    Wait Until Element Is Not Visible    ${LOGIN_POPUP}
+    #Click on Search icon
+    Click Element    ${HOMEPAGE_SEARCH_PRODUCT_ICON}
+    #Serch Product
+    Input Text    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${PRODUCT_1}
+    #Click on Enter
+    Press Keys    ${HOMEPAGE_SEARCH_PRODUCT_FIELD}    ${KEYBOARD_BUTTON_ENTER}
+    Sleep    2s
+    #Click on product list
+    Click Element    ${PLP_PRODUCT_1}
+    #Click on ADD TO BAG button
+    Sleep    2s
+    Wait Until Element Contains    ${PDP_BREADCRUMBS_ITEMLIST}    ${PRODUCT_1}
+    Execute Javascript    window.scrollTo(0,3200)
+    Sleep    4s
+    Click Element    ${PDP_ADD_TO_CART_BUTTON}
+    #Check success message
+    Wait Until Element Contains   ${PDP_ADD_TO_CART_SUCCESS_POPUP}    ${SUCCESS_TEXT}
+    #Click on OK button
+    Click Element    ${PDP_ADD_TO_CART_SUCCESS_POPUP_OK_BUTTON}
+    #Get minicart count
+    ${MINICART_COUNT}=    Get Text    ${MINI_CART_COUNTER_LABEL}
+    Log To Console    Get count on minicart icon = ${MINICART_COUNT}
+    #Click minicart icon
+    Sleep    1s
+    Click Element    ${MINI_CART_ICON}
+    #Verify the Checkout button on Mini cart
+    Wait Until Element Contains    ${MINI_CART_CHECKOUT_BUTTON}    ${MINI_CART_CHECKOUT_BUTTON_TEXT}
+    #Click on Checkout button on Mini Cart
+    Click Element    ${MINI_CART_CHECKOUT_BUTTON}
+    Sleep    8s
+    ${LANDING_PAGE}=    Run Keyword And Return Status    Page Should Contain    ${REVIEW_ORDER_TEXT}
+    Sleep    3s
+    IF    '${LANDING_PAGE}'=='${REVIEW_ORDER_TEXT}' 
+        Click Element    ${REVIEW_ORDER_SHIPPING_EDIT_BUTTON}
+    ELSE
+    Wait Until Page Contains    ${SHIPPING_INFORMATION_TEXT}
+        
+    END
+    Execute Javascript    window.scrollTo(0,0)
+    #--------------------------------------------- Shipping Page ---------------------------------------------------
+    Sleep    5s
+    #Verify the Order Information title on Checkout page
+    Wait Until Element Contains    ${SHIPPING_ORDER_INFORMATION_SECTION}    ${SHIPPING_ORDER_INFORMATION_SECTION_TEXT}
+    #Input Promotion code
+    Input Text    ${SHIPPING_PROMOTION_CODE_FIELD}    ${PROMOTION_CODE}
+    #Click Apply button
+    Click Element    ${SHIPPING_PROMOTION_APPLY_BUTTON}
+    Sleep    3s
+    #Verify the Success Message of online Credit
+    Wait Until Page Contains Element    ${SHIPPING_PROMOTION_SUCCESS_POPUP}
+    #Click OK Button
+    Sleep    3s
+    Click Element    ${SHIPPING_PROMOTION_SUCCESS_POPUP_OK_BUTTON}
+    Sleep    3s
+    #The Subtotal on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL_VALUE}
+    Log To Console    Subtotal is ${SHIPPING_ORDER_INFORMATION_SECTION_SUBTOTAL}
+    #Verify the Shipping Fee on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE_VALUE}
+    Log To Console    Shipping Fee is ${SHIPPING_ORDER_INFORMATION_SECTION_SHIPPING_FEE}
+    #Verify Total discount
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}
+    Log To Console    Total discount is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT}
+    #Verify the Promotion discount
+    ${SHIPPING_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_DISCOUNT_VALUE}
+    Log To Console    Promotion discount is ${SHIPPING_ORDER_INFORMATION_SECTION_PROMOTION_DISCOUNT}
+    #Verify the Total Price on Checkout page
+    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}    Get Text    ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL_VALUE}
+    Log To Console    Total is ${SHIPPING_ORDER_INFORMATION_SECTION_TOTAL}
+    #Click Proceed to payment
+    Click Element    ${SHIPPING_PROCEED_TO_PAYMENT_BUTTON}
+    Sleep    3s
+    #-------------------------- Payment Page ---------------------------------------------
+    Wait Until Page Contains    ${PAYMENT_SELECT_PAYMENT_METHOD_TEXT}
+    #Select payment method
+    Sleep    2s
+    Click Element    ${PAYMENT_METHOD_COD}
+    Sleep    2s
+    #Click Proceed to Review Order button
+    Click Element    ${PAYMENT_PROCEED_TO_REVIEW_BUTTON}
+    #-------------------------- Review Order Page ---------------------------------------------
+    Wait Until Page Contains    ${REVIEW_ORDER_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_SHIPPING_SECTION}    ${REVIEW_ORDER_SHIPPING_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_PAYMENT_SECTION}    ${REVIEW_ORDER_PAYMENT_TEXT}
+    Wait Until Element Contains    ${REVIEW_ORDER_ITEM_LIST_SECTION}    ${REVIEW_ORDER_ITEM_LIST_TEXT}
+    #Click Place Order button
+    Click Element    ${REVIEW_ORDER_PLACE_ORDER}
+    #-------------------------- Thank you Page -------------------------------------------------
+    Sleep    2s
+    #Verify SHIPPING_SECTION
+    Wait Until Element Contains    ${THANKYOU_SHIPPING_SECTION}    ${THANKYOU_SHIPPING_TEXT}
+    #Verify PAYMENT_SECTION
+    Wait Until Element Contains    ${THANKYOU_PAYMENT_SECTION}    ${THANKYOU_PAYMENT_TEXT}
+    #Verify ITEM_LIST_SECTION
+    Wait Until Element Contains    ${THANKYOU_ITEM_LIST_SECTION}    ${THANKYOU_ITEM_LIST_TEXT}
+    #Verify ORDER_NUMBER
+    ${GUEST_ORDER_NUMBER}=    Get Text    ${THANKYOU_GET_REGISTER_ORDER_NUMBER}
+    Log To Console    Order Number is ${GUEST_ORDER_NUMBER}
+    #Verify Sub total
+    ${THANKYOU_SUB_TOTAL}=    Get Text    ${THANKYOU_SUB_TOTAL_TEXT}
+    Log To Console    Sub total is ${THANKYOU_SUB_TOTAL}
+    #Verify Shipping Fee
+    ${THANKYOU_SHIPPING_FEE}=    Get Text    ${THANKYOU_SHIPPING_FEE_TEXT}
+    Log To Console    Shipping Fee is ${THANKYOU_SHIPPING_FEE}
+    #Verify COD Charges
+    ${THANKYOU_COD_CHARGES}=    Get Text    ${THANKYOU_COD_CHARGES_TEXT}
+    Log To Console    COD Charges is ${THANKYOU_COD_CHARGES}
+    #Verify Total
+    ${THANKYOU_TOTAL}=    Get Text    ${THANKYOU_TOTAL_TEXT}
+    Log To Console    Total is ${THANKYOU_COD_CHARGES}
+    Sleep    3s
